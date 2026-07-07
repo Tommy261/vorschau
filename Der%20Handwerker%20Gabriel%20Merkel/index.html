@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Der Handwerker Gabriel Merkel | Ihr Generalunternehmer in Dresden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#f97316', // Handwerker-Orange
+                        dark: '#1f2937'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-dark tracking-tight">Gabriel <span class="text-brand">Merkel</span></a>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#leistungen" class="hover:text-brand transition">Leistungen</a>
+                <a href="#ueber-uns" class="hover:text-brand transition">Über uns</a>
+                <a href="#kontakt" class="hover:text-brand transition">Kontakt</a>
+            </div>
+            <a href="tel:015784991848" class="bg-brand text-white px-5 py-2 rounded-lg font-bold hover:bg-orange-600 transition">Jetzt anrufen</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="relative h-[80vh] flex items-center justify-center text-center">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58e4e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" class="absolute w-full h-full object-cover brightness-50" alt="Handwerker Arbeit">
+        <div class="relative z-10 text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Ihr zuverlässiger Partner für <br>jedes Bauprojekt in Dresden</h1>
+            <p class="text-xl mb-8 opacity-90">Qualität, Pünktlichkeit und Präzision aus einer Hand.</p>
+            <a href="#kontakt" class="bg-brand hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-bold transition">Gratis Angebot anfordern</a>
+        </div>
+    </header>
+
+    <!-- Dienstleistungen -->
+    <section id="leistungen" class="py-20 container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">Unsere Leistungen</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand">
+                <i class="fa-solid fa-hammer text-4xl text-brand mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Generalunternehmung</h3>
+                <p>Von der Planung bis zur schlüsselfertigen Übergabe begleiten wir Ihr Projekt professionell und termingerecht.</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand">
+                <i class="fa-solid fa-paint-roller text-4xl text-brand mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Renovierung</h3>
+                <p>Wir verleihen Ihren Räumen neuen Glanz – von Trockenbau bis hin zu Malerarbeiten setzen wir Ihre Wünsche um.</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand">
+                <i class="fa-solid fa-house-chimney text-4xl text-brand mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Sanierung</h3>
+                <p>Energieeffiziente Sanierungen und Instandsetzungen für Bestandsgebäude durch erfahrene Fachhände.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Über uns -->
+    <section id="ueber-uns" class="bg-dark text-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1581783335277-226e55639149?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="rounded-xl shadow-2xl" alt="Handwerker bei der Arbeit">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-6">Ihr Profi für Qualität in Dresden</h2>
+                <p class="mb-6 text-gray-300 leading-relaxed">Als Ihr Generalunternehmer steht bei uns Gabriel Merkel der Name für Handschlagqualität. Wir wissen, dass Bauprojekte Vertrauenssache sind. Deshalb garantieren wir Pünktlichkeit, transparente Preise und eine erstklassige handwerkliche Ausführung. Egal ob Umbau, Neubau oder Sanierung – wir sind Ihr Partner in Dresden.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="py-20 container mx-auto px-6 max-w-2xl">
+        <h2 class="text-3xl font-bold text-center mb-10">Kontaktieren Sie uns</h2>
+        <form class="bg-white p-8 rounded-xl shadow-lg border">
+            <div class="mb-4">
+                <label class="block mb-2 font-bold">Name</label>
+                <input type="text" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-brand outline-none">
+            </div>
+            <div class="mb-4">
+                <label class="block mb-2 font-bold">E-Mail</label>
+                <input type="email" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-brand outline-none">
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2 font-bold">Nachricht</label>
+                <textarea rows="4" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-brand outline-none"></textarea>
+            </div>
+            <button type="button" class="w-full bg-dark text-white py-4 rounded-lg font-bold hover:bg-black transition">Nachricht senden</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10 text-center">
+        <div class="mb-4">
+            <p><strong>Der Handwerker Gabriel Merkel</strong> | Dresden</p>
+            <p>E-Mail: <a href="mailto:derhandwerker.gabriel@gmail.com" class="hover:text-white">derhandwerker.gabriel@gmail.com</a></p>
+            <p>Tel: <a href="tel:015784991848" class="hover:text-white">01578 4991848</a></p>
+        </div>
+        <div class="text-sm">
+            <p>&copy; 2023 Gabriel Merkel. Alle Rechte vorbehalten.</p>
+            <p>Impressum | Datenschutz</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-white border-t p-4 flex justify-between items-center shadow-2xl z-[100]">
+        <p class="text-sm">Diese Website verwendet Cookies, um die Benutzererfahrung zu verbessern.</p>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'" class="bg-brand text-white px-6 py-2 rounded font-bold">Akzeptieren</button>
+    </div>
+
+</body>
+</html>
