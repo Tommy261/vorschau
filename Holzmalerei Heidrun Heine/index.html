@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holzmalerei Heidrun Heine | Kunstvolle Holzveredelung in Dresden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ea580c', // Handwerker-Orange
+                        dark: '#1f2937'    // Dunkelgrau
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="fixed w-full z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-dark">Holzmalerei <span class="text-primary">Heidrun Heine</span></div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="hover:text-primary transition">Start</a>
+                <a href="#services" class="hover:text-primary transition">Dienstleistungen</a>
+                <a href="#about" class="hover:text-primary transition">Über uns</a>
+                <a href="#contact" class="hover:text-primary transition">Kontakt</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="pt-32 pb-20 bg-cover bg-center" style="background-image: linear-gradient(rgba(31, 41, 55, 0.7), rgba(31, 41, 55, 0.7)), url('https://images.unsplash.com/photo-1549443248-0c634af8b06c?auto=format&fit=crop&q=80&w=2000');">
+        <div class="container mx-auto px-6 text-center text-white">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">Meisterhafte Holzmalerei mit Herz</h1>
+            <p class="text-xl mb-10 text-gray-200">Individuelle Veredelung, Restaurierung und kreatives Design aus Dresden.</p>
+            <a href="tel:03512640162" class="bg-primary hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-bold transition text-lg">Jetzt anrufen: 0351 2640162</a>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-dark">Unsere Leistungen</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-8 border rounded-xl hover:shadow-2xl transition">
+                    <i class="fa-solid fa-paintbrush text-4xl text-primary mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Restaurierung</h3>
+                    <p>Wir hauchen alten Holzschätzen neues Leben ein, mit Liebe zum Detail und traditionellen Techniken.</p>
+                </div>
+                <div class="p-8 border rounded-xl hover:shadow-2xl transition">
+                    <i class="fa-solid fa-palette text-4xl text-primary mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Individuelles Design</h3>
+                    <p>Maßgeschneiderte Malereien für Ihre Möbel und Holzelemente nach Ihren persönlichen Vorstellungen.</p>
+                </div>
+                <div class="p-8 border rounded-xl hover:shadow-2xl transition">
+                    <i class="fa-solid fa-house-chimney text-4xl text-primary mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Objektgestaltung</h3>
+                    <p>Dekorative Holzmalerei für den Innen- und Außenbereich zur ästhetischen Aufwertung Ihrer Räume.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <img src="https://images.unsplash.com/photo-1581783330252-259837775988?auto=format&fit=crop&q=80&w=800" class="rounded-lg shadow-xl md:w-1/2" alt="Werkstatt">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl font-bold mb-6 text-dark">Tradition trifft Leidenschaft</h2>
+                <p class="text-gray-600 mb-6 text-lg">Holzmalerei Heidrun Heine steht seit Jahren für Qualität aus Dresden. Wir verbinden handwerkliche Präzision mit künstlerischem Anspruch. Termintreue und Ihre Zufriedenheit stehen bei uns an erster Stelle.</p>
+                <p class="text-gray-600 text-lg">Ob kleine Reparaturen oder komplexe Veredelungen – wir setzen Ihr Holz perfekt in Szene.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <h2 class="text-4xl font-bold text-center mb-10">Kontaktieren Sie uns</h2>
+            <form action="#" class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Name</label>
+                    <input type="text" class="w-full p-3 border rounded" placeholder="Ihr Name">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">E-Mail</label>
+                    <input type="email" class="w-full p-3 border rounded" placeholder="ihre@email.de">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Nachricht</label>
+                    <textarea class="w-full p-3 border rounded h-32" placeholder="Wie können wir helfen?"></textarea>
+                </div>
+                <button class="w-full bg-dark text-white py-4 rounded font-bold hover:bg-black transition">Nachricht senden</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">&copy; 2023 Holzmalerei Heidrun Heine, Dresden</p>
+            <div class="space-x-4 text-sm">
+                <a href="#" class="hover:text-white">Impressum</a>
+                <a href="#" class="hover:text-white">Datenschutzerklärung</a>
+                <p class="mt-4">E-Mail: <a href="mailto:holzmalerei@web.de" class="hover:text-white">holzmalerei@web.de</a> | Tel: 0351 2640162</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="fixed bottom-0 w-full bg-dark text-white p-4 flex justify-between items-center shadow-lg z-[100]">
+        <p class="text-sm">Wir nutzen Cookies, um Ihr Erlebnis zu verbessern. <a href="#" class="underline">Mehr erfahren</a></p>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'" class="bg-primary px-6 py-2 rounded font-bold hover:bg-orange-700">Akzeptieren</button>
+    </div>
+
+</body>
+</html>
