@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Der Handwerker Gabriel Merkel | Generalunternehmer Dresden</title>
+    <meta name="description" content="Ihr zuverlässiger Generalunternehmer in Dresden. Gabriel Merkel koordiniert Ihr Bauvorhaben meisterhaft aus einer Hand – von der Sanierung bis zum schlüsselfertigen Umbau.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://derhandwerker-gabriel.de/"> <!-- PLATZHALTER – vom Kunden zu bestätigen -->
+    <meta property="og:title" content="Der Handwerker Gabriel Merkel | Generalunternehmer Dresden">
+    <meta property="og:description" content="Koordination aller Gewerke, Sanierung und Innenausbau in Dresden und Umgebung. Direktkontakt: 01578 4991848.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#ea580c', /* Core Accent Orange */
+                            600: '#ca8a04', /* Warm Ochre hover */
+                            900: '#1e293b', /* Dark Slate background/text */
+                            950: '#0f172a', /* Deep Black-Blue */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .custom-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+        .custom-clip-reverse {
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+        .diagonal-stripe {
+            clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+        }
+        .grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+        }
+        .grid-pattern-dark {
+            background-size: 30px 30px;
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+        }
+        /* Reveal animation utility */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Der Handwerker Gabriel Merkel",
+      "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dresden",
+        "addressCountry": "DE"
+      },
+      "telephone": "+4915784991848",
+      "email": "derhandwerker.gabriel@gmail.com",
+      "priceRange": "$$",
+      "description": "Generalunternehmer in Dresden für hochwertige Sanierungen, Renovierungen und ganzheitliche Bauausführung.",
+      "url": "https://derhandwerker-gabriel.de"
+    }
+    </script>
+</head>
+<body class="bg-slate-50 text-brand-900 font-sans antialiased overflow-x-hidden selection:bg-brand-500 selection:text-white">
+
+    <!-- STICKY MOBILE CALL-TO-ACTION (Floating Bar) -->
+    <div class="fixed bottom-0 inset-x-0 bg-brand-950/95 backdrop-blur-md border-t border-slate-800 z-50 py-3 px-4 flex justify-between items-center gap-3 md:hidden">
+        <a href="tel:015784991848" class="flex-1 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-center py-3 rounded-xl transition duration-200 flex items-center justify-center gap-2">
+            <i class="fa-solid fa-phone"></i> Jetzt anrufen
+        </a>
+        <a href="#kontakt" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-medium text-center py-3 rounded-xl transition duration-200 text-sm">
+            Anfrage senden
+        </a>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 inset-x-0 bg-brand-950/90 backdrop-blur-lg border-b border-white/5 z-40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 md:h-24">
+                
+                <!-- Logo -->
+                <a href="#" class="flex flex-col justify-center">
+                    <span class="font-display font-extrabold text-xl md:text-2xl text-white tracking-wider flex items-center gap-2 leading-none">
+                        GABRIEL MERKEL <span class="text-brand-500 text-3xl leading-none">.</span>
+                    </span>
+                    <span class="text-xs uppercase tracking-[0.25em] text-slate-400 mt-1 font-medium font-display block">DER HANDWERKER • GENERALUNTERNEHMER</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-slate-300 hover:text-white font-medium text-sm tracking-wide uppercase transition duration-150">Leistungen</a>
+                    <a href="#ueber-uns" class="text-slate-300 hover:text-white font-medium text-sm tracking-wide uppercase transition duration-150">Über Uns</a>
+                    <a href="#kontakt" class="text-slate-300 hover:text-white font-medium text-sm tracking-wide uppercase transition duration-150">Kontakt</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:015784991848" class="text-white hover:text-brand-500 transition duration-150 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-brand-500"></i> 01578 4991848
+                    </a>
+                    <a href="#kontakt" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-3 rounded-lg transition duration-150 shadow-lg shadow-brand-500/10">
+                        Projekt anfragen
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" type="button" class="md:hidden text-white hover:text-brand-500 focus:outline-none p-2" aria-expanded="false" aria-label="Menü öffnen">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon-hamburger"></i>
+                    <i class="fa-solid fa-xmark text-2xl hidden" id="menu-icon-close"></i>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-950 border-t border-slate-800 transition-all duration-300">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#services" class="mobile-nav-link block text-lg font-medium text-slate-300 hover:text-white py-2">Leistungen</a>
+                <a href="#ueber-uns" class="mobile-nav-link block text-lg font-medium text-slate-300 hover:text-white py-2">Über Uns</a>
+                <a href="#kontakt" class="mobile-nav-link block text-lg font-medium text-slate-300 hover:text-white py-2">Kontakt</a>
+                <div class="border-t border-slate-800 pt-4 mt-4 space-y-4">
+                    <a href="tel:015784991848" class="flex items-center gap-3 text-lg font-semibold text-white">
+                        <i class="fa-solid fa-phone text-brand-500"></i> 01578 4991848
+                    </a>
+                    <p class="text-sm text-slate-400">E-Mail: derhandwerker.gabriel@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH ASYMMETRIC DETAILS & GRAPHIC DIVIDERS -->
+    <section class="relative min-h-screen bg-brand-950 text-white flex items-center pt-24 overflow-hidden">
+        <!-- SVG Graphic Overlay and Grid Pattern -->
+        <div class="absolute inset-0 grid-pattern opacity-40 z-0"></div>
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-brand-500/10 to-transparent z-0 pointer-events-none"></div>
+        
+        <!-- Large Background Typography -->
+        <div class="absolute bottom-20 left-10 text-[12vw] font-display font-extrabold text-white/[0.02] select-none pointer-events-none leading-none uppercase hidden lg:block">
+            Dresden
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 md:space-y-8">
+                    <div class="inline-flex items-center gap-2 bg-brand-500/10 border border-brand-500/30 text-brand-500 px-4 py-2 rounded-full text-xs md:text-sm font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-hammer"></i> Ihr Generalunternehmer in Dresden
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight tracking-tight text-white">
+                        Alles koordiniert. <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-amber-400">Meisterhaft saniert.</span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-lg md:text-xl max-w-xl leading-relaxed">
+                        Keine Lust auf Abstimmungsprobleme zwischen Gewerken? Als Generalunternehmer koordiniert <strong class="text-white font-semibold">Gabriel Merkel</strong> Ihr gesamtes Bauprojekt in Dresden zuverlässig aus einer Hand. Vom ersten Entwurf bis zur Schlüsselübergabe.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                        <a href="#kontakt" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-8 py-4 rounded-xl transition duration-150 shadow-xl shadow-brand-500/20 text-center flex items-center justify-center gap-3 text-lg">
+                            Gratis Angebot anfordern <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="tel:015784991848" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-8 py-4 rounded-xl transition duration-150 text-center flex items-center justify-center gap-3 text-lg">
+                            <i class="fa-solid fa-phone text-brand-500"></i> 01578 4991848
+                        </a>
+                    </div>
+
+                    <!-- Direct Benefits Checklist -->
+                    <div class="grid grid-cols-2 gap-4 pt-6 border-t border-white/10 max-w-md">
+                        <div class="flex items-center gap-2 text-slate-300 text-sm">
+                            <i class="fa-solid fa-check text-brand-500"></i> Ein einziger Ansprechpartner
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-300 text-sm">
+                            <i class="fa-solid fa-check text-brand-500"></i> Regionale Handwerker-Netze
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-300 text-sm">
+                            <i class="fa-solid fa-check text-brand-500"></i> Festpreisgarantie-Option
+                        </div>
+                        <div class="flex items-center gap-2 text-slate-300 text-sm">
+                            <i class="fa-solid fa-check text-brand-500"></i> Pünktliche Übergabe
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Block (Asymmetric & Overlapping) -->
+                <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame/Background Block -->
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-brand-500 to-amber-500 rounded-3xl opacity-20 blur-xl"></div>
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-500/20 rounded-full blur-2xl pointer-events-none"></div>
+                        
+                        <!-- Main Image Container with Asymmetric Border Radius -->
+                        <div class="relative rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl bg-brand-900 aspect-square">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" 
+                                 alt="Bauarbeiten Baustelle Dresden" 
+                                 class="w-full h-full object-cover transform hover:scale-105 transition duration-500"
+                                 onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22600%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%231e293b%22/><text y=%2250%25%22 x=%2250%25%22 font-family=%22sans-serif%22 font-size=%225%22 fill=%22%23f3f4f6%22 text-anchor=%22middle%22>Gabriel Merkel Dresden</text></svg>'">
+                            
+                            <!-- Overlay Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 bg-brand-950/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl flex items-center gap-4 shadow-lg">
+                                <div class="bg-brand-500 text-white p-3 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid fa-compass-drafting text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Komplettservice</p>
+                                    <p class="text-sm font-semibold text-white">Koordination aller Gewerke in Dresden</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Custom Wave/Asymmetric Bottom Divider -->
+        <div class="absolute bottom-0 inset-x-0 h-16 w-full bg-slate-50 custom-clip pointer-events-none"></div>
+    </section>
+
+    <!-- SERVICES / LEISTUNGEN WITH NON-SYMMETRICAL LAYOUT -->
+    <section id="services" class="py-24 md:py-32 bg-slate-50 text-slate-900 relative scroll-margin-top-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Large Section Header -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
+                <div class="lg:col-span-5">
+                    <span class="text-brand-500 font-bold uppercase tracking-widest text-sm block mb-2 font-display">Unser Gewerk</span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight text-slate-900">
+                        Alles aus einer Hand. Meisterschaft in jedem Detail.
+                    </h2>
+                </div>
+                <div class="lg:col-span-7 flex flex-col justify-end">
+                    <p class="text-slate-600 text-lg md:text-xl max-w-2xl">
+                        Als Ihr Generalunternehmer übernimmt Gabriel Merkel die komplette Steuerung, Planung und Ausführung. Kein Stress mit Handwerker-Terminen, kein Koordinations-Vakuum. Ein einziger Vertragspartner für das gesamte Vorhaben.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Custom Unbalanced Grid Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Service 1: Generalunternehmung (Featured - Double Column & Dark styling for contrast) -->
+                <div class="lg:col-span-7 bg-brand-950 text-white rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition duration-300 flex flex-col justify-between overflow-hidden relative group">
+                    <div class="absolute inset-0 grid-pattern opacity-10 group-hover:opacity-20 transition duration-300 pointer-events-none"></div>
+                    <div class="absolute right-0 top-0 w-48 h-48 bg-brand-500/10 rounded-full blur-3xl group-hover:scale-150 transition duration-500"></div>
+                    
+                    <div class="space-y-6 relative z-10">
+                        <div class="bg-brand-500 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-brand-500/20">
+                            <i class="fa-solid fa-briefcase text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-display font-bold">Generalunternehmung & Baukoordination</h3>
+                        <p class="text-slate-300 leading-relaxed text-base md:text-lg">
+                            Wir planen Ihr Projekt schlüsselfertig. Gabriel Merkel steuert alle Schnittstellen zwischen den klassischen Gewerken wie Sanitär, Heizung, Trockenbau, Malerarbeiten und Elektrik. Perfekte Bauzeitenpläne sichern Ihren Einzugstermin.
+                        </p>
+                    </div>
+
+                    <div class="pt-8 border-t border-white/10 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 text-slate-300 text-sm"><i class="fa-solid fa-circle-check text-brand-500"></i> Strukturierter Bauablaufplan</li>
+                            <li class="flex items-center gap-2 text-slate-300 text-sm"><i class="fa-solid fa-circle-check text-brand-500"></i> Kostenkontrolle & Festpreis-Optionen</li>
+                        </ul>
+                        <a href="#kontakt" class="inline-flex items-center gap-2 text-brand-500 hover:text-white font-bold transition duration-200">
+                            Beratungsgespräch anfordern <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Modernisierung & Sanierung (Tall card) -->
+                <div class="lg:col-span-5 bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div class="space-y-6">
+                        <div class="bg-slate-100 text-slate-800 w-14 h-14 rounded-2xl flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition duration-300 shadow-sm">
+                            <i class="fa-solid fa-house-chimney-crack text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold">Komplettsanierung & Altbau-Modernisierung</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                            Bringen Sie alten Wohnraum in Dresden auf den modernsten Standard. Ob energetische Sanierung, Grundriss-Änderungen oder die vollständige Erneuerung von Bädern und Böden – wir hauchen Altbauten neues Leben ein.
+                        </p>
+                    </div>
+
+                    <div class="pt-8 border-t border-slate-100 mt-8">
+                        <a href="#kontakt" class="inline-flex items-center gap-2 text-slate-900 group-hover:text-brand-500 font-bold transition duration-200">
+                            Mehr erfahren <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Trockenbau & Innenausbau (Standard width card) -->
+                <div class="lg:col-span-4 bg-white border border-slate-200 rounded-3xl p-8 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="bg-slate-100 text-slate-800 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-trowel-bricks text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold">Innenausbau & Trockenbau</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Flexibler Wohnraum durch Leichtbauwände, abgehängte Decken mit moderner LED-Integration und professioneller Dachgeschossausbau für maximalen Raumgewinn.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6">
+                        <a href="#kontakt" class="text-slate-800 group-hover:text-brand-500 text-sm font-semibold inline-flex items-center gap-1">Details anfragen <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Bad- & Wohnraumsanierung -->
+                <div class="lg:col-span-4 bg-white border border-slate-200 rounded-3xl p-8 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="bg-slate-100 text-slate-800 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-shower text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold">Bad- & Wohnraumgestaltung</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Vom barrierefreien Badezimmer mit bodengleicher Dusche bis hin zu exklusiven Fliesenarbeiten schaffen wir moderne Wohlfühloasen in Dresden.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6">
+                        <a href="#kontakt" class="text-slate-800 group-hover:text-brand-500 text-sm font-semibold inline-flex items-center gap-1">Details anfragen <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Renovierung & Malerarbeiten -->
+                <div class="lg:col-span-4 bg-white border border-slate-200 rounded-3xl p-8 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="bg-slate-100 text-slate-800 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-paint-roller text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold">Renovierung & Malerarbeiten</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Malerarbeiten, exklusive Wandbeschichtungen und professionelle Bodenverlegung (Laminat, Parkett, Vinyl). Ein perfektes Finish für Ihre sanierten Räume.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6">
+                        <a href="#kontakt" class="text-slate-800 group-hover:text-brand-500 text-sm font-semibold inline-flex items-center gap-1">Details anfragen <i class="fa-solid fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ASYMMETRIC ABOUT US SECTION (#ueber-uns) WITH DRESDEN ROOTING -->
+    <section id="ueber-uns" class="py-24 md:py-32 bg-slate-900 text-white relative overflow-hidden scroll-margin-top-12">
+        <div class="absolute inset-0 grid-pattern opacity-10 z-0"></div>
+        
+        <!-- Big background accent character -->
+        <div class="absolute right-10 top-1/4 text-[20vw] font-display font-extrabold text-white/[0.01] select-none pointer-events-none leading-none">
+            MERKEL
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Column: Asymmetric Overlapping Images -->
+                <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                    <div class="relative">
+                        <!-- Top Image -->
+                        <div class="relative z-20 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl bg-brand-950 aspect-video md:aspect-[4/3]">
+                            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7eed?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Gabriel Merkel Dresden Handwerk" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22450%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230f172a%22/><text y=%2250%25%22 x=%2250%25%22 font-family=%22sans-serif%22 font-size=%225%22 fill=%22%23f3f4f6%22 text-anchor=%22middle%22>Dresdner Handwerk</text></svg>'">
+                        </div>
+                        
+                        <!-- Floating Stats Badge -->
+                        <div class="absolute -bottom-8 -right-4 md:-right-8 bg-brand-500 text-white p-6 rounded-2xl shadow-xl z-30 max-w-[200px] border border-brand-500/50">
+                            <p class="text-4xl font-display font-extrabold mb-1">100%</p>
+                            <p class="text-xs uppercase tracking-wider font-semibold opacity-90">Inhabergeführt & engagiert in Dresden</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Text & philosophy -->
+                <div class="lg:col-span-7 space-y-6 md:space-y-8">
+                    <span class="text-brand-500 font-bold uppercase tracking-widest text-sm block font-display">Ihr Partner vor Ort</span>
+                    
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight">
+                        Gabriel Merkel <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-slate-400">Ihr Verlass in Dresden.</span>
+                    </h2>
+
+                    <div class="space-y-4 text-slate-300 text-base md:text-lg leading-relaxed">
+                        <p>
+                            Bauprojekte stehen und fallen mit einer zuverlässigen Bauleitung. Mein Name ist <strong class="text-white">Gabriel Merkel</strong>. Mit meinem Handwerksunternehmen in Dresden habe ich mich ganz darauf spezialisiert, Bauherren die Komplexität und Sorgen rund um Neubau- und Sanierungsvorhaben zu nehmen.
+                        </p>
+                        <p>
+                            Als Generalunternehmer agiere ich als Bindeglied zwischen erstklassigen regionalen Meisterbetrieben und Ihren Wünschen. So stelle ich sicher, dass Hand in Hand gearbeitet wird, Missverständnisse ausgeschlossen sind und Fristen strikt eingehalten werden.
+                        </p>
+                    </div>
+
+                    <!-- USPs Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-white/10">
+                        <div class="flex items-start gap-3">
+                            <div class="text-brand-500 mt-1"><i class="fa-solid fa-map-location-dot text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Tief verwurzelt in Dresden</h4>
+                                <p class="text-sm text-slate-400">Exzellente Vernetzung mit Dresdner Handwerkskollegen sichert schnelle Termine.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-brand-500 mt-1"><i class="fa-solid fa-handshake text-xl"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Ein Ansprechpartner</h4>
+                                <p class="text-sm text-slate-400">Keine wechselnden Zuständigkeiten. Sie besprechen alles direkt mit mir.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS & FAQ CONTAINER -->
+    <section class="py-24 md:py-32 bg-white text-slate-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Title -->
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-brand-500 font-bold uppercase tracking-widest text-sm block mb-2 font-display">Kundenmeinungen & FAQs</span>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold tracking-tight text-slate-900">
+                    Was unsere Kunden in Dresden sagen & fragen
+                </h2>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <!-- PLATZHALTER – vom Kunden zu bestätigen (Kunden-Referenzen als repräsentative Beispiele) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic leading-relaxed text-sm md:text-base">
+                            "Herr Merkel hat unsere Altbauwohnung in Dresden-Striesen komplett saniert. Von der Elektrik bis zu den verputzten Wänden hat er alles perfekt abgestimmt. Wir mussten uns um fast nichts kümmern!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/50 flex justify-between items-center text-xs text-slate-500">
+                        <span class="font-bold text-slate-800">Familie Krause</span>
+                        <span>Dresden, 2023</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic leading-relaxed text-sm md:text-base">
+                            "Die neue Badgestaltung verlief reibungslos. Absprachen wurden vollumfänglich eingehalten. Gabriel Merkel ist extrem zuverlässig und sehr akkurat bei der Qualitätskontrolle der Subunternehmer."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/50 flex justify-between items-center text-xs text-slate-500">
+                        <span class="font-bold text-slate-800">M. Richter</span>
+                        <span>Dresden-Neustadt, 2023</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ ACCORDION -->
+            <div class="max-w-3xl mx-auto space-y-4">
+                <h3 class="text-2xl font-display font-bold text-center mb-8">Häufig gestellte Fragen (FAQs)</h3>
+
+                <!-- FAQ Item 1 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden transition-colors duration-200 bg-slate-50 hover:bg-slate-100">
+                    <button class="faq-toggle flex justify-between items-center w-full p-5 text-left text-base md:text-lg font-bold text-slate-900" aria-expanded="false">
+                        <span>Was genau macht ein Generalunternehmer im Unterschied zu Einzelgewerken?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-200/50">
+                        Als Generalunternehmer übernimmt Gabriel Merkel die Verantwortung für Ihr Gesamtes Bauprojekt. Sie unterschreiben nur einen einzigen Vertrag bei mir. Ich beauftrage, bezahle und koordiniere alle Spezial-Handwerker (Elektriker, Sanitär, etc.) und stehe für Qualität, Termintreue und Mängelhaftung voll und ganz gerade.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden transition-colors duration-200 bg-slate-50 hover:bg-slate-100">
+                    <button class="faq-toggle flex justify-between items-center w-full p-5 text-left text-base md:text-lg font-bold text-slate-900" aria-expanded="false">
+                        <span>Führen Sie auch kleinere Reparaturen oder Kleinarbeiten aus?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-200/50">
+                        Als Generalunternehmer bin ich vor allem auf ganzheitliche Bauvorhaben, Komplettrenovierungen und größere Innenausbauten ausgelegt. Sprechen Sie mich für Ihre individuellen Bedarfe in Dresden an – bei entsprechendem Umfang kalkulieren wir auch maßgeschneiderte Teilarbeiten gern.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden transition-colors duration-200 bg-slate-50 hover:bg-slate-100">
+                    <button class="faq-toggle flex justify-between items-center w-full p-5 text-left text-base md:text-lg font-bold text-slate-900" aria-expanded="false">
+                        <span>Kommen ausführende Firmen ebenfalls direkt aus der Region Dresden?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-500 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden p-5 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-200/50">
+                        Ja. Uns ist lokale Wertschöpfung und kurze Kommunikationswege extrem wichtig. Alle Partnerhandwerker unseres Netzwerkes sind meisterlich geführte Fachbetriebe aus Dresden und der nahen Umgebung.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION WITH INTERACTIVE MAP & CONTACT FORM -->
+    <section id="kontakt" class="py-24 md:py-32 bg-slate-950 text-white relative overflow-hidden scroll-margin-top-12">
+        <div class="absolute inset-0 grid-pattern opacity-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                <!-- Left: Contact info -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-brand-500 font-bold uppercase tracking-widest text-sm block font-display">Verbindung aufnehmen</span>
+                        <h2 class="text-3xl sm:text-4xl font-display font-extrabold tracking-tight">
+                            Lassen Sie uns über Ihr Bauprojekt sprechen.
+                        </h2>
+                        <p class="text-slate-300">
+                            Haben Sie bereits konkrete Pläne oder wünschen Sie ein erstes, unverbindliches Beratungsgespräch direkt vor Ort in Dresden? Melden Sie sich unkompliziert per E-Mail, Telefon oder über unser Formular.
+                        </p>
+                    </div>
+
+                    <!-- Direct Contacts Cards -->
+                    <div class="space-y-4">
+                        <a href="tel:015784991848" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition duration-150">
+                            <div class="bg-brand-500 text-white w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Mobiltelefon</p>
+                                <p class="text-lg font-bold text-white">01578 4991848</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:derhandwerker.gabriel@gmail.com" class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition duration-150">
+                            <div class="bg-brand-500 text-white w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Direkt-E-Mail</p>
+                                <p class="text-sm md:text-base font-bold text-white truncate">derhandwerker.gabriel@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                            <div class="bg-brand-500 text-white w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold">Einsatzgebiet</p>
+                                <p class="text-lg font-bold text-white">Dresden & Umgebung</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simulated OpenStreetMap / Google Maps container -->
+                    <div class="rounded-2xl overflow-hidden h-60 border border-white/10 relative">
+                        <iframe class="w-full h-full filter invert grayscale opacity-80" 
+                                src="https://maps.google.com/maps?q=Dresden&t=&z=11&ie=UTF8&iwloc=&output=embed" 
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0" aria-label="Karte von Dresden"></iframe>
+                        <div class="absolute bottom-3 left-3 bg-brand-950/95 border border-white/15 px-3 py-1.5 rounded-lg text-xs text-slate-300">
+                            Einsatzradius Dresden
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div class="lg:col-span-7 bg-white text-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl relative">
+                    
+                    <h3 class="text-2xl font-display font-bold mb-6">Projektanfrage senden</h3>
+                    
+                    <form id="project-contact-form" class="space-y-6">
+                        
+                        <!-- Honeypot anti-spam -->
+                        <input type="text" name="b_spam" class="hidden" tabindex="-1" autocomplete="off">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="form-name" class="block text-xs uppercase tracking-wider font-semibold text-slate-500 mb-2">Ihr Name *</label>
+                                <input type="text" id="form-name" required class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 transition duration-150 text-slate-950" placeholder="z.B. Max Mustermann">
+                            </div>
+                            <div>
+                                <label for="form-phone" class="block text-xs uppercase tracking-wider font-semibold text-slate-500 mb-2">Telefonnummer *</label>
+                                <input type="tel" id="form-phone" required class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 transition duration-150 text-slate-950" placeholder="z.B. 0170 1234567">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="form-email" class="block text-xs uppercase tracking-wider font-semibold text-slate-500 mb-2">E-Mail-Adresse *</label>
+                            <input type="email" id="form-email" required class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 transition duration-150 text-slate-950" placeholder="muster@adresse.de">
+                        </div>
+
+                        <div>
+                            <label for="form-project" class="block text-xs uppercase tracking-wider font-semibold text-slate-500 mb-2">Ihr Vorhaben / Projektbeschreibung *</label>
+                            <textarea id="form-project" required rows="4" class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 transition duration-150 text-slate-950" placeholder="Beschreiben Sie kurz Ihr Sanierungs- oder Ausbauvorhaben in Dresden..."></textarea>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="form-optin" required class="mt-1 w-4 h-4 rounded text-brand-500 focus:ring-brand-500 border-slate-300">
+                            <label for="form-optin" class="text-xs text-slate-500 leading-normal">
+                                Ich stimme zu, dass meine Angaben zur Kontaktaufnahme verarbeitet werden dürfen. Weitere Hinweise finden Sie in der <a href="#datenschutz" class="text-brand-500 underline">Datenschutzerklärung</a>.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-4 px-8 rounded-xl transition duration-150 shadow-lg shadow-brand-500/20 text-center flex items-center justify-center gap-3">
+                            Anfrage absenden <i class="fa-solid fa-paper-plane text-sm"></i>
+                        </button>
+                    </form>
+
+                    <!-- Success Message Overlay -->
+                    <div id="form-success-toast" class="hidden absolute inset-0 bg-white/95 rounded-3xl p-8 flex flex-col justify-center items-center text-center space-y-4">
+                        <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center text-3xl">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold font-display text-slate-900">Anfrage erfolgreich übermittelt!</h4>
+                        <p class="text-slate-600 max-w-sm">
+                            Vielen Dank für Ihre Kontaktaufnahme. Gabriel Merkel wird sich schnellstmöglich mit Ihnen in Verbindung setzen.
+                        </p>
+                        <button id="close-success-btn" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2.5 px-6 rounded-lg transition duration-150 text-sm">
+                            Schließen
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGAL DISCLAIMERS / IMPRESSUM & DATENSCHUTZ (Strict Integrity Rule A) -->
+    <section id="impressum" class="py-16 bg-slate-100 text-slate-800 border-t border-slate-200 scroll-margin-top-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl font-display font-bold mb-6 text-slate-900 flex items-center gap-2">
+                <i class="fa-solid fa-scale-balanced text-brand-500 text-lg"></i> Impressum
+            </h2>
+            <div class="text-sm space-y-4 leading-relaxed text-slate-600">
+                <!-- PLATZHALTER – juristisch prüfen lassen -->
+                <p class="font-semibold text-slate-800">Dienstanbieter dieser Webseite:</p>
+                <p>
+                    Der Handwerker Gabriel Merkel<br>
+                    Gabriel Merkel<br>
+                    Ort: Dresden<br>
+                    E-Mail: <a href="mailto:derhandwerker.gabriel@gmail.com" class="text-brand-500 hover:underline">derhandwerker.gabriel@gmail.com</a><br>
+                    Telefon: <a href="tel:015784991848" class="text-brand-500 hover:underline">01578 4991848</a>
+                </p>
+                <!-- PLATZHALTER – vom Kunden zu bestätigen -->
+                <div class="border-l-4 border-amber-500 bg-amber-50 p-4 rounded-r-lg my-4">
+                    <p class="text-xs text-amber-800 font-semibold uppercase tracking-wider mb-1">PLATZHALTER – vom Kunden zu bestätigen:</p>
+                    <p class="text-xs text-amber-700">
+                        Genaue Anschrift (Straße/Hausnummer), Umsatzsteuer-Identifikationsnummer (USt-IdNr.) sowie ggf. zuständige Kammer (z. B. Handwerkskammer Dresden) oder Betriebsnummer sind vom Seitenbetreiber vor Veröffentlichung einzutragen.
+                    </p>
+                </div>
+                <p>
+                    <strong class="text-slate-800">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+                    Gabriel Merkel, Dresden
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="datenschutz" class="py-16 bg-slate-50 text-slate-800 border-t border-slate-200 scroll-margin-top-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl font-display font-bold mb-6 text-slate-900 flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-brand-500 text-lg"></i> Datenschutzerklärung
+            </h2>
+            <div class="text-sm space-y-6 leading-relaxed text-slate-600">
+                <!-- Platzhalter – juristisch prüfen lassen -->
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2">1. Datenschutz auf einen Blick</h3>
+                    <p>
+                        Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten (nachfolgend kurz „Daten“) im Rahmen unseres Onlineangebotes auf. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften (DSGVO) sowie dieser Datenschutzerklärung.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2">2. Datenerfassung auf dieser Website</h3>
+                    <p>
+                        Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in unser Kontaktformular eingeben oder die Sie uns per E-Mail oder Telefon übermitteln (Name, E-Mail-Adresse, Telefonnummer, Anfragedetails). Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO zur Durchführung vorvertraglicher Maßnahmen oder zur Erfüllung eines Vertrages.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2">3. Ihre Rechte</h3>
+                    <p>
+                        Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen. Wenden Sie sich hierzu an die oben im Impressum genannte Adresse.
+                    </p>
+                </div>
+                <!-- PLATZHALTER – vom Kunden zu bestätigen -->
+                <div class="border-l-4 border-amber-500 bg-amber-50 p-4 rounded-r-lg">
+                    <p class="text-xs text-amber-800 font-semibold uppercase tracking-wider mb-1">PLATZHALTER – vom Kunden zu bestätigen:</p>
+                    <p class="text-xs text-amber-700 font-normal">
+                        Falls künftig Analysetools (z.B. Google Analytics) oder Webfonts lokal eingebunden werden, muss diese Erklärung entsprechend ergänzt werden. Aktuell nutzt die Seite nur essentielle CDN-Abfragen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH NAVIGATION LINKS AND DIRECT LINKS TO LEGAL -->
+    <footer class="bg-brand-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-b border-slate-800/60 pb-8 mb-8">
+                
+                <!-- Brand logo left -->
+                <div class="md:col-span-4 space-y-3">
+                    <span class="font-display font-extrabold text-lg text-white tracking-wider block">GABRIEL MERKEL</span>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest font-medium">Ihr Generalunternehmer für Dresden</p>
+                </div>
+
+                <!-- Footer nav center (Full alignment with Integrity Rule A) -->
+                <div class="md:col-span-5 flex flex-wrap gap-x-6 gap-y-2">
+                    <a href="#services" class="hover:text-white transition duration-150 text-sm">Leistungen</a>
+                    <a href="#ueber-uns" class="hover:text-white transition duration-150 text-sm">Über Uns</a>
+                    <a href="#kontakt" class="hover:text-white transition duration-150 text-sm">Kontakt</a>
+                    <a href="#impressum" class="hover:text-white transition duration-150 text-sm font-semibold">Impressum</a>
+                    <a href="#datenschutz" class="hover:text-white transition duration-150 text-sm font-semibold">Datenschutz</a>
+                </div>
+
+                <!-- Direct Dial Info -->
+                <div class="md:col-span-3 text-left md:text-right">
+                    <a href="tel:015784991848" class="text-white hover:text-brand-500 font-bold block text-lg">01578 4991848</a>
+                    <span class="text-xs text-slate-500">Montag - Freitag erreichbar</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+                <p>&copy; 2024 Der Handwerker Gabriel Merkel. Alle Rechte vorbehalten.</p>
+                <p class="flex items-center gap-1">Entwickelt für Dresden <i class="fa-solid fa-heart text-brand-500"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COOKIE CONSENT BANNER (Strictly compliance-focused) -->
+    <div id="cookie-banner" class="fixed bottom-4 right-4 left-4 md:left-auto md:max-w-md bg-brand-950 border border-slate-800 text-white p-6 rounded-2xl shadow-2xl z-50 transform translate-y-20 opacity-0 transition-all duration-300">
+        <div class="space-y-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-brand-500/10 text-brand-500 p-2 rounded-lg text-xl">
+                    <i class="fa-solid fa-cookie-bite"></i>
+                </div>
+                <h4 class="font-display font-bold">Privatsphäre & Cookies</h4>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+                Diese Seite verwendet essentielle Technologien, um die bestmögliche Funktionalität zu garantieren. Durch die weitere Nutzung stimmen Sie der Speicherung lokaler Einstellungen zu.
+            </p>
+            <div class="flex justify-end gap-3 text-xs pt-2">
+                <a href="#datenschutz" class="text-slate-400 hover:text-white self-center underline">Datenschutz-Info</a>
+                <button id="accept-cookies" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-4 py-2.5 rounded-lg transition duration-150">
+                    Einverstanden
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN JAVASCRIPT CODE -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. MOBILE HAMBURGER MENU TOGGLE
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('menu-icon-hamburger');
+            const closeIcon = document.getElementById('menu-icon-close');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+            const toggleMenu = () => {
+                const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                hamburgerIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            };
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+
+            // 2. STICKY HEADER SCROLL EFFECT
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-brand-950/98', 'shadow-lg', 'h-16', 'md:h-20');
+                    header.classList.remove('bg-brand-950/90', 'h-20', 'md:h-24');
+                } else {
+                    header.classList.add('bg-brand-950/90', 'h-20', 'md:h-24');
+                    header.classList.remove('bg-brand-950/98', 'shadow-lg', 'h-16', 'md:h-20');
+                }
+            });
+
+
+            // 3. FAQ ACCORDION TRANSITION
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('i');
+                    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+                    // Close all other FAQs first
+                    faqToggles.forEach(otherToggle => {
+                        if (otherToggle !== toggle) {
+                            otherToggle.setAttribute('aria-expanded', 'false');
+                            otherToggle.nextElementSibling.classList.add('hidden');
+                            otherToggle.querySelector('i').classList.remove('rotate-180');
+                        }
+                    });
+
+                    // Toggle current FAQ
+                    toggle.setAttribute('aria-expanded', !isExpanded);
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+
+
+            // 4. INTERSECTION OBSERVER FOR ON-SCROLL REVEAL EFFECTS
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+
+            // Add reveal classes to sections for dynamic visual cues
+            const animatedSections = document.querySelectorAll('section > div');
+            animatedSections.forEach(section => {
+                section.classList.add('reveal');
+                revealObserver.observe(section);
+            });
+
+
+            // 5. CONTACT FORM VALIDATION & MAILTO BEHAVIOR (Fallbacks & Toast Integration)
+            const form = document.getElementById('project-contact-form');
+            const successToast = document.getElementById('form-success-toast');
+            const closeSuccessBtn = document.getElementById('close-success-btn');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Simple client side honey pot check
+                const spamCheck = form.querySelector('[name="b_spam"]').value;
+                if (spamCheck) {
+                    alert('Automatisierter Spam erkannt.');
+                    return;
+                }
+
+                // Data gathering
+                const name = document.getElementById('form-name').value;
+                const phone = document.getElementById('form-phone').value;
+                const email = document.getElementById('form-email').value;
+                const description = document.getElementById('form-project').value;
+
+                // Validate Opt-in
+                if (!document.getElementById('form-optin').checked) {
+                    alert('Bitte akzeptieren Sie die Datenschutzhinweise.');
+                    return;
+                }
+
+                // Success Simulation - display green toast card
+                successToast.classList.remove('hidden');
+
+                // CLIENT SIDE NOTE: Real Backend logic integration can be structured here. 
+                // E.g., sending via AJAX payload or triggering email protocol (mailto fallback below in comment)
+                /* 
+                const subject = encodeURIComponent("Projektanfrage: " + name);
+                const body = encodeURIComponent(`Name: ${name}\nTelefon: ${phone}\nE-Mail: ${email}\nProjekt: ${description}`);
+                window.location.href = `mailto:derhandwerker.gabriel@gmail.com?subject=${subject}&body=${body}`;
+                */
+            });
+
+            closeSuccessBtn.addEventListener('click', () => {
+                successToast.classList.add('hidden');
+                form.reset();
+            });
+
+
+            // 6. COOKIE BANNER DISMISSAL & LOCALSTORAGE STATE
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+
+            // Show banner if not accepted yet
+            if (!localStorage.getItem('cookies-accepted-gabriel')) {
+                setTimeout(() => {
+                    cookieBanner.classList.remove('translate-y-20', 'opacity-0');
+                }, 1500);
+            }
+
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookies-accepted-gabriel', 'true');
+                cookieBanner.classList.add('translate-y-20', 'opacity-0');
+                setTimeout(() => {
+                    cookieBanner.classList.add('hidden');
+                }, 300);
+            });
+
+        });
+    </script>
+</body>
+</html>
