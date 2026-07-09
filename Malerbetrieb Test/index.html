@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malerbetrieb Test | Exklusive Malerarbeiten & Wandgestaltung in Oschatzt</title>
+    <meta name="description" content="Malerbetrieb Test in Oschatzt – Ihr Partner für präzise Malerarbeiten, kreative Wandgestaltung und Fassadenschutz. Erfahren Sie handwerkliche Perfektion.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Malerbetrieb Test | Malerhandwerk in Oschatzt">
+    <meta property="og:description" content="Präzise Malerarbeiten, kreative Spachteltechniken und moderner Fassadenschutz. Handwerksqualität aus Oschatzt.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://malerbetrieb-test-oschatzt.de"> <!-- PLATZHALTER - Domänenname vom Kunden zu bestätigen -->
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#121315',       /* Deep Charcoal */
+                            light: '#FAF9F6',      /* Warm Alabaster */
+                            gold: '#C5A880',       /* Sophisticated Gold */
+                            terracotta: '#A95C42', /* Clay Accent */
+                            accent: '#D97706'      /* Ochre */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .custom-shape-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        .custom-shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(150% + 1.3px);
+            height: 70px;
+        }
+        .custom-shape-divider .shape-fill {
+            fill: #FAF9F6;
+        }
+        /* Custom smooth entrance helper */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(197, 168, 128, 0.15);
+        }
+    </style>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Painter",
+      "name": "Malerbetrieb Test",
+      "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=80",
+      "email": "tom.koehler2610@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Oschatzt",
+        "addressCountry": "DE"
+        /* PLATZHALTER - Straße, Hausnummer und PLZ vom Kunden zu ergänzen */
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "51.3000", /* Ungefähre Koordinaten für Oschatz */
+        "longitude": "13.1100"
+      },
+      "url": "https://malerbetrieb-test-oschatzt.de" /* PLATZHALTER */
+    }
+    </script>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans selection:bg-brand-gold selection:text-brand-dark antialiased overflow-x-hidden">
+
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-brand-dark text-white border-t border-brand-gold/30 shadow-2xl transition-transform duration-500 translate-y-full">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-sm text-gray-300">
+                Wir nutzen Cookies, um unsere Website optimal für Sie zu gestalten. Mit der Nutzung der Seite erklären Sie sich damit einverstanden. 
+                Details finden Sie in unserer <a href="#datenschutz" class="underline hover:text-brand-gold transition-colors">Datenschutzerklärung</a>.
+            </div>
+            <div class="flex gap-4 shrink-0">
+                <button onclick="acceptCookies()" class="bg-brand-gold hover:bg-brand-gold/80 text-brand-dark px-5 py-2 rounded text-sm font-semibold transition-all">Einverstanden</button>
+                <button onclick="closeCookieBanner()" class="border border-gray-500 hover:border-white px-5 py-2 rounded text-sm transition-all">Ablehnen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY MOBILE CALL-TO-ACTION (Telefon k.A., daher direkter Link zum Kontaktformular) -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-brand-dark border-t border-brand-gold/20 p-3 flex justify-around items-center shadow-lg">
+        <a href="#kontakt" class="flex items-center gap-2 text-brand-gold font-semibold text-sm tracking-wider uppercase">
+            <i class="fa-solid fa-paper-plane animate-pulse"></i> Angebot anfordern
+        </a>
+        <div class="h-6 w-px bg-brand-gold/20"></div>
+        <a href="mailto:tom.koehler2610@gmail.com" class="flex items-center gap-2 text-white font-semibold text-sm tracking-wider uppercase">
+            <i class="fa-solid fa-envelope"></i> E-Mail schreiben
+        </a>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-brand-light/95 backdrop-blur-md border-b border-brand-dark/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
+            
+            <!-- Logo / Name -->
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-xl md:text-2xl font-bold tracking-tight text-brand-dark">
+                    Malerbetrieb <span class="text-brand-gold">Test</span>
+                </span>
+                <span class="text-xs tracking-widest uppercase text-brand-terracotta font-semibold">Meisterqualität &bull; Oschatzt</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide uppercase">
+                <a href="#services" class="hover:text-brand-gold transition-colors duration-200">Leistungen</a>
+                <a href="#ueber-uns" class="hover:text-brand-gold transition-colors duration-200">Über uns</a>
+                <a href="#kontakt" class="hover:text-brand-gold transition-colors duration-200">Kontakt</a>
+                <a href="#kontakt" class="bg-brand-dark text-brand-light hover:bg-brand-gold hover:text-brand-dark px-6 py-3 rounded-none transition-all duration-300 shadow-md">
+                    Projekt anfragen
+                </a>
+            </nav>
+
+            <!-- Mobile Burger Icon -->
+            <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 focus:outline-none" aria-label="Menü öffnen" aria-expanded="false">
+                <span class="w-6 h-0.5 bg-brand-dark transition-all duration-300"></span>
+                <span class="w-6 h-0.5 bg-brand-dark transition-all duration-300"></span>
+                <span class="w-6 h-0.5 bg-brand-dark transition-all duration-300"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 right-0 bg-brand-light border-b border-brand-dark/10 shadow-xl flex flex-col p-6 gap-4 font-semibold text-center transition-all duration-300">
+            <a href="#services" onclick="toggleMenu()" class="py-2 hover:text-brand-gold">Leistungen</a>
+            <a href="#ueber-uns" onclick="toggleMenu()" class="py-2 hover:text-brand-gold">Über uns</a>
+            <a href="#kontakt" onclick="toggleMenu()" class="py-2 hover:text-brand-gold">Kontakt</a>
+            <a href="#kontakt" onclick="toggleMenu()" class="bg-brand-dark text-brand-light py-3 mt-2 rounded-none">Projekt anfragen</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Asymmetrisches Layout, Overlap & Bildfallback) -->
+    <section class="relative min-h-screen pt-28 md:pt-0 flex items-center bg-gradient-to-tr from-brand-dark via-[#1a1b1e] to-brand-dark text-brand-light overflow-hidden">
+        
+        <!-- Background Decorative Stroke (Kreativ-Feature 1: Große Typografie) -->
+        <div class="absolute inset-0 select-none pointer-events-none z-0 flex items-center justify-center">
+            <span class="text-[30vw] font-serif font-black text-outline uppercase tracking-widest opacity-20">FARBE</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 py-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Side Text (Asymmetric span-7) -->
+            <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+                <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/20 text-brand-gold px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider self-start">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span> Kreatives Malerhandwerk
+                </div>
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-white">
+                    Räume, die atmen. <br class="hidden sm:inline">
+                    Wände, die <span class="italic text-brand-gold underline decoration-brand-terracotta decoration-wavy underline-offset-8">begeistern</span>.
+                </h1>
+                <p class="text-base sm:text-lg text-gray-300 max-w-xl font-light">
+                    Malerbetrieb Test bringt frischen Wind und meisterhafte Präzision in Ihr Zuhause oder Gewerbe in <strong class="text-white">Oschatzt</strong>. Mit feinstem Handstrich, erlesenen Pigmenten und einem Auge fürs Besondere.
+                </p>
+                
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                    <a href="#kontakt" class="bg-brand-gold hover:bg-brand-gold/90 text-brand-dark text-center font-bold px-8 py-4 transition-all duration-300 shadow-lg tracking-wider uppercase text-sm">
+                        Gratis Angebot anfordern
+                    </a>
+                    <a href="#services" class="border border-white/20 hover:border-brand-gold text-white hover:text-brand-gold text-center font-bold px-8 py-4 transition-all duration-300 tracking-wider uppercase text-sm">
+                        Unsere Leistungen
+                    </a>
+                </div>
+
+                <!-- Live-Zähler / Fakten (Plathalter) -->
+                <!-- PLATZHALTER - vom Kunden zu bestätigen -->
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 text-center sm:text-left">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-serif font-bold text-brand-gold">100%</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-widest">Präzision</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-serif font-bold text-brand-gold">Oschatzt</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-widest">Einsatzort</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-serif font-bold text-brand-gold">&infin;</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-widest">Leidenschaft</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side Image (Asymmetric Overlap span-5) -->
+            <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                <!-- Background decorative block (Kreativ-Feature 2: Negative Margins/Overlap) -->
+                <div class="absolute -inset-4 bg-brand-gold/10 border border-brand-gold/20 -rotate-3 rounded-3xl z-0"></div>
+                <div class="absolute inset-0 bg-brand-terracotta/10 translate-x-4 translate-y-4 rounded-3xl z-0"></div>
+                
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] bg-gradient-to-b from-zinc-800 to-zinc-900">
+                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Maler bei präziser Arbeit an einer Wand" 
+                         class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700 scale-105 hover:scale-100"
+                         onerror="this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80'">
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Wave Divider (Kreativ-Feature 3: Diagonale/geschwungene Übergänge) -->
+        <div class="custom-shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION (Kreatives Layout: Unterschiedlich große Karten + Farbpaletten-Element) -->
+    <section id="services" class="scroll-mt-24 py-24 bg-brand-light relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta">Exklusives Spektrum</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-dark mt-2">
+                        Unsere Leistungen im Detail
+                    </h2>
+                </div>
+                <p class="text-gray-600 max-w-md font-light leading-relaxed">
+                    Ob minimalistisch, opulent, funktional oder kunstvoll – wir verwandeln Oberflächen in langlebige Meisterwerke.
+                </p>
+            </div>
+
+            <!-- Services Grid (Asymmetric) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                
+                <!-- Service 1 (Hero-Karte: Große Breite span-7) -->
+                <div class="md:col-span-7 bg-white p-8 md:p-12 border border-brand-dark/5 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative overflow-hidden group reveal">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl group-hover:bg-brand-gold/20 transition-all duration-500"></div>
+                    <div>
+                        <div class="w-16 h-16 bg-brand-dark text-brand-gold flex items-center justify-center text-2xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-paintbrush"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-brand-dark mb-4">Kreative Wandgestaltung & Design</h3>
+                        <p class="text-gray-600 leading-relaxed max-w-lg mb-6">
+                            Fugenlose Oberflächen, feiner Kalk-Marmor-Putz oder raffinierte Spachteltechniken. Wir erschaffen einzigartige Haptiken und Raumatmosphären, die Licht und Schatten lebendig reflektieren.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-brand-terracotta font-semibold group-hover:translate-x-2 transition-transform">
+                        <span>Mehr erfahren & Beratung anfragen</span>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </div>
+                </div>
+
+                <!-- Service 2 (Klassisch span-5) -->
+                <div class="md:col-span-5 bg-white p-8 border border-brand-dark/5 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300 group reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-brand-gold/10 text-brand-terracotta flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-brand-dark mb-3">Präzise Maler- & Lackierarbeiten</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            Ob Wände, Decken, Türen oder Fensterprofile – wir sorgen für makellose Anstriche und hochbelastbare Lackierungen im Innen- und Außenbereich.
+                        </p>
+                    </div>
+                    <a href="#kontakt" class="text-xs uppercase tracking-wider font-bold text-brand-dark hover:text-brand-gold transition-colors">Jetzt anfragen &rarr;</a>
+                </div>
+
+                <!-- Service 3 (Klassisch span-5) -->
+                <div class="md:col-span-5 bg-white p-8 border border-brand-dark/5 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300 group reveal">
+                    <div>
+                        <div class="w-12 h-12 bg-brand-gold/10 text-brand-terracotta flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-house-chimney-crack"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-brand-dark mb-3">Fassadenbeschichtung & Schutz</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            Werterhalt Ihrer Immobilie in Oschatzt. Wetterfeste, atmungsaktive Fassadenanstriche mit modernem Algenschutz und brillantem Farbtonerhalt.
+                        </p>
+                    </div>
+                    <a href="#kontakt" class="text-xs uppercase tracking-wider font-bold text-brand-dark hover:text-brand-gold transition-colors">Jetzt anfragen &rarr;</a>
+                </div>
+
+                <!-- Service 4 (Hero-Karte: Große Breite span-7) -->
+                <div class="md:col-span-7 bg-brand-dark text-brand-light p-8 md:p-12 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300 relative overflow-hidden group reveal">
+                    <div class="absolute bottom-0 right-0 w-48 h-48 bg-brand-gold/5 rounded-full blur-3xl"></div>
+                    <div>
+                        <div class="w-16 h-16 bg-brand-gold text-brand-dark flex items-center justify-center text-2xl mb-8 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-scroll"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-4">Exklusive Tapezierarbeiten</h3>
+                        <p class="text-gray-300 leading-relaxed max-w-lg mb-6">
+                            Präzise Verarbeitung von edlen Vliestapeten, großformatigen Mustertapeten, robusten Glasgeweben oder edlen Textiltapeten. Qualität, die man bis ins letzte Detail spürt.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 text-brand-gold font-semibold group-hover:translate-x-2 transition-transform">
+                        <span>Erstklassige Tapetenberatung anfordern</span>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Signature Element: Maler-Farbpalette (Kreativ-Feature 4) -->
+            <div class="mt-20 bg-brand-dark text-white p-8 md:p-12 rounded-none relative overflow-hidden reveal shadow-xl">
+                <div class="absolute -top-12 -right-12 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl"></div>
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-6">
+                        <span class="text-xs uppercase tracking-widest text-brand-gold font-bold">Inspirations-Palette</span>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-2 mb-4">Farben erleben & spüren</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Farbe ist nicht gleich Farbe. Wir arbeiten eng mit renommierten Farbmanufakturen zusammen, um maßgeschneiderte Konzepte zu kreieren, die exakt zu Ihrem Einrichtungsstil passen.
+                        </p>
+                    </div>
+                    <!-- Interactive Color Swatches UI element -->
+                    <div class="lg:col-span-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="bg-zinc-800 p-4 border border-zinc-700 hover:border-brand-gold transition-all duration-300">
+                            <div class="w-full aspect-square bg-[#E8E3D7] mb-3 rounded-sm shadow-inner"></div>
+                            <span class="block text-xs font-semibold uppercase tracking-wider text-white">Muschelsand</span>
+                            <span class="text-[10px] text-gray-400">Warm & Erdend</span>
+                        </div>
+                        <div class="bg-zinc-800 p-4 border border-zinc-700 hover:border-brand-gold transition-all duration-300">
+                            <div class="w-full aspect-square bg-[#4E5652] mb-3 rounded-sm shadow-inner"></div>
+                            <span class="block text-xs font-semibold uppercase tracking-wider text-white">Waldmoos</span>
+                            <span class="text-[10px] text-gray-400">Beruhigend & Natur</span>
+                        </div>
+                        <div class="bg-zinc-800 p-4 border border-zinc-700 hover:border-brand-gold transition-all duration-300">
+                            <div class="w-full aspect-square bg-[#C59B74] mb-3 rounded-sm shadow-inner"></div>
+                            <span class="block text-xs font-semibold uppercase tracking-wider text-white">Safran-Ocker</span>
+                            <span class="text-[10px] text-gray-400">Belebend & Edel</span>
+                        </div>
+                        <div class="bg-zinc-800 p-4 border border-zinc-700 hover:border-brand-gold transition-all duration-300">
+                            <div class="w-full aspect-square bg-[#2A3439] mb-3 rounded-sm shadow-inner"></div>
+                            <span class="block text-xs font-semibold uppercase tracking-wider text-white">Tiefsee-Grau</span>
+                            <span class="text-[10px] text-gray-400">Fokus & Tiefe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- UEBER UNS SECTION (Asymmetrisches Split-Design mit überlappenden Elementen) -->
+    <section id="ueber-uns" class="scroll-mt-24 py-24 bg-[#FAF9F6] border-t border-brand-dark/5 relative overflow-hidden">
+        
+        <!-- Large Background Text (Kreativ-Feature 1 repeated) -->
+        <div class="absolute -bottom-12 left-10 select-none pointer-events-none z-0">
+            <span class="text-[15vw] font-serif font-black text-outline uppercase tracking-wider opacity-10">HANDWERK</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <!-- Left Side Images Grid (Overlapping) -->
+            <div class="lg:col-span-5 grid grid-cols-12 gap-4 relative">
+                <div class="col-span-8 relative z-10 rounded-xl overflow-hidden shadow-xl aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" 
+                         alt="Frisch gestaltetes, lichtdurchflutetes Wohnzimmer" 
+                         class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-500 scale-105 hover:scale-100"
+                         onerror="this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div class="col-span-6 col-start-7 -mt-48 relative z-20 rounded-xl overflow-hidden shadow-2xl border-4 border-[#FAF9F6] aspect-square">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" 
+                         alt="Detailaufnahme Spachteltechnik" 
+                         class="w-full h-full object-cover scale-110 hover:scale-100 transition-all duration-500"
+                         onerror="this.src='https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80'">
+                </div>
+            </div>
+
+            <!-- Right Side Text -->
+            <div class="lg:col-span-7 space-y-6 reveal">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta">Über den Betrieb</span>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-dark">
+                    Malerbetrieb Test &ndash; Ihr Meisterhandwerker in Oschatzt
+                </h2>
+                <p class="text-gray-600 leading-relaxed font-light">
+                    Wir verstehen uns nicht nur als Maler, sondern als Gestalter Ihrer Lebensräume. Ausgehend von unserem Standort in <strong class="text-brand-dark">Oschatzt</strong> realisieren wir anspruchsvolle Projekte mit einem kompromisslosen Qualitätsanspruch.
+                </p>
+                <p class="text-gray-600 leading-relaxed font-light">
+                    Sauberkeit, Termintreue und ein respektvoller Umgang mit Ihrem Eigentum sind für uns selbstverständliche Fundamente jedes Auftrags. Wir nehmen uns Zeit für die individuelle Beratung, um genau die Farbnuancen und Strukturen zu finden, die Ihre Räume optimal zur Geltung bringen.
+                </p>
+                
+                <!-- USPs / Werte -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-brand-dark/10">
+                    <div class="flex gap-4">
+                        <span class="text-brand-gold text-2xl shrink-0"><i class="fa-solid fa-circle-check"></i></span>
+                        <div>
+                            <h4 class="font-bold text-brand-dark text-base">Kompromisslose Präzision</h4>
+                            <p class="text-xs text-gray-500">Saubere Kanten, makellose Übergänge, perfekte Finish-Qualität.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-brand-gold text-2xl shrink-0"><i class="fa-solid fa-leaf"></i></span>
+                        <div>
+                            <h4 class="font-bold text-brand-dark text-base">Gesunde Materialien</h4>
+                            <p class="text-xs text-gray-500">Schadstoffarme, allergikerfreundliche und langlebige Farben.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS & FAQ (Zwei-Spalten Layout für dichten, überzeugenden Informationsgehalt) -->
+    <section class="py-24 bg-white relative z-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+            
+            <!-- Left Side: Testimonials (Referenzen) -->
+            <div class="lg:col-span-5 space-y-8">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta">Stimmen unserer Kunden</span>
+                    <h2 class="font-serif text-3xl font-extrabold text-brand-dark mt-2 mb-6">Erfahrungen, die überzeugen</h2>
+                </div>
+
+                <!-- Testimonial 1 -->
+                <!-- PLATZHALTER - Beispielbewertung vom Kunden zu bestätigen -->
+                <div class="bg-[#FAF9F6] p-6 border-l-4 border-brand-gold shadow-sm flex flex-col justify-between">
+                    <p class="italic text-gray-600 text-sm leading-relaxed mb-4">
+                        &bdquo;Die Beratung vorab war hervorragend und extrem detailliert. Die Ausführung der Spachtelarbeiten in unserem Wohnzimmer in Oschatzt hat unsere Erwartungen übertroffen. Absolut präzise und sauber gearbeitet.&ldquo;
+                    </p>
+                    <div>
+                        <strong class="block text-brand-dark text-sm">Familie Lehmann</strong>
+                        <span class="text-[11px] uppercase tracking-widest text-gray-400">Privatprojekt, Oschatzt</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <!-- PLATZHALTER - Beispielbewertung vom Kunden zu bestätigen -->
+                <div class="bg-[#FAF9F6] p-6 border-l-4 border-brand-terracotta shadow-sm flex flex-col justify-between">
+                    <p class="italic text-gray-600 text-sm leading-relaxed mb-4">
+                        &bdquo;Sehr zuverlässig, pünktlich und eine tadellose Arbeit bei der Renovierung unseres Flurs. Malerbetrieb Test ist ab jetzt unsere erste Adresse für Malerarbeiten!&ldquo;
+                    </p>
+                    <div>
+                        <strong class="block text-brand-dark text-sm">M. Schmidt</strong>
+                        <span class="text-[11px] uppercase tracking-widest text-gray-400">Renovierung, Oschatzt</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: FAQ Accordion -->
+            <div class="lg:col-span-7 space-y-8">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta">Fragen &amp; Antworten</span>
+                    <h2 class="font-serif text-3xl font-extrabold text-brand-dark mt-2 mb-6">Häufig gestellte Fragen</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border border-brand-dark/10 bg-[#FAF9F6]">
+                        <button class="w-full flex justify-between items-center p-5 text-left font-bold text-brand-dark hover:text-brand-gold transition-colors focus:outline-none" aria-expanded="false" onclick="toggleFaq(this)">
+                            <span>Wie schnell erhalte ich ein Angebot?</span>
+                            <span class="text-brand-gold text-lg transition-transform duration-300"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-brand-dark/5">
+                                Nach einer ersten Kontaktaufnahme und eventuellen Detailklärung erstellen wir Ihnen in der Regel innerhalb von 3 bis 5 Werktagen ein transparentes und detailliertes Angebot.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="border border-brand-dark/10 bg-[#FAF9F6]">
+                        <button class="w-full flex justify-between items-center p-5 text-left font-bold text-brand-dark hover:text-brand-gold transition-colors focus:outline-none" aria-expanded="false" onclick="toggleFaq(this)">
+                            <span>Welche Farben und Materialien nutzen Sie?</span>
+                            <span class="text-brand-gold text-lg transition-transform duration-300"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-brand-dark/5">
+                                Wir verwenden ausschließlich hochwertige Profi-Farben renommierter Hersteller. Diese sind extrem langlebig, hochergiebig, geruchsarm und umweltschonend.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="border border-brand-dark/10 bg-[#FAF9F6]">
+                        <button class="w-full flex justify-between items-center p-5 text-left font-bold text-brand-dark hover:text-brand-gold transition-colors focus:outline-none" aria-expanded="false" onclick="toggleFaq(this)">
+                            <span>Führen Sie auch Vorarbeiten wie Spachteln oder Tapezieren aus?</span>
+                            <span class="text-brand-gold text-lg transition-transform duration-300"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <p class="p-5 pt-0 text-sm text-gray-600 leading-relaxed border-t border-brand-dark/5">
+                                Ja, absolut. Ein perfektes Endergebnis erfordert einen makellosen Untergrund. Wir übernehmen das Abschleifen, Spachteln (bis Qualitätsstufe Q4), Grundieren und Aufbringen von Vlies oder Tapeten vollumfänglich.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- KONTAKT SECTION (Mit funktionierender Formular-Logik, interaktivem Mailto-Fallback und Google Maps) -->
+    <section id="kontakt" class="scroll-mt-24 py-24 bg-brand-dark text-brand-light relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1a1b1e] to-brand-dark"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
+            
+            <!-- Left Side: Contact Information & Google Maps -->
+            <div class="lg:col-span-5 space-y-8 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Kontakt aufnehmen</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6">Lassen Sie uns Ihr Projekt planen</h2>
+                    <p class="text-gray-300 font-light leading-relaxed mb-8">
+                        Bereit für eine optische Verwandlung? Schreiben Sie uns eine Nachricht oder senden Sie uns direkt eine E-Mail. Wir freuen uns auf Ihre Idee.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <span class="w-10 h-10 bg-brand-gold/10 text-brand-gold flex items-center justify-center rounded-none text-lg shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-gray-400">E-Mail schreiben</span>
+                                <a href="mailto:tom.koehler2610@gmail.com" class="font-bold hover:text-brand-gold transition-colors break-all">tom.koehler2610@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <span class="w-10 h-10 bg-brand-gold/10 text-brand-gold flex items-center justify-center rounded-none text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-gray-400">Telefonnummer</span>
+                                <!-- PLATZHALTER - Telefonnummer vom Kunden zu bestätigen -->
+                                <span class="text-gray-300 italic">Auf Anfrage</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <span class="w-10 h-10 bg-brand-gold/10 text-brand-gold flex items-center justify-center rounded-none text-lg shrink-0">
+                                <i class="fa-solid fa-map-pin"></i>
+                            </span>
+                            <div>
+                                <span class="block text-xs uppercase tracking-widest text-gray-400">Einsatzort</span>
+                                <span class="font-bold">Oschatzt &amp; Umgebung</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed for Oschatzt -->
+                <div class="w-full h-64 rounded-none overflow-hidden border border-brand-gold/20 shadow-lg mt-8">
+                    <!-- Geolocation / Iframe Oschatz -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41829.35147820138!2d13.078275558231267!3d51.29871576757143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a627b0c3ffbc91%3A0x42120465b5e3cc0!2s04758%20Oschatz!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde" 
+                        class="w-full h-full border-0 grayscale invert opacity-80" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Right Side: Beautiful Interactive Form -->
+            <div class="lg:col-span-7 bg-[#1c1d22] p-8 md:p-12 border border-brand-gold/10 relative">
+                
+                <!-- Success Message Overlap -->
+                <div id="form-success" class="hidden absolute inset-0 bg-brand-dark/95 backdrop-blur-md z-20 flex flex-col items-center justify-center text-center p-6">
+                    <div class="w-20 h-20 bg-brand-gold/10 text-brand-gold flex items-center justify-center text-4xl mb-6 rounded-full">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-2">Nachricht erfolgreich vorbereitet!</h3>
+                    <p class="text-gray-400 text-sm max-w-sm mb-6">
+                        Ihr E-Mail-Programm sollte sich nun öffnen. Falls nicht, kopieren Sie bitte den Text oder senden Sie direkt eine Mail an tom.koehler2610@gmail.com.
+                    </p>
+                    <button onclick="resetForm()" class="bg-brand-gold hover:bg-brand-gold/80 text-brand-dark font-bold px-6 py-2 rounded text-sm transition-all uppercase tracking-wider">Erneut senden</button>
+                </div>
+
+                <h3 class="font-serif text-2xl font-bold mb-6 text-white">Senden Sie uns eine Anfrage</h3>
+                
+                <!-- WEBBACKEND-KOMMENTAR: Dieses Formular validiert via JS und öffnet den Standard-Mail-Client des Nutzers vorbefüllt. Für vollwertige serverseitige Verarbeitung wird PHP (z.B. mail()) oder ein Dienst wie Formspree empfohlen. -->
+                <form id="project-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-xs uppercase tracking-widest text-gray-400 mb-2 font-semibold">Ihr Name *</label>
+                            <input type="text" id="name" required class="w-full bg-brand-dark/50 border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white outline-none transition-all text-sm">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs uppercase tracking-widest text-gray-400 mb-2 font-semibold">Ihre E-Mail *</label>
+                            <input type="email" id="email" required class="w-full bg-brand-dark/50 border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white outline-none transition-all text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="service-select" class="block text-xs uppercase tracking-widest text-gray-400 mb-2 font-semibold">Leistungswunsch</label>
+                        <select id="service-select" class="w-full bg-[#1c1d22] border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white outline-none transition-all text-sm">
+                            <option value="kreative-wandgestaltung">Kreative Wandgestaltung & Spachteltechnik</option>
+                            <option value="klassischer-anstrich">Maler- & Lackierarbeiten</option>
+                            <option value="fassade">Fassadenschutz & -anstrich</option>
+                            <option value="tapeten">Tapezierarbeiten</option>
+                            <option value="sonstiges">Sonstige Anfrage</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-xs uppercase tracking-widest text-gray-400 mb-2 font-semibold">Projektbeschreibung *</label>
+                        <textarea id="message" rows="5" required placeholder="Beschreiben Sie kurz Ihr Vorhaben in Oschatzt..." class="w-full bg-brand-dark/50 border border-brand-gold/20 focus:border-brand-gold px-4 py-3 text-white outline-none transition-all text-sm placeholder:text-zinc-600"></textarea>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <input type="checkbox" id="privacy-agree" required class="mt-1 accent-brand-gold">
+                        <label for="privacy-agree" class="text-xs text-gray-400 leading-relaxed select-none">
+                            Ich willige ein, dass meine Angaben zur Kontaktaufnahme gespeichert und verarbeitet werden dürfen. Weitere Informationen in der <a href="#datenschutz" class="text-brand-gold underline">Datenschutzerklärung</a>. *
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-gold hover:bg-brand-gold/90 text-brand-dark font-bold py-4 transition-all duration-300 uppercase tracking-widest text-sm shadow-lg">
+                        Projektanfrage absenden
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER / IMPRESSUM / DATENSCHUTZ -->
+    <footer class="bg-[#0f1012] text-gray-400 border-t border-white/5 py-16 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+            
+            <!-- Column 1: Company Logo / Pitch -->
+            <div class="md:col-span-4 flex flex-col space-y-4">
+                <span class="font-serif text-2xl font-bold tracking-tight text-white">
+                    Malerbetrieb <span class="text-brand-gold">Test</span>
+                </span>
+                <p class="text-xs text-gray-500 max-w-xs leading-relaxed">
+                    Ihr verlässlicher Partner für kreatives, sauberes und langlebiges Malerhandwerk in Oschatzt und Region.
+                </p>
+                <span class="text-xs text-brand-terracotta">&copy; 2024 Malerbetrieb Test. Alle Rechte vorbehalten.</span>
+            </div>
+
+            <!-- Column 2: Navigation Links -->
+            <div class="md:col-span-4">
+                <h4 class="text-white text-xs uppercase tracking-widest font-semibold mb-4">Schnellzugriff</h4>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <a href="#" class="hover:text-brand-gold transition-colors">Startseite</a>
+                    <a href="#services" class="hover:text-brand-gold transition-colors">Leistungen</a>
+                    <a href="#ueber-uns" class="hover:text-brand-gold transition-colors">Über uns</a>
+                    <a href="#kontakt" class="hover:text-brand-gold transition-colors">Kontakt</a>
+                </div>
+            </div>
+
+            <!-- Column 3: Legal Navigation Links -->
+            <div class="md:col-span-4">
+                <h4 class="text-white text-xs uppercase tracking-widest font-semibold mb-4">Rechtliches</h4>
+                <div class="flex flex-col gap-2 text-sm">
+                    <a href="#impressum" class="hover:text-brand-gold transition-colors">Impressum</a>
+                    <a href="#datenschutz" class="hover:text-brand-gold transition-colors">Datenschutzerklärung</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- IMPRESSUM SECTION (Echte Pflichtseite, integriert im Footer-Bereich mit eigener ID und Padding) -->
+        <section id="impressum" class="scroll-mt-24 max-w-7xl mx-auto px-6 pt-12 border-t border-white/5 space-y-6 text-xs text-gray-500 leading-relaxed">
+            <h3 class="font-serif text-lg font-bold text-white uppercase tracking-wider">Impressum</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <!-- PLATZHALTER - juristisch durch den Kunden prüfen und ergänzen lassen -->
+                    <p class="font-bold text-gray-300">Angaben gemäß § 5 TMG:</p>
+                    <p class="mt-1">
+                        Malerbetrieb Test<br>
+                        Tom Köhler<br>
+                        [PLATZHALTER: Straße und Hausnummer]<br>
+                        [PLATZHALTER: PLZ] Oschatzt
+                    </p>
+                    <p class="mt-3 font-bold text-gray-300">Kontakt:</p>
+                    <p class="mt-1">
+                        E-Mail: <a href="mailto:tom.koehler2610@gmail.com" class="underline hover:text-brand-gold">tom.koehler2610@gmail.com</a><br>
+                        Telefon: [PLATZHALTER - vom Kunden zu bestätigen]
+                    </p>
+                </div>
+                <div>
+                    <!-- PLATZHALTER - Vertretungsberechtigte, Register & Steuer-ID -->
+                    <p class="font-bold text-gray-300">Vertreten durch:</p>
+                    <p class="mt-1">Tom Köhler</p>
+                    
+                    <p class="mt-3 font-bold text-gray-300">Umsatzsteuer-Identifikationsnummer (USt-IdNr.):</p>
+                    <p class="mt-1">[PLATZHALTER - Umsatzsteuer-ID vom Kunden einzufügen]</p>
+
+                    <p class="mt-3 font-bold text-gray-300">Zuständige Kammer:</p>
+                    <p class="mt-1">[PLATZHALTER - z.B. Handwerkskammer Leipzig]</p>
+                </div>
+            </div>
+            <p class="text-[10px] text-gray-600">Disclaimer: Die auf dieser Webseite dargestellten Inhalte wurden nach bestem Wissen und mit vorliegenden Firmendaten erstellt. Sie dienen ausschließlich Marketingzwecken.</p>
+        </section>
+
+        <!-- DATENSCHUTZ SECTION (Echte Pflichtseite, integriert im Footer-Bereich mit eigener ID) -->
+        <section id="datenschutz" class="scroll-mt-24 max-w-7xl mx-auto px-6 pt-12 mt-12 border-t border-white/5 space-y-6 text-xs text-gray-500 leading-relaxed">
+            <h3 class="font-serif text-lg font-bold text-white uppercase tracking-wider">Datenschutzerklärung</h3>
+            
+            <div class="space-y-4">
+                <div>
+                    <h4 class="font-bold text-gray-300 text-sm">1. Datenschutz auf einen Blick</h4>
+                    <p class="mt-1">
+                        Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO) sowie dieser Datenschutzerklärung.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-300 text-sm">2. Datenerfassung auf unserer Website</h4>
+                    <p class="mt-1">
+                        Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in unser Kontaktformular eingeben oder uns per E-Mail an <span class="text-brand-gold">tom.koehler2610@gmail.com</span> senden. Diese Daten werden ausschließlich für den Zweck der Bearbeitung Ihrer Anfrage verwendet und nicht ohne Ihre Einwilligung an Dritte weitergegeben.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-300 text-sm">3. Ihre Rechte</h4>
+                    <p class="mt-1">
+                        Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenden Sie sich hierzu formlos per E-Mail an uns.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-300 text-sm">4. Cookies &amp; Webanalyse</h4>
+                    <p class="mt-1">
+                        Unsere Website verwendet zur Bereitstellung bestimmter Kernfunktionen ausschließlich technisch notwendige oder funktionale Cookies. Sie können der Nutzung dieser Cookies über unseren Cookie-Banner zustimmen oder diese verweigern.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // 1. COOKIE BANNER LOGIC
+        window.addEventListener('DOMContentLoaded', () => {
+            const consent = localStorage.getItem('cookie-consent');
+            if (!consent) {
+                setTimeout(() => {
+                    document.getElementById('cookie-banner').classList.remove('translate-y-full');
+                }, 1000);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem('cookie-consent', 'accepted');
+            closeCookieBanner();
+        }
+
+        function closeCookieBanner() {
+            document.getElementById('cookie-banner').classList.add('translate-y-full');
+        }
+
+        // 2. MOBILE DRAWER MENU
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        function toggleMenu() {
+            const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+            
+            // Toggle hamburger icon styling
+            const spans = menuBtn.querySelectorAll('span');
+            if(!expanded) {
+                spans[0].classList.add('rotate-45', 'translate-y-2');
+                spans[1].classList.add('opacity-0');
+                spans[2].classList.add('-rotate-45', '-translate-y-2');
+            } else {
+                spans[0].classList.remove('rotate-45', 'translate-y-2');
+                spans[1].classList.remove('opacity-0');
+                spans[2].classList.remove('-rotate-45', '-translate-y-2');
+            }
+        }
+
+        // 3. FAQ ACCORDION LOGIC
+        function toggleFaq(button) {
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !expanded);
+            
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('span i');
+            
+            if (!expanded) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.className = 'fa-solid fa-minus';
+                button.parentElement.classList.add('border-brand-gold');
+            } else {
+                answer.style.maxHeight = '0px';
+                icon.className = 'fa-solid fa-plus';
+                button.parentElement.classList.remove('border-brand-gold');
+            }
+        }
+
+        // 4. CONTACT FORM ACTION (mailto prefilled fallback)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service-select').options[document.getElementById('service-select').selectedIndex].text;
+            const msg = document.getElementById('message').value;
+            
+            // Crafting mailto link to direct form submission to tom.koehler2610@gmail.com
+            const subject = encodeURIComponent(`Anfrage von ${name} - Malerbetrieb Test`);
+            const body = encodeURIComponent(`Name: ${name}\nE-Mail: ${email}\nGewünschte Leistung: ${service}\n\nNachricht:\n${msg}`);
+            
+            const mailtoUrl = `mailto:tom.koehler2610@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Open user's email client
+            window.location.href = mailtoUrl;
+
+            // Display success message overlay
+            document.getElementById('form-success').classList.remove('hidden');
+        }
+
+        function resetForm() {
+            document.getElementById('project-form').reset();
+            document.getElementById('form-success').classList.add('hidden');
+        }
+
+        // 5. SCROLL REVEAL ANIMATION (Micro-interactions)
+        const reveals = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 120;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Initial check once loaded
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>
