@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malereibetrieb Andres | Meisterhafte Malerarbeiten in Berlin-Lichtenberg</title>
+    <meta name="description" content="Ihr zuverlässiger Partner für Malerarbeiten, Spachteltechniken und Tapezierungen in Berlin-Lichtenberg und Friedrichsfelde. Jetzt unverbindliches Angebot sichern!">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Malereibetrieb Andres | Berlin-Lichtenberg">
+    <meta property="og:description" content="Meisterhafte Malerarbeiten, exklusive Wandgestaltung und Sanierungen in Berlin. Erfahren, zuverlässig, sauber.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://malereibetrieb-andres.de">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#fbeee9',
+                            200: '#f5d6cb',
+                            600: '#d95d39', // Terracotta/Farbe Akzent
+                            700: '#b84424',
+                            800: '#8e341c',
+                            900: '#1e293b'  // Slate Gray für edle Kontraste
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Painter",
+      "name": "Malereibetrieb Andres",
+      "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=80",
+      "telephone": "+4917632325207",
+      "email": "malereibetrieb.andres@t-online.de",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin-Lichtenberg/Friedrichsfelde",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.5028,
+        "longitude": 13.5186
+      },
+      "priceRange": "$$"
+    }
+    </script>
+
+    <style>
+        /* Custom Customizations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf9f6; /* Soft canvas tone */
+        }
+        .heading-font {
+            font-family: 'Syne', sans-serif;
+        }
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        .clip-diagonal-reverse {
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+        /* Custom Scroll Margin to prevent sticky nav overlap */
+        section {
+            scroll-margin-top: 80px;
+        }
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .scroll-animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-stone-800 antialiased overflow-x-hidden">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300 border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <span class="w-10 h-10 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-paint-roller"></i>
+                </span>
+                <div>
+                    <span class="block text-xl font-bold tracking-tight text-brand-900 heading-font">Andres</span>
+                    <span class="block text-xs uppercase tracking-widest text-brand-600 font-semibold">Malereibetrieb</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 items-center font-medium text-stone-600">
+                <a href="#services" class="hover:text-brand-600 transition-colors">Leistungen</a>
+                <a href="#ueber-uns" class="hover:text-brand-600 transition-colors">Über uns</a>
+                <a href="#kontakt" class="hover:text-brand-600 transition-colors">Kontakt</a>
+                <a href="tel:017632325207" class="bg-brand-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-brand-600 transition-colors flex items-center space-x-2 shadow-lg shadow-stone-900/10">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>0176 32 32 52 07</span>
+                </a>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" class="md:hidden p-2 rounded-lg text-stone-600 hover:bg-stone-50 focus:outline-none" aria-label="Menü öffnen" aria-expanded="false">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 transition-all duration-300">
+            <div class="px-4 pt-2 pb-6 space-y-4 font-medium">
+                <a href="#services" class="block py-2 text-stone-700 hover:text-brand-600">Leistungen</a>
+                <a href="#ueber-uns" class="block py-2 text-stone-700 hover:text-brand-600">Über uns</a>
+                <a href="#kontakt" class="block py-2 text-stone-700 hover:text-brand-600">Kontakt</a>
+                <a href="#impressum" class="block py-2 text-stone-500 text-sm hover:text-brand-600">Impressum</a>
+                <a href="#datenschutz" class="block py-2 text-stone-500 text-sm hover:text-brand-600">Datenschutz</a>
+                <a href="tel:017632325207" class="w-full text-center bg-brand-600 text-white block py-3 rounded-lg font-semibold">
+                    <i class="fa-solid fa-phone mr-2"></i> Jetzt anrufen
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Asymmetrisch & Starker Ausdruck) -->
+    <section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-brand-900 text-white clip-diagonal">
+        <!-- Background Decor (Giant Typography & Paint Splat SVG) -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none select-none overflow-hidden">
+            <span class="absolute -right-10 bottom-0 text-[18vw] font-black uppercase text-white/5 tracking-tighter heading-font">BERLIN</span>
+            <svg class="absolute -left-20 top-1/4 w-[600px] h-[600px] text-brand-600 fill-current opacity-30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M44.7,-74C58.1,-67.5,69.3,-55.9,76.5,-42.1C83.7,-28.3,86.8,-12.2,85.2,3.4C83.6,18.9,77.3,33.9,68.2,46.7C59,59.5,47.1,70.1,33.1,75.4C19.1,80.7,3,80.7,-12.4,77.3C-27.8,73.9,-42.6,67.1,-54.6,56.7C-66.6,46.3,-75.8,32.3,-79.9,16.8C-84,-1.3,-83.1,-21,-75.4,-37C-67.8,-53.1,-53.4,-65.5,-38.1,-71.1C-22.8,-76.7,-6.6,-75.4,8.1,-86.7C22.8,-98,44.7,-74,44.7,-74Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+
+        <!-- Main Hero Grid -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left text content -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="inline-flex items-center space-x-2 bg-brand-600/20 text-brand-200 border border-brand-600/30 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Berlin-Lichtenberg & Friedrichsfelde</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight heading-font leading-[1.1] text-stone-50">
+                        Präzision in Farbe. <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-amber-400">Meisterhaftes</span> Malerhandwerk.
+                    </h1>
+                    <p class="text-lg text-stone-300 max-w-xl leading-relaxed">
+                        Vom klassischen Wandanstrich bis zur modernen Wandgestaltung – Malereibetrieb Andres steht für saubere Ausführung, höchste Materialqualität und echte Zuverlässigkeit direkt in Ihrer Nachbarschaft.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#kontakt" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-600/30 transition-all text-center flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-calendar-alt"></i>
+                            <span>Gratis Angebot anfordern</span>
+                        </a>
+                        <a href="tel:017632325207" class="border border-white/20 hover:border-white/50 bg-white/5 hover:bg-white/10 text-white font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>0176 32 32 52 07</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right image content (Asymmetric & Overlapping) -->
+                <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                    <div class="relative w-full max-w-[420px] mx-auto">
+                        <!-- Color Accent Block behind -->
+                        <div class="absolute -top-6 -left-6 w-full h-full bg-brand-600 rounded-3xl -rotate-3 z-0 shadow-lg"></div>
+                        <!-- Main Image -->
+                        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-stone-800 aspect-[4/5]">
+                            <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80'" 
+                                 alt="Malereibetrieb Andres im Einsatz" 
+                                 class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES / LEISTUNGEN -->
+    <section id="services" class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16 scroll-animate">
+                <span class="text-sm font-bold text-brand-600 uppercase tracking-widest block mb-2">Unsere Expertise</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold heading-font text-brand-900">Leistungen für ein schöneres Zuhause</h2>
+                <div class="w-16 h-1.5 bg-brand-600 mx-auto mt-4 rounded-full"></div>
+                <p class="text-stone-600 mt-4">Wir verschönern und schützen Ihre Wände im Innen- und Außenbereich mit handwerklicher Präzision.</p>
+            </div>
+
+            <!-- Asymmetric Grid for Services -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Large Featured Card -->
+                <div class="md:col-span-2 bg-gradient-to-br from-brand-900 to-stone-800 text-white rounded-3xl p-8 lg:p-12 shadow-xl relative overflow-hidden flex flex-col justify-between group scroll-animate">
+                    <!-- Subtle pattern -->
+                    <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none translate-x-10 translate-y-10 group-hover:scale-110 transition duration-500">
+                        <i class="fa-solid fa-fill-drip text-[200px]"></i>
+                    </div>
+                    
+                    <div class="space-y-4 max-w-md">
+                        <div class="w-12 h-12 bg-brand-600 rounded-2xl flex items-center justify-center text-white text-xl shadow-lg">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold heading-font mt-6 text-white">Exklusive Spachtel- & Dekorationstechniken</h3>
+                        <p class="text-stone-300">
+                            Sie suchen das Besondere? Wir erschaffen einzigartige Akzentwände in Betonoptik, feinstem Kalkputz (Stucco Veneziano) oder modernen Rost- & Metallic-Strukturen. Machen Sie Ihre Wand zum Kunstwerk.
+                        </p>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#kontakt" class="inline-flex items-center space-x-2 text-brand-200 hover:text-white font-semibold transition-colors">
+                            <span>Beratung anfordern</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Paint Work -->
+                <div class="bg-white rounded-3xl p-8 shadow-md border border-stone-100 hover:shadow-xl transition-all flex flex-col justify-between scroll-animate">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+                        <h3 class="text-xl font-bold heading-font text-brand-900">Maler- & Lackierarbeiten</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            Makellose Anstriche im Innenbereich. Wir streichen Wände, Decken, Türen, Fenster und Heizkörper fachgerecht unter Verwendung emissionsfreier Qualitätsfarben.
+                        </p>
+                    </div>
+                    <a href="#kontakt" class="mt-6 text-brand-600 hover:text-brand-700 font-semibold text-sm flex items-center space-x-2">
+                        <span>Details</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3: Wallpapering -->
+                <div class="bg-white rounded-3xl p-8 shadow-md border border-stone-100 hover:shadow-xl transition-all flex flex-col justify-between scroll-animate">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-scroll"></i>
+                        </div>
+                        <h3 class="text-xl font-bold heading-font text-brand-900">Tapezierarbeiten</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">
+                            Von feinstem Vlies über robuste Raufaser bis hin zu komplexen Mustertapeten und Fototapeten – wir kleben absolut präzise und nahtlos für perfekte Ergebnisse.
+                        </p>
+                    </div>
+                    <a href="#kontakt" class="mt-6 text-brand-600 hover:text-brand-700 font-semibold text-sm flex items-center space-x-2">
+                        <span>Details</span> <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4: Renovation -->
+                <div class="md:col-span-2 bg-white rounded-3xl p-8 shadow-md border border-stone-100 hover:shadow-xl transition-all flex flex-col justify-between scroll-animate">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-2xl flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <h3 class="text-xl font-bold heading-font text-brand-900">Untergrundvorbereitung & Sanierung</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed">
+                                Nur ein optimaler Untergrund garantiert Langlebigkeit. Wir spachteln Risse, verputzen Unebenheiten (Q1–Q4), sanieren Wasserschäden und bereiten Oberflächen perfekt vor.
+                            </p>
+                        </div>
+                        <!-- Decorative Image (Quality visual) -->
+                        <div class="h-40 md:h-full rounded-2xl overflow-hidden bg-stone-100">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80'" 
+                                 alt="Makellose Wandgestaltung" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE ELEM: BRUSHSTOKE ACCENT STATS -->
+    <section class="bg-brand-900 py-16 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none">
+            <div class="absolute left-10 top-0 text-[10vw] font-black heading-font text-white">ANDRES</div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-2">
+                    <p class="text-4xl md:text-5xl font-black heading-font text-brand-600">100%</p>
+                    <p class="text-sm uppercase tracking-wider text-stone-300">Kundenzufriedenheit</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-4xl md:text-5xl font-black heading-font text-brand-600">Berlin</p>
+                    <p class="text-sm uppercase tracking-wider text-stone-300">Lichtenberg & Umkreis</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-4xl md:text-5xl font-black heading-font text-brand-600">Präzise</p>
+                    <p class="text-sm uppercase tracking-wider text-stone-300">Saubere Ausführung</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-4xl md:text-5xl font-black heading-font text-brand-600">Fair</p>
+                    <p class="text-sm uppercase tracking-wider text-stone-300">Kalkulierte Angebote</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US / ÜBER UNS (Asymmetrisch, Ortsbezug) -->
+    <section id="ueber-uns" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Image Side with offset frames -->
+                <div class="lg:col-span-5 relative scroll-animate">
+                    <div class="relative w-11/12 mx-auto lg:mx-0">
+                        <div class="absolute -bottom-6 -right-6 w-full h-full bg-brand-100 rounded-3xl z-0"></div>
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" 
+                             onerror="this.src='https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80'" 
+                             alt="Malerwerkzeug im Einsatz" 
+                             class="rounded-3xl shadow-xl relative z-10 w-full object-cover aspect-[4/5] object-center">
+                    </div>
+                </div>
+
+                <!-- Text Side -->
+                <div class="lg:col-span-7 space-y-6 lg:pl-6 scroll-animate">
+                    <span class="text-sm font-bold text-brand-600 uppercase tracking-widest block">Aus Liebe zum Handwerk</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold heading-font text-brand-900 leading-tight">Ihr lokaler Meisterbetrieb in Berlin-Lichtenberg</h2>
+                    <div class="w-16 h-1.5 bg-brand-600 rounded-full"></div>
+                    
+                    <p class="text-stone-600 leading-relaxed">
+                        Als tief verwurzelter Handwerksbetrieb in Berlin-Lichtenberg und Friedrichsfelde kennen wir die Wünsche unserer Kunden ganz genau. Wir glauben, dass perfekte Malerarbeit nicht nur aus Farbe besteht, sondern aus sorgfältiger Vorbereitung, erstklassigem Material und einem Auge fürs Detail.
+                    </p>
+                    
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start space-x-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mt-1"><i class="fa-solid fa-check text-xs"></i></span>
+                            <div>
+                                <h4 class="font-bold text-brand-900">Zuverlässigkeit & Termintreue</h4>
+                                <p class="text-stone-500 text-sm">Wir erscheinen pünktlich und halten zugesagte Fristen strikt ein.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mt-1"><i class="fa-solid fa-check text-xs"></i></span>
+                            <div>
+                                <h4 class="font-bold text-brand-900">Sauberkeit ist Ehrensache</h4>
+                                <p class="text-stone-500 text-sm">Perfektes Abkleben und eine besenreine Übergabe Ihrer Räume.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <a href="#kontakt" class="inline-flex items-center space-x-3 bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-3 rounded-xl transition duration-300 shadow-md">
+                            <span>Kostenlosen Beratungstermin vereinbaren</span>
+                            <i class="fa-solid fa-chevron-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (Referenzen) -->
+    <section class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16 scroll-animate">
+                <span class="text-sm font-bold text-brand-600 uppercase tracking-widest block mb-2">Kundenstimmen</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold heading-font text-brand-900">Was unsere Kunden sagen</h2>
+                <div class="w-16 h-1.5 bg-brand-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <!-- PLATZHALTER – vom Kunden zu bestätigen -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-stone-100 flex flex-col justify-between scroll-animate">
+                    <div class="space-y-4">
+                        <div class="text-amber-400 flex space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-600 italic text-sm leading-relaxed">
+                            "Der Malereibetrieb Andres hat unsere 3-Zimmer-Wohnung in Friedrichsfelde tapeziert und gestrichen. Die Beratung vorab war hochprofessionell und das Ergebnis ist perfekt geworden. Keine Kanten, absolut sauber gearbeitet!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-stone-100 flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-600">S</div>
+                        <div>
+                            <p class="font-bold text-brand-900 text-sm">Sabine K.</p>
+                            <p class="text-xs text-stone-400">Kundin aus Berlin-Lichtenberg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <!-- PLATZHALTER – vom Kunden zu bestätigen -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-stone-100 flex flex-col justify-between scroll-animate">
+                    <div class="space-y-4">
+                        <div class="text-amber-400 flex space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-600 italic text-sm leading-relaxed">
+                            "Zuverlässige und unkomplizierte Absprache. Herr Andres kam für die Besichtigung vorbei und am nächsten Tag hatten wir ein faires Angebot im Postfach. Die Spachtelarbeiten an unserer Akzentwand sind genial geworden."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-stone-100 flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-600">M</div>
+                        <div>
+                            <p class="font-bold text-brand-900 text-sm">Markus L.</p>
+                            <p class="text-xs text-stone-400">Eigenheimbesitzer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <!-- PLATZHALTER – vom Kunden zu bestätigen -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-stone-100 flex flex-col justify-between scroll-animate">
+                    <div class="space-y-4">
+                        <div class="text-amber-400 flex space-x-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-600 italic text-sm leading-relaxed">
+                            "Sehr freundlicher Malerbetrieb! Pünktlich, sauber und extrem ordentlich. Die Baustelle wurde jeden Tag sauber hinterlassen. Preis-Leistung ist absolut unschlagbar."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-stone-100 flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-600">A</div>
+                        <div>
+                            <p class="font-bold text-brand-900 text-sm">Andreas M.</p>
+                            <p class="text-xs text-stone-400">Gewerblicher Kunde</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-animate">
+                <span class="text-sm font-bold text-brand-600 uppercase tracking-widest block mb-2">Fragen & Antworten</span>
+                <h2 class="text-3xl font-extrabold heading-font text-brand-900">Häufig gestellte Fragen</h2>
+                <div class="w-16 h-1.5 bg-brand-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="border border-stone-200 rounded-xl overflow-hidden shadow-sm transition-all hover:border-brand-200">
+                    <button class="faq-trigger w-full flex items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-bold text-brand-900">Bieten Sie kostenlose Vorab-Besichtigungen an?</span>
+                        <span class="faq-icon transition-transform duration-300 text-brand-600"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-stone-600 border-t border-stone-100 text-sm leading-relaxed bg-stone-50">
+                        Ja! Um Ihnen ein exaktes, verlässliches und faires Festpreisangebot unterbreiten zu können, kommen wir für eine kurze Besichtigung Ihres Objekts direkt vor Ort vorbei – im Raum Berlin-Lichtenberg absolut kostenfrei und unverbindlich.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-stone-200 rounded-xl overflow-hidden shadow-sm transition-all hover:border-brand-200">
+                    <button class="faq-trigger w-full flex items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-bold text-brand-900">Welche Farben und Materialien verwenden Sie?</span>
+                        <span class="faq-icon transition-transform duration-300 text-brand-600"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-stone-600 border-t border-stone-100 text-sm leading-relaxed bg-stone-50">
+                        Wir verwenden ausschließlich professionelle Farben namhafter Hersteller, die lösemittel- und weichmacherfrei sowie geruchsarm sind. Auf Wunsch setzen wir auch gerne Allergiker-geeignete Silikatfarben ein.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-stone-200 rounded-xl overflow-hidden shadow-sm transition-all hover:border-brand-200">
+                    <button class="faq-trigger w-full flex items-center justify-between p-6 text-left focus:outline-none" aria-expanded="false">
+                        <span class="font-bold text-brand-900">Muss ich Möbel vor dem Malertermin ausräumen?</span>
+                        <span class="faq-icon transition-transform duration-300 text-brand-600"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 text-stone-600 border-t border-stone-100 text-sm leading-relaxed bg-stone-50">
+                        Große Möbelstücke sollten nach Möglichkeit in die Mitte des Raumes geschoben werden. Den Rest erledigen wir: Wir decken alle Böden, Fußleisten und verbliebenen Möbel absolut zuverlässig mit professionellem Malervlies und Folien ab, um Schäden komplett auszuschließen.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (#kontakt) -->
+    <section id="kontakt" class="py-24 bg-stone-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Info Column (Contact details) -->
+                <div class="lg:col-span-5 space-y-8 scroll-animate">
+                    <span class="text-sm font-bold text-brand-600 uppercase tracking-widest block">Jetzt Anfragen</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold heading-font text-stone-50">Starten Sie Ihr Malerprojekt mit uns</h2>
+                    <p class="text-stone-300 leading-relaxed text-sm">
+                        Kontaktieren Sie uns telefonisch, per E-Mail oder ganz einfach über das Formular für ein unverbindliches Erstgespräch. Wir freuen uns auf Ihr Vorhaben!
+                    </p>
+
+                    <!-- Contact details -->
+                    <div class="space-y-6 pt-4">
+                        <a href="tel:017632325207" class="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-brand-600 transition duration-300 group">
+                            <span class="w-12 h-12 bg-brand-600/20 text-brand-600 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition duration-300"><i class="fa-solid fa-phone"></i></span>
+                            <div>
+                                <p class="text-xs text-stone-400 uppercase tracking-wider font-semibold">Telefonisch erreichbar</p>
+                                <p class="text-base font-bold text-stone-100">0176 32 32 52 07</p>
+                            </div>
+                        </a>
+
+                        <a href="mailto:malereibetrieb.andres@t-online.de" class="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-brand-600 transition duration-300 group">
+                            <span class="w-12 h-12 bg-brand-600/20 text-brand-600 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition duration-300"><i class="fa-solid fa-envelope"></i></span>
+                            <div>
+                                <p class="text-xs text-stone-400 uppercase tracking-wider font-semibold">E-Mail schreiben</p>
+                                <p class="text-base font-bold text-stone-100">malereibetrieb.andres@t-online.de</p>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10">
+                            <span class="w-12 h-12 bg-brand-600/20 text-brand-600 rounded-xl flex items-center justify-center text-xl"><i class="fa-solid fa-map-location-dot"></i></span>
+                            <div>
+                                <p class="text-xs text-stone-400 uppercase tracking-wider font-semibold">Einsatzort</p>
+                                <p class="text-base font-bold text-stone-100">Berlin-Lichtenberg / Friedrichsfelde</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Interactive Map (Lichtenberg Location representation) -->
+                    <div class="h-64 rounded-2xl overflow-hidden border border-white/10 shadow-lg relative bg-stone-800">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d38864.2045582356!2d13.48625945820313!3d52.50346380000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84ec02c81729b%3A0xe54e17efcb7279f6!2sBerlin-Lichtenberg!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Karte Berlin-Lichtenberg"
+                            class="grayscale opacity-75">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7 bg-white text-stone-900 rounded-3xl p-8 lg:p-12 shadow-2xl relative overflow-hidden scroll-animate">
+                    <h3 class="text-2xl font-bold heading-font text-brand-900 mb-6">Unverbindliche Anfrage senden</h3>
+                    
+                    <!-- Submission Form. Uses Mailto Fallback or Modern Local Feedback -->
+                    <!-- PLATZHALTER – für vollwertige Backend-Integration vorzubereiten -->
+                    <form id="contact-form" action="mailto:malereibetrieb.andres@t-online.de" method="POST" enctype="text/plain" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-stone-700 mb-1">Ihr Name *</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 focus:border-brand-600 focus:bg-white focus:outline-none transition-all text-stone-900" placeholder="z.B. Max Mustermann">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-stone-700 mb-1">Ihre Telefonnummer *</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 focus:border-brand-600 focus:bg-white focus:outline-none transition-all text-stone-900" placeholder="z.B. 0176 12345678">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-stone-700 mb-1">Ihre E-Mail-Adresse *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 focus:border-brand-600 focus:bg-white focus:outline-none transition-all text-stone-900" placeholder="z.B. email@beispiel.de">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-stone-700 mb-1">Ihr Anliegen (Gewünschte Arbeiten, Raumgröße etc.) *</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 focus:border-brand-600 focus:bg-white focus:outline-none transition-all text-stone-900" placeholder="Wie können wir Ihnen helfen? (z.B. Flur streichen, Wohnzimmer tapezieren...)"></textarea>
+                        </div>
+
+                        <div class="flex items-start">
+                            <input type="checkbox" id="privacy-agreement" required class="mt-1 h-4 w-4 text-brand-600 border-stone-300 rounded focus:ring-brand-500">
+                            <label for="privacy-agreement" class="ml-3 text-xs text-stone-500 leading-normal">
+                                Ich willige ein, dass meine Daten zur Bearbeitung meines Anliegens verarbeitet werden. Weitere Infos unter <a href="#datenschutz" class="underline hover:text-brand-600">Datenschutz</a>. *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg shadow-brand-600/30 flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Jetzt Nachricht senden</span>
+                        </button>
+                    </form>
+                    
+                    <!-- Success JS Message -->
+                    <div id="form-success" class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-8 z-20">
+                        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-circle-check"></i></div>
+                        <h4 class="text-2xl font-bold text-brand-900">Vielen Dank für Ihre Anfrage!</h4>
+                        <p class="text-stone-600 mt-2 max-w-md">Wir haben Ihre Anfrage erhalten und melden uns so schnell wie möglich bei Ihnen zurück.</p>
+                        <button onclick="resetForm()" class="mt-6 text-brand-600 underline font-semibold">Zurück zum Formular</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MANDATORY IMPRESSUM SECTION -->
+    <section id="impressum" class="py-16 bg-stone-100 border-t border-stone-200 scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-stone-700">
+            <h2 class="text-2xl font-bold heading-font text-brand-900 mb-6">Impressum</h2>
+            <!-- PLATZHALTER – juristisch prüfen und vom Kunden bestätigen lassen -->
+            <div class="space-y-4 text-sm leading-relaxed">
+                <p class="font-bold">Malereibetrieb Andres</p>
+                <p>Inhaber: [Vorname Nachname - PLATZHALTER]</p>
+                <p>Einsatzgebiet / Firmensitz: Berlin-Lichtenberg/Friedrichsfelde</p>
+                
+                <h3 class="font-bold text-stone-900 mt-4">Kontakt:</h3>
+                <p>Telefon: 0176 32 32 52 07</p>
+                <p>E-Mail: malereibetrieb.andres@t-online.de</p>
+
+                <h3 class="font-bold text-stone-900 mt-4">Umsatzsteuer-ID:</h3>
+                <p>[Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz - PLATZHALTER]</p>
+
+                <h3 class="font-bold text-stone-900 mt-4">Berufsbezeichnung & Kammer:</h3>
+                <p>Malerbetrieb (Handwerkskammer Berlin - [Betriebsnummer PLATZHALTER])</p>
+
+                <h3 class="font-bold text-stone-900 mt-4">Haftungsausschluss:</h3>
+                <p class="text-xs text-stone-500">
+                    Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANDATORY DATENSCHUTZ SECTION -->
+    <section id="datenschutz" class="py-16 bg-stone-50 border-t border-stone-200 scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-stone-700">
+            <h2 class="text-2xl font-bold heading-font text-brand-900 mb-6">Datenschutzerklärung</h2>
+            <!-- PLATZHALTER – juristisch prüfen und vom Kunden bestätigen lassen -->
+            <div class="space-y-4 text-sm leading-relaxed">
+                <h3 class="font-bold text-stone-900">1. Datenschutz auf einen Blick</h3>
+                <p>
+                    Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Personenbezogene Daten werden auf dieser Website nur im technisch notwendigen Umfang erhoben (z.B. zur Abwicklung von Kontaktanfragen über das bereitgestellte Formular).
+                </p>
+
+                <h3 class="font-bold text-stone-900 mt-4">2. Datenerfassung auf unserer Website</h3>
+                <p>
+                    Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist.
+                </p>
+
+                <h3 class="font-bold text-stone-900 mt-4">3. Ihre Rechte</h3>
+                <p>
+                    Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen.
+                </p>
+
+                <h3 class="font-bold text-stone-900 mt-4">4. Hosting & Server-Logfiles</h3>
+                <p>
+                    Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind u.a.: Browsertyp, Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-900 text-white py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
+                <!-- Branding -->
+                <div>
+                    <div class="flex items-center justify-center md:justify-start space-x-3 mb-3">
+                        <span class="w-8 h-8 rounded bg-brand-600 flex items-center justify-center text-white font-bold"><i class="fa-solid fa-paint-roller"></i></span>
+                        <span class="text-xl font-bold heading-font">Andres</span>
+                    </div>
+                    <p class="text-xs text-stone-400">Malereibetrieb Berlin-Lichtenberg & Friedrichsfelde</p>
+                </div>
+                <!-- Links -->
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-stone-300">
+                    <a href="#services" class="hover:text-brand-600 transition-colors">Leistungen</a>
+                    <a href="#ueber-uns" class="hover:text-brand-600 transition-colors">Über uns</a>
+                    <a href="#kontakt" class="hover:text-brand-600 transition-colors">Kontakt</a>
+                    <a href="#impressum" class="hover:text-brand-600 transition-colors">Impressum</a>
+                    <a href="#datenschutz" class="hover:text-brand-600 transition-colors">Datenschutz</a>
+                </div>
+                <!-- Call directly -->
+                <div class="text-center md:text-right">
+                    <p class="text-xs text-stone-400">Direktkontakt per Telefon</p>
+                    <a href="tel:017632325207" class="text-lg font-bold text-brand-600 hover:text-white transition-colors">0176 32 32 52 07</a>
+                </div>
+            </div>
+            <div class="border-t border-white/5 mt-8 pt-8 text-center text-xs text-stone-500">
+                <p>&copy; 2024 Malereibetrieb Andres. Alle Rechte vorbehalten. Erstellt für Berlin-Lichtenberg.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE CALL-TO-ACTION BUTTON (For conversion on touch devices) -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-stone-200 p-3 md:hidden flex justify-between gap-4 items-center shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <a href="tel:017632325207" class="flex-1 bg-brand-900 text-white font-bold py-3 px-4 rounded-xl text-center text-sm flex items-center justify-center space-x-2">
+            <i class="fa-solid fa-phone"></i>
+            <span>Anrufen</span>
+        </a>
+        <a href="#kontakt" class="flex-1 bg-brand-600 text-white font-bold py-3 px-4 rounded-xl text-center text-sm flex items-center justify-center space-x-2">
+            <i class="fa-solid fa-calendar-alt"></i>
+            <span>Angebot</span>
+        </a>
+    </div>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner" class="fixed bottom-20 md:bottom-6 left-6 right-6 md:max-w-md bg-white border border-stone-200 shadow-2xl rounded-2xl p-6 z-50 hidden transition-transform duration-300">
+        <h4 class="font-bold text-brand-900 mb-2">Cookies & Datenschutz</h4>
+        <p class="text-xs text-stone-600 mb-4 leading-relaxed">
+            Wir verwenden Cookies, um Ihren Besuch auf unserer Seite optimal zu gestalten. Durch Klicken auf "Akzeptieren" stimmen Sie unserer Datenschutzerklärung zu.
+        </p>
+        <div class="flex space-x-3">
+            <button id="cookie-accept" class="bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-4 py-2.5 rounded-lg flex-1">Akzeptieren</button>
+            <a href="#datenschutz" class="text-center text-stone-500 hover:text-stone-800 text-xs px-4 py-2.5 rounded-lg flex-1 border border-stone-200">Datenschutz</a>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR DYNAMIC FUNCTIONALITY -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close Mobile Menu on Click to hash links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // FAQ Accordion
+        const faqTriggers = document.querySelectorAll('.faq-trigger');
+        faqTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const content = trigger.nextElementSibling;
+                const icon = trigger.querySelector('.faq-icon');
+                const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+                // Toggle visibility
+                content.classList.toggle('hidden');
+                trigger.setAttribute('aria-expanded', !isExpanded);
+                
+                // Icon rotation
+                if (!isExpanded) {
+                    icon.innerHTML = '<i class="fa-solid fa-minus"></i>';
+                } else {
+                    icon.innerHTML = '<i class="fa-solid fa-plus"></i>';
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            restore: true
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact Form Mocking Success (Mailto works as baseline, but we add visual confirmation)
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            // Let mailto execute but show success dialog
+            setTimeout(() => {
+                successMessage.classList.remove('hidden');
+            }, 300);
+        });
+
+        function resetForm() {
+            contactForm.reset();
+            successMessage.classList.add('hidden');
+        }
+
+        // Cookie Banner Management
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('andres_cookies_accepted')) {
+                document.getElementById('cookie-banner').classList.remove('hidden');
+            }
+        });
+
+        document.getElementById('cookie-accept').addEventListener('click', () => {
+            localStorage.setItem('andres_cookies_accepted', 'true');
+            document.getElementById('cookie-banner').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
