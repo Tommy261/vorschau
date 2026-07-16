@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malereibetrieb Gadegast GmbH – Meisterhafte Malerarbeiten in Berlin-Lichtenberg</title>
+    <meta name="description" content="Ihr zuverlässiger Malerbetrieb in Berlin-Lichtenberg. Malereibetrieb Gadegast GmbH steht für präzise Malerarbeiten, Tapezierarbeiten und kreative Wandgestaltung. Jetzt Angebot anfordern!">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Malereibetrieb Gadegast GmbH – Berlin-Lichtenberg">
+    <meta property="og:description" content="Präzise Malerarbeiten, Tapezierarbeiten und kreative Wandgestaltung in Berlin. Kontaktieren Sie uns für ein unverbindliches Angebot.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#home">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1e293b',    /* Edles Schiefergrau */
+                            accent: '#d97706',  /* Warmer Bernstein/Ocker-Ton */
+                            accentHover: '#b45309',
+                            light: '#f8fafc',   /* Off-White */
+                            surface: '#f1f5f9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Hacks & Smooth Scrolling Customizations -->
+    <style>
+        html {
+            scroll-padding-top: 80px; /* Offset für Sticky Header */
+        }
+        .text-outline-bg {
+            -webkit-text-stroke: 1px rgba(217, 119, 6, 0.15);
+            color: transparent;
+        }
+        /* Custom transitions */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <!-- JSON-LD LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PaintingBusiness",
+      "name": "Malereibetrieb Gadegast GmbH",
+      "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=80",
+      "email": "malergadegastgmbh@gmx.de",
+      "telephone": "030 9 71 62 97",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin-Lichtenberg",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "52.5167",
+        "longitude": "13.4833"
+      }
+    }
+    </script>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans selection:bg-brand-accent selection:text-white overflow-x-hidden">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo / Brand Name -->
+                <a href="#hero" class="flex flex-col group">
+                    <span class="text-lg md:text-xl font-bold tracking-wider text-brand-dark group-hover:text-brand-accent transition-colors">
+                        GADEGAST <span class="text-brand-accent">GmbH</span>
+                    </span>
+                    <span class="text-xs uppercase tracking-widest text-gray-500 font-medium">Malereibetrieb • Berlin</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="#services" class="text-brand-dark hover:text-brand-accent transition-colors py-2">Leistungen</a>
+                    <a href="#ueber-uns" class="text-brand-dark hover:text-brand-accent transition-colors py-2">Über Uns</a>
+                    <a href="#faq" class="text-brand-dark hover:text-brand-accent transition-colors py-2">Häufige Fragen</a>
+                    <a href="#kontakt" class="text-brand-dark hover:text-brand-accent transition-colors py-2">Kontakt</a>
+                </nav>
+
+                <!-- Desktop Call-to-Action -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="tel:0309716297" class="flex items-center text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors">
+                        <i class="fa-solid fa-phone mr-2 text-brand-accent"></i> 030 9 71 62 97
+                    </a>
+                    <a href="#kontakt" class="bg-brand-dark hover:bg-brand-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors shadow-sm">
+                        Angebot anfordern
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-brand-dark hover:text-brand-accent p-2 rounded-md focus:outline-none" aria-expanded="false" aria-label="Menü öffnen">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="block px-3 py-2.5 rounded-md text-base font-medium text-brand-dark hover:bg-brand-surface hover:text-brand-accent transition-all">Leistungen</a>
+            <a href="#ueber-uns" class="block px-3 py-2.5 rounded-md text-base font-medium text-brand-dark hover:bg-brand-surface hover:text-brand-accent transition-all">Über Uns</a>
+            <a href="#faq" class="block px-3 py-2.5 rounded-md text-base font-medium text-brand-dark hover:bg-brand-surface hover:text-brand-accent transition-all">Häufige Fragen</a>
+            <a href="#kontakt" class="block px-3 py-2.5 rounded-md text-base font-medium text-brand-dark hover:bg-brand-surface hover:text-brand-accent transition-all">Kontakt</a>
+            <div class="pt-4 border-t border-gray-100 flex flex-col gap-3 px-3">
+                <a href="tel:0309716297" class="flex items-center text-brand-dark font-semibold">
+                    <i class="fa-solid fa-phone mr-3 text-brand-accent"></i> 030 9 71 62 97
+                </a>
+                <a href="#kontakt" class="w-full text-center bg-brand-dark hover:bg-brand-accent text-white py-3 rounded-lg font-medium transition-colors">
+                    Angebot anfordern
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen pt-20 flex items-center bg-brand-dark overflow-hidden">
+        <!-- Background Image with Overlay and Fallback color -->
+        <div class="absolute inset-0 z-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/80 to-transparent">
+            <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=80" 
+                 onerror="this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80'"
+                 alt="Maler bei der Arbeit" 
+                 class="w-full h-full object-cover mix-blend-overlay opacity-60">
+        </div>
+
+        <!-- Decorative Element: Large Subtle Brush Stroke SVG Background -->
+        <div class="absolute -right-24 bottom-0 opacity-10 pointer-events-none hidden lg:block z-0">
+            <i class="fa-solid fa-paint-roller text-[35rem] text-brand-accent"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text Block (Asymmetrical layout - 7 columns) -->
+                <div class="lg:col-span-8 text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-accent/20 border border-brand-accent/30 rounded-full text-brand-accent font-semibold text-xs uppercase tracking-widest">
+                        <i class="fa-solid fa-map-pin"></i> Berlin-Lichtenberg & Umgebung
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Meisterhafte Farbe für Ihr Zuhause. <br>
+                        Präzise, sauber & zuverlässig.
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
+                        Wir bringen frischen Wind in Ihre Räume. Der <span class="text-white font-medium">Malereibetrieb Gadegast GmbH</span> steht für erstklassige Handwerksqualität, erstklassige Materialien und ein makelloses Finish direkt aus Berlin-Lichtenberg.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#kontakt" class="bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-4 rounded-xl text-base font-semibold shadow-lg shadow-brand-accent/20 transition-all transform hover:-translate-y-0.5 text-center">
+                            Jetzt kostenloses Angebot anfordern
+                        </a>
+                        <a href="tel:0309716297" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-xl text-base font-semibold transition-all backdrop-blur-sm text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone"></i> 030 9 71 62 97
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Mini-Card Feature (Asymmetric overlay, 4 columns) -->
+                <div class="lg:col-span-4 hidden lg:block">
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl space-y-6 text-white">
+                        <h3 class="text-lg font-semibold border-b border-white/10 pb-3 text-brand-accent">
+                            <i class="fa-solid fa-circle-check mr-2"></i> Ihr Vorteil bei uns
+                        </h3>
+                        <ul class="space-y-4 text-sm text-gray-200">
+                            <li class="flex items-start gap-3">
+                                <span class="bg-brand-accent/20 text-brand-accent p-1.5 rounded-lg mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+                                <div><strong>Präzise Facharbeit</strong> – Nur professionelle Umsetzung</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-brand-accent/20 text-brand-accent p-1.5 rounded-lg mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+                                <div><strong>Sauberes Arbeiten</strong> – Sorgfältige Abdeckung aller Möbel</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-brand-accent/20 text-brand-accent p-1.5 rounded-lg mt-0.5"><i class="fa-solid fa-check text-xs"></i></span>
+                                <div><strong>Lokaler Partner</strong> – Schnell vor Ort in Berlin-Lichtenberg</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Creative Diagonal Transition Curve -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[50px] fill-brand-light">
+                <path d="M1200 120L0 120 307.75 0 1200 120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- KEY SERVICES (UNUSUAL LAYOUT / ASYMMETRIC) -->
+    <section id="services" class="py-24 bg-brand-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Large background typography signature element -->
+            <div class="absolute left-10 top-10 pointer-events-none select-none hidden xl:block">
+                <span class="text-8xl font-black text-outline-bg tracking-widest uppercase">KREATIV</span>
+            </div>
+
+            <!-- Section Title -->
+            <div class="text-center max-w-3xl mx-auto mb-16 relative z-10">
+                <span class="text-sm font-bold tracking-widest text-brand-accent uppercase">Unser Leistungsspektrum</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-brand-dark">Qualitätshandwerk für jede Fläche</h2>
+                <div class="w-16 h-1.5 bg-brand-accent mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-600 mt-4">Wir decken die gesamte Bandbreite moderner und klassischer Malerarbeiten ab. Für private Wohnungen, Büros oder ganze Liegenschaften.</p>
+            </div>
+
+            <!-- Services Grid: Asymmetric Highlight Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                
+                <!-- Highlight Service Card (Takes 7 columns on md/lg, has background and custom offset design) -->
+                <div class="md:col-span-7 bg-brand-dark text-white rounded-2xl shadow-xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
+                    <div class="absolute inset-0 z-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent">
+                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317babca?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80'"
+                             alt="Fassadenarbeiten" 
+                             class="w-full h-full object-cover mix-blend-overlay opacity-30 group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 sm:p-10 relative z-10 space-y-4">
+                        <div class="w-12 h-12 bg-brand-accent text-white rounded-xl flex items-center justify-center text-xl font-bold mb-6 shadow-md shadow-brand-accent/20">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+                        <span class="text-xs uppercase font-semibold text-brand-accent tracking-widest">Premium Leistung</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold">Hochwertige Maler- & Lackierarbeiten</h3>
+                        <p class="text-gray-300 text-base leading-relaxed max-w-lg">
+                            Ob klassischer weißer Anstrich oder anspruchsvolle Farbgestaltung – wir bereiten Untergründe fachgerecht vor und bringen Farben exakt und streifenfrei an Ihre Wände und Decken.
+                        </p>
+                    </div>
+                    <div class="p-8 sm:px-10 border-t border-white/10 relative z-10 flex items-center justify-between">
+                        <span class="text-sm font-semibold text-brand-accent">Inklusive fachlicher Farbberatung</span>
+                        <a href="#kontakt" class="text-white hover:text-brand-accent transition-colors flex items-center gap-2 font-medium">Anfragen <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 (Takes 5 columns) -->
+                <div class="md:col-span-5 bg-white rounded-2xl shadow-md border border-gray-100 p-8 flex flex-col justify-between group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div>
+                        <div class="w-12 h-12 bg-brand-surface text-brand-accent rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-scroll"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">Sorgfältige Tapezierarbeiten</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Von klassischen Raufaser- und Vliestapeten bis hin zu exklusiven Mustertapeten und Fototapeten. Wir sorgen für blasenfreie, passgenaue Übergänge an jeder Wand.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-100 mt-6 flex justify-between items-center">
+                        <span class="text-xs text-gray-400 font-medium">Präzision im Detail</span>
+                        <a href="#kontakt" class="text-brand-accent hover:text-brand-dark transition-colors font-medium text-sm flex items-center gap-1">Details <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 (Takes 5 columns) -->
+                <div class="md:col-span-5 bg-white rounded-2xl shadow-md border border-gray-100 p-8 flex flex-col justify-between group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div>
+                        <div class="w-12 h-12 bg-brand-surface text-brand-accent rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-house-chimney-crack"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3">Fassadenbeschichtung & Schutz</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Schutz vor Witterungseinflüssen gepaart mit attraktiver Optik. Wir sanieren und streichen Fassaden nachhaltig, um den Wert Ihrer Immobilie langfristig zu sichern.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-100 mt-6 flex justify-between items-center">
+                        <span class="text-xs text-gray-400 font-medium">Werterhalt & Schutz</span>
+                        <a href="#kontakt" class="text-brand-accent hover:text-brand-dark transition-colors font-medium text-sm flex items-center gap-1">Details <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 (Takes 7 columns, highlight style) -->
+                <div class="md:col-span-7 bg-white rounded-2xl shadow-md border border-gray-100 p-8 flex flex-col sm:flex-row gap-6 justify-between items-center group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="space-y-4 text-left flex-1">
+                        <div class="w-12 h-12 bg-brand-surface text-brand-accent rounded-xl flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-fill-drip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark">Kreative Spachtel- & Putztechniken</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed max-w-md">
+                            Verleihen Sie Ihren Wänden eine einzigartige Struktur. Ob Betonoptik, feiner Verputz oder moderne Glättetechniken – wir realisieren individuelle Akzente.
+                        </p>
+                    </div>
+                    <div class="w-full sm:w-44 h-36 rounded-xl overflow-hidden shrink-0 relative bg-brand-surface">
+                        <img src="https://images.unsplash.com/photo-1595814433015-e6f548d53d6a?auto=format&fit=crop&w=400&q=80" 
+                             onerror="this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=400&q=80'"
+                             alt="Farbpalette" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: UEBER UNS (ASYMMETRICAL OVERLAP) -->
+    <section id="ueber-uns" class="py-24 bg-brand-surface relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Interactive/Visual Area with overlapping elements (5 columns) -->
+                <div class="lg:col-span-5 relative">
+                    <!-- Base Image -->
+                    <div class="rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-brand-dark">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" 
+                             onerror="this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80'"
+                             alt="Professionelle Malerarbeit" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Overlapping Floating Element -->
+                    <div class="absolute -bottom-6 -right-6 bg-brand-accent text-white p-6 rounded-2xl shadow-2xl max-w-[240px] border border-brand-accent/20">
+                        <i class="fa-solid fa-quote-left text-3xl opacity-30 block mb-2"></i>
+                        <p class="text-sm font-medium leading-relaxed italic">
+                            "Farbe ist nicht einfach nur Anstrich. Sie ist Ausdruck von Persönlichkeit und Wohnkomfort."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Text Content with massive background text (7 columns) -->
+                <div class="lg:col-span-7 space-y-6 lg:pl-6 relative">
+                    <!-- Background Word (Berlin) as a subtle watermark -->
+                    <div class="absolute -right-10 top-0 pointer-events-none select-none z-0">
+                        <span class="text-[9rem] font-bold text-gray-200/50 uppercase select-none tracking-tighter">BERLIN</span>
+                    </div>
+
+                    <div class="relative z-10 space-y-6">
+                        <span class="text-sm font-bold tracking-widest text-brand-accent uppercase">Wer wir sind</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark">Ihr Meisterbetrieb in Berlin-Lichtenberg</h2>
+                        <div class="w-12 h-1.5 bg-brand-accent rounded-full"></div>
+                        
+                        <p class="text-gray-700 leading-relaxed">
+                            Als inhabergeführter Malerbetrieb – der <strong>Malereibetrieb Gadegast GmbH</strong> – schlagen wir die Brücke zwischen handwerklicher Perfektion und modernem Serviceanspruch. Mitten in Berlin-Lichtenberg zuhause, kennen wir die Architektur der Hauptstadt und bieten maßgeschneiderte Lösungen für Altbauten, Neubauten und Gewerbeprojekte.
+                        </p>
+                        
+                        <p class="text-gray-700 leading-relaxed">
+                            Besonderen Wert legen wir auf termingetreue Ausführung, Sauberkeit am Arbeitsplatz und langlebige Materialien führender Hersteller. Wir verlassen Ihr Objekt erst, wenn Sie absolut zufrieden sind.
+                        </p>
+
+                        <!-- Key Stats (Strictly using verified placeholders with client confirmation tags) -->
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
+                            <div>
+                                <!-- PLATZHALTER – vom Kunden zu bestätigen -->
+                                <span class="block text-3xl font-extrabold text-brand-dark">Meisterbetrieb</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">Qualifizierte Fachkräfte</span>
+                            </div>
+                            <div>
+                                <!-- PLATZHALTER – vom Kunden zu bestätigen -->
+                                <span class="block text-3xl font-extrabold text-brand-dark">100%</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">Zuverlässigkeit & Termintreue</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (REALISTIC EXAMPLES / PLACEHOLDERS) -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sm font-bold tracking-widest text-brand-accent uppercase">Kundenstimmen</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark mt-2">Das sagen unsere Kunden</h2>
+                <div class="w-12 h-1.5 bg-brand-accent mx-auto mt-4 rounded-full"></div>
+                <!-- PLATZHALTER – Feedback-Beispiele zur Veranschaulichung -->
+                <p class="text-xs text-gray-400 mt-2 italic">(Hinweis: Beispielhafte Kundenstimmen – vom Kunden final freizugeben)</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-brand-surface p-8 rounded-2xl border border-gray-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-accent gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            "Wir haben unser Wohnzimmer und den Flur tapezieren und streichen lassen. Extrem saubere Arbeit, pünktlich erschienen und sehr freundliche Mitarbeiter. Wir sind begeistert!"
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-200 mt-6">
+                        <span class="block font-bold text-brand-dark text-sm">Familie Neumann</span>
+                        <span class="text-xs text-gray-500">Berlin-Lichtenberg</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-brand-surface p-8 rounded-2xl border border-gray-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-accent gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            "Sehr kompetente Beratung im Vorfeld bezüglich der Farbwahl für unser Büro. Die Ausführung am Wochenende lief völlig reibungslos, sodass der Betrieb direkt weitergehen konnte."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-200 mt-6">
+                        <span class="block font-bold text-brand-dark text-sm">Bürogemeinschaft S.</span>
+                        <span class="text-xs text-gray-500">Berlin-Mitte</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-brand-surface p-8 rounded-2xl border border-gray-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex text-brand-accent gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            "Zuverlässig, schnell und ein hervorragendes Ergebnis beim Streichen unserer Hausfassade. Keine versteckten Kosten. Absolut empfehlenswert."
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-200 mt-6">
+                        <span class="block font-bold text-brand-dark text-sm">Dieter K.</span>
+                        <span class="text-xs text-gray-500">Berlin-Karlshorst</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section id="faq" class="py-24 bg-brand-surface relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-sm font-bold tracking-widest text-brand-accent uppercase">Antworten vorab</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark mt-2">Häufig gestellte Fragen</h2>
+                <div class="w-12 h-1.5 bg-brand-accent mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Accordion Container -->
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center font-semibold text-brand-dark hover:text-brand-accent focus:outline-none" aria-expanded="false">
+                        <span>Wie schnell erhalte ich ein Angebot für mein Vorhaben?</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300 text-brand-accent"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-50 pt-3">
+                            Nach einer ersten Kontaktaufnahme vereinbaren wir in der Regel zeitnah einen Besichtigungstermin vor Ort in Berlin oder besprechen die Details telefonisch. Ein detailliertes und unverbindliches Angebot erhalten Sie meist innerhalb von 2-3 Werktagen danach.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center font-semibold text-brand-dark hover:text-brand-accent focus:outline-none" aria-expanded="false">
+                        <span>Führen Sie Besichtigungen auch außerhalb von Lichtenberg durch?</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300 text-brand-accent"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-50 pt-3">
+                            Ja, unser primäres Einzugsgebiet ist zwar Berlin-Lichtenberg und die umliegenden Bezirke, wir sind jedoch im gesamten Berliner Stadtgebiet sowie im nahen Brandenburger Umland für Sie im Einsatz.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center font-semibold text-brand-dark hover:text-brand-accent focus:outline-none" aria-expanded="false">
+                        <span>Muss ich im Vorfeld die Möbel wegräumen?</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300 text-brand-accent"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-50 pt-3">
+                            Das Absichern und Abdecken Ihrer Möbel sowie des Bodens übernehmen wir standardmäßig mit höchster Sorgfalt. Größere Möbelstücke sollten idealerweise von den Wänden in die Raummitte gerückt werden. Gerne besprechen wir im Vorfeld genau, was Sie vorbereiten können.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden transition-all duration-300">
+                    <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center font-semibold text-brand-dark hover:text-brand-accent focus:outline-none" aria-expanded="false">
+                        <span>Welche Farben und Materialien verwenden Sie?</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300 text-brand-accent"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-50 pt-3">
+                            Wir verwenden ausschließlich hochwertige, emissionsarme und lösemittelfreie Qualitätsfarben namhafter Hersteller. Auf Wunsch verarbeiten wir auch ökologische Silikat- oder Lehmfarben, die besonders gut für Allergiker geeignet sind.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (#kontakt) -->
+    <section id="kontakt" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-stretch">
+                
+                <!-- Left: Contact info & Google Map (5 columns) -->
+                <div class="lg:col-span-5 space-y-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <span class="text-sm font-bold tracking-widest text-brand-accent uppercase">Kontakt aufnehmen</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark">Lassen Sie uns über Ihr Projekt sprechen</h2>
+                        <div class="w-12 h-1.5 bg-brand-accent rounded-full mb-6"></div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Schreiben Sie uns eine E-Mail, rufen Sie uns direkt an oder nutzen Sie das Kontaktformular. Wir freuen uns darauf, Ihr Vorhaben in Berlin fachgerecht umzusetzen.
+                        </p>
+
+                        <!-- Contact Details -->
+                        <div class="space-y-4 pt-4">
+                            <a href="tel:0309716297" class="flex items-center gap-4 p-4 rounded-xl bg-brand-surface hover:bg-brand-accent/10 hover:text-brand-accent transition-all group">
+                                <span class="w-12 h-12 rounded-lg bg-white flex items-center justify-center text-brand-accent shadow-sm group-hover:bg-brand-accent group-hover:text-white transition-all">
+                                    <i class="fa-solid fa-phone text-lg"></i>
+                                </span>
+                                <div>
+                                    <span class="block text-xs uppercase tracking-wider text-gray-500 font-medium">Telefonisch erreichbar</span>
+                                    <span class="font-bold text-brand-dark text-base">030 9 71 62 97</span>
+                                </div>
+                            </a>
+
+                            <a href="mailto:malergadegastgmbh@gmx.de" class="flex items-center gap-4 p-4 rounded-xl bg-brand-surface hover:bg-brand-accent/10 hover:text-brand-accent transition-all group">
+                                <span class="w-12 h-12 rounded-lg bg-white flex items-center justify-center text-brand-accent shadow-sm group-hover:bg-brand-accent group-hover:text-white transition-all">
+                                    <i class="fa-solid fa-envelope text-lg"></i>
+                                </span>
+                                <div class="min-w-0">
+                                    <span class="block text-xs uppercase tracking-wider text-gray-500 font-medium">Schreiben Sie uns</span>
+                                    <span class="font-bold text-brand-dark text-sm sm:text-base block truncate">malergadegastgmbh@gmx.de</span>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center gap-4 p-4 rounded-xl bg-brand-surface">
+                                <span class="w-12 h-12 rounded-lg bg-white flex items-center justify-center text-brand-accent shadow-sm">
+                                    <i class="fa-solid fa-map-location-dot text-lg"></i>
+                                </span>
+                                <div>
+                                    <span class="block text-xs uppercase tracking-wider text-gray-500 font-medium">Einsatzgebiet</span>
+                                    <span class="font-bold text-brand-dark text-base">Berlin-Lichtenberg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Interactive Google Map showing general area of Berlin-Lichtenberg -->
+                    <div class="rounded-2xl overflow-hidden shadow-md border border-gray-100 h-64 relative bg-gray-100">
+                        <iframe 
+                            class="absolute inset-0 w-full h-full border-0 grayscale opacity-80 hover:grayscale-0 transition-all duration-300"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d38848.33036987413!2d13.46825005!3d52.51608385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84ec0216bbd19%3A0x521204d16ba7fc0!2sLichtenberg%2C%20Berlin!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Right: High-Conversion Contact Form (7 columns) -->
+                <div class="lg:col-span-7 bg-brand-surface rounded-2xl p-6 sm:p-10 border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold text-brand-dark mb-2">Unverbindliche Anfrage</h3>
+                        <p class="text-gray-500 text-sm mb-6">Bitte füllen Sie das Formular aus. Wir melden uns umgehend bei Ihnen zurück.</p>
+                        
+                        <!-- Form submits via fallback simulation or client JS handle -->
+                        <!-- HINWEIS AN ENTWICKLER: Backend-Anbindung oder Mail-API hier konfigurieren -->
+                        <form id="contact-form" class="space-y-5">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <label for="name" class="block text-xs uppercase tracking-wider font-semibold text-gray-500">Name *</label>
+                                    <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all text-sm" placeholder="Ihr Name">
+                                </div>
+                                <div class="space-y-1">
+                                    <label for="phone" class="block text-xs uppercase tracking-wider font-semibold text-gray-500">Telefonnummer</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all text-sm" placeholder="Für eventuelle Rückfragen">
+                                </div>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label for="email" class="block text-xs uppercase tracking-wider font-semibold text-gray-500">E-Mail-Adresse *</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all text-sm" placeholder="ihre.mail@beispiel.de">
+                            </div>
+
+                            <div class="space-y-1">
+                                <label for="message" class="block text-xs uppercase tracking-wider font-semibold text-gray-500">Ihr Vorhaben / Nachricht *</label>
+                                <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all text-sm" placeholder="Beschreiben Sie kurz Ihr Projekt (z.B. Größe des Raums, gewünschte Arbeiten...)"></textarea>
+                            </div>
+
+                            <!-- Data Privacy Accord Checkbox -->
+                            <div class="flex items-start gap-3 pt-2">
+                                <input type="checkbox" id="privacy-check" required class="mt-1 rounded text-brand-accent focus:ring-brand-accent h-4 w-4">
+                                <label for="privacy-check" class="text-xs text-gray-500 leading-normal">
+                                    Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Informationen zur Löschung finden Sie in der <a href="#datenschutz" class="underline text-brand-accent hover:text-brand-dark transition-colors">Datenschutzerklärung</a>. *
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-dark hover:bg-brand-accent text-white py-4 rounded-xl font-bold transition-all transform hover:-translate-y-0.5 shadow-md flex items-center justify-center gap-3">
+                                <span id="btn-text">Anfrage jetzt absenden</span>
+                                <i class="fa-solid fa-paper-plane" id="btn-icon"></i>
+                            </button>
+                        </form>
+
+                        <!-- Dynamic Success Feedback Frame (controlled via JS) -->
+                        <div id="form-success" class="hidden bg-green-50 border border-green-200 text-green-800 p-6 rounded-xl space-y-3 text-center my-4">
+                            <i class="fa-solid fa-circle-check text-4xl text-green-500"></i>
+                            <h4 class="text-lg font-bold">Vielen Dank für Ihre Anfrage!</h4>
+                            <p class="text-sm leading-relaxed max-w-md mx-auto">
+                                Wir haben Ihre Nachricht erhalten und werden uns schnellstmöglich (meist am nächsten Werktag) unter der angegebenen E-Mail-Adresse oder Telefonnummer bei Ihnen melden.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH INTEGRATED LEGALLY REQUIRED IMPRESSUM & DATENSCHUTZ (Rule A) -->
+    <footer class="bg-brand-dark text-gray-300 pt-16 pb-24 md:pb-12 border-t border-white/10 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-white/10">
+                
+                <!-- Col 1: Brand details (4 columns) -->
+                <div class="md:col-span-4 space-y-4">
+                    <span class="text-lg md:text-xl font-bold text-white tracking-wider">
+                        GADEGAST <span class="text-brand-accent">GmbH</span>
+                    </span>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Malereibetrieb • Berlin-Lichtenberg</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Meisterhafte Malerarbeiten und modern gestaltete Wandflächen direkt aus der Hauptstadt. Zuverlässig und mit Liebe zum Detail.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Shortcuts (4 columns) -->
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Schnellzugriff</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="hover:text-brand-accent transition-colors">Unsere Leistungen</a></li>
+                        <li><a href="#ueber-uns" class="hover:text-brand-accent transition-colors">Über uns</a></li>
+                        <li><a href="#faq" class="hover:text-brand-accent transition-colors">Häufige Fragen</a></li>
+                        <li><a href="#kontakt" class="hover:text-brand-accent transition-colors">Kontakt anfordern</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legal Navigation Links (4 columns) -->
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Rechtliches</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#impressum" class="hover:text-brand-accent transition-colors">Impressum</a></li>
+                        <li><a href="#datenschutz" class="hover:text-brand-accent transition-colors">Datenschutzerklärung</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- LEGAL DETAILS AREA: IMPRESSUM & DATENSCHUTZ AS EXPLICIT HIGH-SPACING SECTIONS (Rule A) -->
+            
+            <!-- IMPRESSUM SECTION -->
+            <section id="impressum" class="pt-16 pb-12 text-xs text-gray-400 border-b border-white/5 scroll-margin-top-[100px]">
+                <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Impressum</h3>
+                <!-- PLATZHALTER – Daten zur juristischen Prüfung freizugeben -->
+                <p class="font-semibold text-gray-200 mb-2">Malereibetrieb Gadegast GmbH</p>
+                <div class="grid sm:grid-cols-2 gap-6 leading-relaxed">
+                    <div class="space-y-1">
+                        <p><strong class="text-gray-300">Anschrift:</strong></p>
+                        <p>Berlin-Lichtenberg</p>
+                        <p class="italic text-gray-500">(Vollständige Anschrift durch Mandant zu ergänzen)</p>
+                        <p class="pt-2"><strong class="text-gray-300">Vertreten durch:</strong></p>
+                        <p>[Name der Geschäftsführung - PLATZHALTER]</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p><strong class="text-gray-300">Kontakt:</strong></p>
+                        <p>Telefon: 030 9 71 62 97</p>
+                        <p>E-Mail: malergadegastgmbh@gmx.de</p>
+                        <p class="pt-2"><strong class="text-gray-300">Handwerkskammer & Register:</strong></p>
+                        <p>Eingetragen im Handelsregister des Amtsgerichts Berlin [Handelsregisternummer - PLATZHALTER]</p>
+                        <p>Zuständige Kammer: Handwerkskammer Berlin</p>
+                    </div>
+                </div>
+                <p class="mt-4 text-[10px] text-gray-500">
+                    Haftungsausschluss: Die Inhalte dieser Internetseite wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+                </p>
+            </section>
+
+            <!-- DATENSCHUTZ SECTION -->
+            <section id="datenschutz" class="pt-16 pb-12 text-xs text-gray-400 scroll-margin-top-[100px]">
+                <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Datenschutzerklärung</h3>
+                <div class="space-y-4 leading-relaxed">
+                    <div>
+                        <h4 class="font-semibold text-gray-200 mb-1">1. Datenschutz auf einen Blick</h4>
+                        <p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO) sowie dieser Datenschutzerklärung.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-200 mb-1">2. Datenerfassung auf unserer Website</h4>
+                        <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen. Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z.B. durch Eingabe im Kontaktformular). Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst (z.B. technische Daten wie Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-200 mb-1">3. Ihre Rechte</h4>
+                        <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Copyright bar -->
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; 2024 Malereibetrieb Gadegast GmbH. Alle Rechte vorbehalten.</p>
+                <p>Designed mit Fokus auf Handwerksqualität • Berlin-Lichtenberg</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE CALL-TO-ACTION BAR (Rule 3) -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 py-3 px-4 flex gap-4 md:hidden z-40 shadow-xl">
+        <a href="tel:0309716297" class="flex-1 bg-brand-surface text-brand-dark py-3.5 rounded-xl font-bold text-center text-sm flex items-center justify-center gap-2 border border-gray-200">
+            <i class="fa-solid fa-phone text-brand-accent"></i> 030 9 71 62 97
+        </a>
+        <a href="#kontakt" class="flex-1 bg-brand-accent text-white py-3.5 rounded-xl font-bold text-center text-sm flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane"></i> Jetzt Anfragen
+        </a>
+    </div>
+
+    <!-- COOKIE CONSENT BANNER (Rule 8) -->
+    <div id="cookie-banner" class="fixed bottom-20 md:bottom-6 right-6 left-6 md:left-auto md:max-w-md bg-brand-dark text-white p-5 rounded-2xl shadow-2xl border border-white/10 z-50 transition-all duration-500 transform translate-y-20 opacity-0">
+        <div class="space-y-4">
+            <div class="flex items-start gap-3">
+                <span class="text-brand-accent text-2xl mt-0.5"><i class="fa-solid fa-cookie-bite"></i></span>
+                <div class="space-y-1">
+                    <h4 class="font-bold text-sm">Privatsphäre & Cookies</h4>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Wir nutzen Cookies, um unsere Website optimal zu gestalten und die Nutzererfahrung stetig zu verbessern. Mit einem Klick auf "Alle akzeptieren" stimmen Sie dem zu.
+                    </p>
+                </div>
+            </div>
+            <div class="flex gap-2 justify-end pt-2 border-t border-white/10">
+                <button id="cookie-deny-btn" class="px-3 py-1.5 text-xs font-semibold text-gray-400 hover:text-white transition-colors">Ablehnen</button>
+                <button id="cookie-accept-btn" class="bg-brand-accent hover:bg-brand-accentHover text-white px-4 py-2 rounded-lg text-xs font-bold transition-all shadow-md">Alle akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VANILLA JAVASCRIPT FOR ENGINE OPERATIONS -->
+    <script>
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const faqButtons = document.querySelectorAll('.faq-btn');
+        const contactForm = document.getElementById('contact-form');
+        const formSuccessBlock = document.getElementById('form-success');
+        const cookieBanner = document.getElementById('cookie-banner');
+        const cookieAcceptBtn = document.getElementById('cookie-accept-btn');
+        const cookieDenyBtn = document.getElementById('cookie-deny-btn');
+
+        // 1. Mobile Menu Toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            
+            // Icon transformation
+            if (!isExpanded) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close Mobile Menu upon link clicking
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // 2. FAQ Accordion Logic
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+
+                // Collapse all other panels
+                faqButtons.forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.setAttribute('aria-expanded', 'false');
+                        otherButton.nextElementSibling.style.maxHeight = null;
+                        otherButton.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+
+                // Toggle current panel
+                if (!isExpanded) {
+                    button.setAttribute('aria-expanded', 'true');
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.classList.add('rotate-180');
+                } else {
+                    button.setAttribute('aria-expanded', 'false');
+                    content.style.maxHeight = null;
+                    icon.classList.remove('rotate-180');
+                }
+            });
+        });
+
+        // 3. Simulated Lead Generation Handler
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show dynamic feedback instead of raw submit
+                contactForm.classList.add('hidden');
+                formSuccessBlock.classList.remove('hidden');
+                
+                // Visual Scroll adjustment to success anchor
+                formSuccessBlock.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+        }
+
+        // 4. Cookie Banner Initialization with storage
+        window.addEventListener('DOMContentLoaded', () => {
+            const consentGiven = localStorage.getItem('cookie_consent_gadegast');
+            if (!consentGiven) {
+                setTimeout(() => {
+                    cookieBanner.classList.remove('translate-y-20', 'opacity-0');
+                    cookieBanner.classList.add('translate-y-0', 'opacity-100');
+                }, 1500);
+            }
+        });
+
+        function closeCookieBanner() {
+            cookieBanner.classList.add('translate-y-20', 'opacity-0');
+            cookieBanner.classList.remove('translate-y-0', 'opacity-100');
+        }
+
+        cookieAcceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie_consent_gadegast', 'accepted');
+            closeCookieBanner();
+        });
+
+        cookieDenyBtn.addEventListener('click', () => {
+            localStorage.setItem('cookie_consent_gadegast', 'denied');
+            closeCookieBanner();
+        });
+
+        // 5. Scroll Interaction: Subtle Fade-in effects
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('fade-in-section');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
