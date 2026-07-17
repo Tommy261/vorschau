@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susanne Menke Gartenpflege | Berlin-Treptow (Baumschulenweg)</title>
+    <meta name="description" content="Professionelle Gartenpflege & Landschaftsgestaltung in Berlin-Treptow (Baumschulenweg). Susanne Menke bringt Ihren Garten mit Leidenschaft und Fachwissen zum Erblühen.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://susanne-menke-gartenpflege.de"> <!-- PLATZHALTER – URL vom Kunden zu bestätigen -->
+    <meta property="og:title" content="Susanne Menke Gartenpflege | Berlin-Treptow">
+    <meta property="og:description" content="Professionelle Gartenpflege & Landschaftsgestaltung im Baumschulenweg.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1558904541-efa8c3a30fc9?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            DEFAULT: '#1b4332',
+                            light: '#2d6a4f',
+                            dark: '#081c15',
+                        },
+                        sage: {
+                            DEFAULT: '#74c69d',
+                            light: '#d8f3dc',
+                            dark: '#40916c',
+                        },
+                        clay: {
+                            DEFAULT: '#d97443',
+                            light: '#f4a261',
+                            dark: '#b55a30',
+                        },
+                        sand: '#faf6f0',
+                    },
+                    fontFamily: {
+                        serif: ['Fraunces', 'serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        .organic-blob {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .organic-blob-alt {
+            border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(27, 67, 50, 0.1);
+            color: transparent;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            visibility: hidden;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+    </style>
+
+    <!-- JSON-LD LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GardenStore",
+      "name": "Susanne Menke Gartenpflege",
+      "image": "https://images.unsplash.com/photo-1558904541-efa8c3a30fc9?auto=format&fit=crop&w=1200&q=80",
+      "telephone": "030 63 22 45 92",
+      "email": "susanne_menke@web.de",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin-Treptow",
+        "addressRegion": "Berlin",
+        "addressCountry": "DE",
+        "streetAddress": "Baumschulenweg"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "52.4674",
+        "longitude": "13.4891"
+      },
+      "url": "https://susanne-menke-gartenpflege.de"
+    }
+    </script>
+</head>
+
+<body class="bg-sand text-forest-dark font-sans selection:bg-sage selection:text-forest-dark overflow-x-hidden">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-sand/90 backdrop-blur-md border-b border-forest/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo / Brand -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full bg-forest flex items-center justify-center text-sand transition-transform group-hover:rotate-12">
+                    <i class="fa-solid fa-leaf text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-lg sm:text-xl tracking-tight text-forest">Susanne Menke</span>
+                    <span class="text-xs uppercase tracking-widest text-clay font-bold -mt-1">Gartenpflege</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="font-medium text-forest-dark hover:text-clay transition-colors">Dienstleistungen</a>
+                <a href="#ueber-uns" class="font-medium text-forest-dark hover:text-clay transition-colors">Über uns</a>
+                <a href="#kontakt" class="font-medium text-forest-dark hover:text-clay transition-colors">Kontakt</a>
+                <a href="#kontakt" class="bg-forest hover:bg-forest-light text-sand px-5 py-2.5 rounded-full font-medium transition-colors shadow-md hover:shadow-lg">
+                    Angebot anfordern
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-forest p-2 focus:outline-none" aria-label="Menü öffnen" aria-expanded="false">
+                <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-sand border-b border-forest/10 px-4 pt-2 pb-6 space-y-4 shadow-lg">
+            <a href="#services" class="block font-medium text-lg text-forest-dark hover:text-clay py-2 border-b border-forest/5">Dienstleistungen</a>
+            <a href="#ueber-uns" class="block font-medium text-lg text-forest-dark hover:text-clay py-2 border-b border-forest/5">Über uns</a>
+            <a href="#kontakt" class="block font-medium text-lg text-forest-dark hover:text-clay py-2 border-b border-forest/5">Kontakt</a>
+            <a href="tel:03063224592" class="flex items-center space-x-3 text-clay font-bold py-2">
+                <i class="fa-solid fa-phone"></i>
+                <span>030 63 22 45 92</span>
+            </a>
+            <a href="#kontakt" class="block w-full text-center bg-forest text-sand py-3 rounded-full font-medium shadow-md">
+                Kostenlose Beratung
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Asymmetric Layout, Organic Shapes) -->
+    <section class="relative min-h-[calc(100vh-5rem)] flex items-center py-12 md:py-20 overflow-hidden bg-gradient-to-br from-sand via-sage-light/20 to-sand">
+        <!-- Background Typography Gesture -->
+        <div class="absolute -right-10 top-1/4 select-none pointer-events-none opacity-5 hidden lg:block">
+            <span class="font-serif text-[22vw] leading-none font-bold text-forest">GRÜN</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Text Column -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <div class="inline-flex items-center space-x-2 bg-forest/10 px-4 py-1.5 rounded-full text-forest text-sm font-semibold tracking-wide">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Berlin-Treptow &amp; Baumschulenweg</span>
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-forest font-bold leading-tight">
+                        Ihr Garten in Treptow verdient meisterhafte <span class="text-clay italic">Pflege</span>.
+                    </h1>
+                    
+                    <p class="text-lg text-forest-light max-w-xl leading-relaxed">
+                        Mit scharfer Schere, grünem Daumen und Blick fürs Detail bringe ich Ihren Garten in Berlin-Treptow wieder zur Entfaltung. Zuverlässig, fachgerecht und genau auf Ihre Bedürfnisse abgestimmt.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#kontakt" class="bg-forest hover:bg-forest-light text-sand px-8 py-4 rounded-full font-bold text-center transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center space-x-3">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <span>Jetzt Termin vereinbaren</span>
+                        </a>
+                        <a href="tel:03063224592" class="border-2 border-forest hover:bg-forest hover:text-sand text-forest px-8 py-4 rounded-full font-bold text-center transition-all flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>030 63 22 45 92</span>
+                        </a>
+                    </div>
+
+                    <!-- Micro Facts -->
+                    <!-- PLATZHALTER – vom Kunden zu bestätigen (Folgende Vertrauenselemente) -->
+                    <div class="pt-8 grid grid-cols-2 gap-4 border-t border-forest/10 max-w-lg">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-clay text-lg"></i>
+                            <span class="text-sm font-semibold text-forest-dark">Echte Handarbeit</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-check text-clay text-lg"></i>
+                            <span class="text-sm font-semibold text-forest-dark">Nah &amp; Zuverlässig</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Asymmetric Image Blob -->
+                <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                    <div class="relative w-full aspect-square max-w-md mx-auto">
+                        <!-- Background Blob Decoration -->
+                        <div class="absolute inset-0 bg-sage organic-blob opacity-40 blur-lg scale-105 animate-pulse"></div>
+                        
+                        <!-- Main Image Frame with Fallback and Organic Shape -->
+                        <div class="absolute inset-0 overflow-hidden organic-blob border-4 border-forest shadow-2xl bg-gradient-to-br from-forest-light to-sage">
+                            <img src="https://images.unsplash.com/photo-1558904541-efa8c3a30fc9?auto=format&fit=crop&w=1200&q=80" 
+                                 alt="Gartenpflege im Detail" 
+                                 class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&w=1200&q=80';">
+                        </div>
+                        
+                        <!-- Badge Overlay -->
+                        <div class="absolute -bottom-4 -left-4 bg-sand border-2 border-forest p-4 rounded-2xl shadow-xl flex items-center space-x-3 max-w-[220px]">
+                            <i class="fa-solid fa-scissors text-clay text-2xl"></i>
+                            <span class="text-xs font-bold text-forest uppercase tracking-wider leading-tight">Fachmännisch &amp; behutsam</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Custom SVG Wave Transition at Bottom -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
+            <svg class="relative block w-full h-[60px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="none">
+                <path d="M1200,1200H0V0C150,150,350,150,600,0C850,150,1050,150,1200,0V1200Z" fill="#1b4332" opacity="0.05"></path>
+                <path d="M1200,1200H0V300C200,450,400,150,700,300C1000,450,1100,200,1200,300V1200Z" fill="#1b4332" opacity="0.1"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION (Dynamic & Asymmetrical Cards) -->
+    <section id="services" class="py-24 bg-forest text-sand relative scroll-margin-top">
+        <!-- Giant outline text in background -->
+        <div class="absolute left-10 top-1/2 -translate-y-1/2 select-none pointer-events-none opacity-5 hidden xl:block">
+            <span class="font-serif text-[18vw] font-bold text-outline">SERVICES</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="max-w-3xl mb-16 text-left">
+                <span class="text-clay uppercase tracking-widest font-bold text-sm">Was wir für Sie tun</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 text-sand">Individuelle Pflege für Ihren grünen Lebensraum</h2>
+                <p class="text-sage-light mt-4 text-lg">Ein Garten ist lebendig, verändert sich stetig und benötigt passgenaue Zuwendung. Wir bieten Ihnen die gesamte Bandbreite an gärtnerischen Leistungen.</p>
+            </div>
+
+            <!-- Asymmetric Grid: First Card is huge/special, others are grid elements -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Hero Card (Span 7) -->
+                <div class="lg:col-span-7 bg-forest-light rounded-3xl p-8 sm:p-12 shadow-xl border border-sage/20 relative overflow-hidden group hover:border-clay/50 transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-48 h-48 bg-sage opacity-10 rounded-full blur-3xl -mr-12 -mt-12 group-hover:scale-125 transition-transform"></div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-6">
+                        <div class="space-y-4">
+                            <div class="w-16 h-16 rounded-2xl bg-sage/20 flex items-center justify-center text-sage">
+                                <i class="fa-solid fa-scissors text-3xl"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-sand">Hecken-, Baum- &amp; Strauchschnitt</h3>
+                            <p class="text-sage-light leading-relaxed">
+                                Form- und Rückschnitt sind essenziell für die Pflanzengesundheit. Wir sorgen mit scharfem, professionellem Werkzeug für die optimale Entwicklung Ihrer Gehölze – ob verjüngender Frühjahrsschnitt, sanfter Pflegeschnitt im Sommer oder fachgerechter Winterschnitt.
+                            </p>
+                            <ul class="space-y-2 text-sm text-sand/80 pt-2">
+                                <li class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-check text-clay"></i>
+                                    <span>Form- und Verjüngungsschnitt</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-check text-clay"></i>
+                                    <span>Fachgerechte Entsorgung des Schnittguts</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column of 2 Cards (Span 5) -->
+                <div class="lg:col-span-5 space-y-8">
+                    
+                    <!-- Service Card 2 -->
+                    <div class="bg-forest-dark/40 rounded-3xl p-8 shadow-md border border-sage/10 hover:border-sage/40 transition-colors">
+                        <div class="flex items-start space-x-5">
+                            <div class="w-12 h-12 shrink-0 rounded-xl bg-sage/10 flex items-center justify-center text-sage">
+                                <i class="fa-solid fa-seedling text-xl"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-xl font-bold text-sand">Rasenpflege &amp; Sanierung</h3>
+                                <p class="text-sm text-sage-light leading-relaxed">
+                                    Von fachgerechtem Mähen, Vertikutieren und Belüften bis hin zu bedarfsgerechter Düngung oder Nachsaat – wir verwandeln beanspruchte Flächen in sattgrünen Rasen.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-forest-dark/40 rounded-3xl p-8 shadow-md border border-sage/10 hover:border-sage/40 transition-colors">
+                        <div class="flex items-start space-x-5">
+                            <div class="w-12 h-12 shrink-0 rounded-xl bg-sage/10 flex items-center justify-center text-sage">
+                                <i class="fa-solid fa-spa text-xl"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-xl font-bold text-sand">Beetpflege &amp; Unkrautregulierung</h3>
+                                <p class="text-sm text-sage-light leading-relaxed">
+                                    Wir befreien Ihre Rabatte schonend von Wildkräutern, lockern den Boden, mulchen und setzen neue Bepflanzungsideen so um, dass Ihre Beete das ganze Jahr erstrahlen.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="bg-forest-dark/40 rounded-3xl p-8 shadow-md border border-sage/10 hover:border-sage/40 transition-colors">
+                        <div class="flex items-start space-x-5">
+                            <div class="w-12 h-12 shrink-0 rounded-xl bg-sage/10 flex items-center justify-center text-sage">
+                                <i class="fa-solid fa-wind text-xl"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="font-serif text-xl font-bold text-sand">Saisonale Gartenarbeiten</h3>
+                                <p class="text-sm text-sage-light leading-relaxed">
+                                    Beseitigung von Herbstlaub, Winterschutz für empfindliche Stauden, gründlicher Frühjahrsputz oder die Vorbereitung der Bewässerungsanlagen für den Sommer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Custom Info Box inside Services -->
+            <div class="mt-16 bg-sand text-forest p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center space-x-4">
+                    <div class="text-4xl text-clay"><i class="fa-solid fa-circle-info"></i></div>
+                    <div>
+                        <h4 class="font-serif font-bold text-lg">Individueller Pflegevertrag gesucht?</h4>
+                        <p class="text-sm text-forest-light">Ob einmaliger Einsatz oder regelmäßige Pflege im Abonnement – wir passen uns Ihrem Rhythmus an.</p>
+                    </div>
+                </div>
+                <a href="#kontakt" class="bg-clay hover:bg-clay-dark text-sand px-6 py-3 rounded-full font-bold text-sm whitespace-nowrap transition-colors">
+                    Unverbindlich anfragen
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ÜBER UNS SECTION (With sensory narrative, lokal reference) -->
+    <section id="ueber-uns" class="py-24 bg-sand relative overflow-hidden scroll-margin-top">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Double overlapping image layout -->
+                <div class="lg:col-span-5 relative flex items-center justify-center">
+                    <div class="relative w-full max-w-sm aspect-[4/5]">
+                        <div class="absolute inset-0 bg-sage-light organic-blob-alt opacity-50 blur-md"></div>
+                        
+                        <!-- Main overlapping image -->
+                        <div class="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl border border-forest/10 bg-forest/20">
+                            <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=1200&q=80" 
+                                 alt="Gärtnerin bei der Arbeit" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=80';">
+                        </div>
+                        
+                        <!-- Second overlapping element (Small card) -->
+                        <div class="absolute -bottom-6 -right-6 md:-right-12 bg-forest text-sand p-6 rounded-2xl shadow-2xl max-w-[240px] border border-sage/20">
+                            <span class="text-xs uppercase tracking-widest font-bold text-clay block mb-1">Über die Inhaberin</span>
+                            <p class="font-serif text-sm italic">"Für mich ist jeder Garten ein lebendiges Kunstwerk, das mit Respekt und Leidenschaft gepflegt werden will."</p>
+                            <span class="block text-xs font-bold text-sage mt-2">— Susanne Menke</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Sensory Narrative -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-clay uppercase tracking-widest font-bold text-sm">Persönlich &amp; Verwurzelt</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest">Susanne Menke Gartenpflege in Berlin-Treptow</h2>
+                    
+                    <div class="space-y-4 text-forest-light leading-relaxed">
+                        <p>
+                            Mitten im traditionsreichen und waldreichen Ortsteil <strong class="text-forest">Berlin-Treptow</strong>, genauer gesagt im Baumschulenweg, bin ich für Sie im Einsatz. Unser Kiez ist berühmt für seine reiche gärtnerische Geschichte und den wunderschönen Baumbestand – und genau diese Liebe zur grünen Stadtoase treibt mich täglich an.
+                        </p>
+                        <p>
+                            Bei mir gibt es keine unpersönliche Massenabfertigung. Wenn Sie mich beauftragen, erhalten Sie verlässliches, sorgfältiges Handwerk direkt von der Expertin. Ich verstehe die hiesigen Boden- und Klimaverhältnisse und richte meine Pflegeplanung präzise danach aus.
+                        </p>
+                        <p>
+                            Vom kleinen, feinen Vorgarten im Baumschulenweg bis hin zu weitläufigen Gartengrundstücken in Treptow: Ich kümmere mich mit derselben hohen Hingabe und fachlichen Präzision um Ihre Pflanzen, als wären es meine eigenen.
+                        </p>
+                    </div>
+
+                    <!-- USPs -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="text-clay mt-1"><i class="fa-solid fa-house-chimney-window"></i></div>
+                            <div>
+                                <h4 class="font-bold text-forest text-sm">Lokaler Fokus</h4>
+                                <p class="text-xs text-forest-light">Schnelle Anfahrtswege in Baumschulenweg &amp; Umgebung.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-clay mt-1"><i class="fa-solid fa-hands-holding-child"></i></div>
+                            <div>
+                                <h4 class="font-bold text-forest text-sm">Schonende Methoden</h4>
+                                <p class="text-xs text-forest-light">Umweltbewusste Pflege, Verzicht auf unnötige Chemie.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS & FAQ (Balanced Social Proof) -->
+    <section class="py-24 bg-sage-light/20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-clay uppercase tracking-widest font-bold text-sm">Erfahrungen</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest mt-2">Das sagen unsere Kunden</h2>
+                <p class="text-sm text-forest-light/80 mt-1">
+                    <!-- PLATZHALTER – vom Kunden zu bestätigen (Folgende Testimonials) -->
+                    *Kundenstimmen exemplarisch dargestellt
+                </p>
+            </div>
+
+            <!-- Testimonials Grid (Asymmetric) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-sand p-8 rounded-3xl shadow-sm border border-forest/5 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <p class="text-forest-light italic leading-relaxed">
+                        "Frau Menke pflegt unseren Garten am Baumschulenweg nun schon die zweite Saison. Der Rasen war noch nie so dicht und die Hecken sind perfekt in Form geschnitten. Äußerst zuverlässig!"
+                    </p>
+                    <div class="mt-6 flex items-center space-x-3 border-t border-forest/10 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-sage flex items-center justify-center text-forest font-bold text-sm">
+                            M.W.
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-forest text-sm">Familie Wagner</h4>
+                            <span class="text-xs text-clay">Berlin-Treptow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 (Accentuated Border) -->
+                <div class="bg-sand p-8 rounded-3xl shadow-md border-2 border-clay flex flex-col justify-between hover:shadow-lg transition-shadow relative">
+                    <span class="absolute top-4 right-6 text-clay/20 text-5xl font-serif">“</span>
+                    <p class="text-forest-light italic leading-relaxed">
+                        "Endlich eine Gärtnerin, die mitdenkt! Frau Menke hat unsere Beete komplett umstrukturiert und so bepflanzt, dass im Sommer immer etwas blüht. Ein absoluter Segen für uns."
+                    </p>
+                    <div class="mt-6 flex items-center space-x-3 border-t border-forest/10 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-clay flex items-center justify-center text-sand font-bold text-sm">
+                            I.B.
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-forest text-sm">Ingrid Becker</h4>
+                            <span class="text-xs text-clay">Baumschulenweg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-sand p-8 rounded-3xl shadow-sm border border-forest/5 flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <p class="text-forest-light italic leading-relaxed">
+                        "Schnell, sauber und unkompliziert. Besonders die Entsorgung des Grünschnitts klappt immer perfekt. Der Kontakt ist überaus freundlich!"
+                    </p>
+                    <div class="mt-6 flex items-center space-x-3 border-t border-forest/10 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-sage flex items-center justify-center text-forest font-bold text-sm">
+                            T.K.
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-forest text-sm">Thomas Krause</h4>
+                            <span class="text-xs text-clay">Berlin-Treptow</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="max-w-3xl mx-auto mt-24">
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-forest text-center mb-8">Häufige Fragen zur Gartenpflege</h3>
+                
+                <div class="space-y-4">
+                    
+                    <!-- FAQ 1 -->
+                    <div class="bg-sand rounded-2xl border border-forest/10 overflow-hidden">
+                        <button class="w-full text-left p-6 font-bold text-forest flex justify-between items-center focus:outline-none focus:bg-sage-light/10" onclick="toggleFaq(this)">
+                            <span>In welchen Gebieten in Berlin sind Sie im Einsatz?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-forest-light/90">
+                            Mein primäres Einsatzgebiet liegt im Bezirk Berlin-Treptow, insbesondere rund um den Baumschulenweg. Durch diese lokale Fokussierung kann ich kurze Fahrtzeiten garantieren und flexibel reagieren. Weitere Gebiete auf Anfrage.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="bg-sand rounded-2xl border border-forest/10 overflow-hidden">
+                        <button class="w-full text-left p-6 font-bold text-forest flex justify-between items-center focus:outline-none focus:bg-sage-light/10" onclick="toggleFaq(this)">
+                            <span>Wie berechnen sich die Kosten für die Pflege?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-forest-light/90">
+                            Die Kosten richten sich ganz nach dem konkreten Aufwand, der Größe Ihres Gartens und den gewünschten Dienstleistungen. Nach einer Erstbesprechung oder Zusendung von Bildern erstelle ich Ihnen gerne ein maßgeschneidertes, unverbindliches Angebot.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-sand rounded-2xl border border-forest/10 overflow-hidden">
+                        <button class="w-full text-left p-6 font-bold text-forest flex justify-between items-center focus:outline-none focus:bg-sage-light/10" onclick="toggleFaq(this)">
+                            <span>Entsorgen Sie das anfallende Schnittgut und Laub?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-sm text-forest-light/90">
+                            Ja, selbstverständlich. Alle gärtnerischen Abfälle, Gehölzschnitt oder Laub werden auf Wunsch komplett von mir abtransportiert und fachgerecht kompostiert bzw. entsorgt, sodass Ihr Garten sofort sauber übergeben wird.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- KONTAKT SECTION (Interactive Form, Maps, Contact info) -->
+    <section id="kontakt" class="py-24 bg-forest text-sand scroll-margin-top relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                
+                <!-- Left: Contact info & Map -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-clay uppercase tracking-widest font-bold text-sm">Kontakt</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-sand">Lassen Sie uns ins Gespräch kommen</h2>
+                        <p class="text-sage-light text-sm sm:text-base">
+                            Haben Sie Fragen oder möchten direkt einen Termin zur Besichtigung vereinbaren? Schreiben Sie mir oder rufen Sie einfach an.
+                        </p>
+                    </div>
+
+                    <!-- Direct Contacts -->
+                    <div class="space-y-4">
+                        <a href="tel:03063224592" class="flex items-center space-x-4 p-4 rounded-2xl bg-forest-light hover:bg-sage-dark/30 transition-colors border border-sage/10">
+                            <div class="w-12 h-12 rounded-full bg-clay/20 flex items-center justify-center text-clay text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-sage-light block">Rufen Sie an</span>
+                                <span class="font-bold text-sm sm:text-base text-sand">030 63 22 45 92</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:susanne_menke@web.de" class="flex items-center space-x-4 p-4 rounded-2xl bg-forest-light hover:bg-sage-dark/30 transition-colors border border-sage/10">
+                            <div class="w-12 h-12 rounded-full bg-clay/20 flex items-center justify-center text-clay text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-sage-light block">Schreiben Sie eine E-Mail</span>
+                                <span class="font-bold text-sm sm:text-base text-sand break-all">susanne_menke@web.de</span>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center space-x-4 p-4 rounded-2xl bg-forest-light border border-sage/10">
+                            <div class="w-12 h-12 rounded-full bg-clay/20 flex items-center justify-center text-clay text-xl shrink-0">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-sage-light block">Einsatzort</span>
+                                <span class="font-bold text-sm sm:text-base text-sand">Berlin-Treptow (Baumschulenweg)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OpenStreetMap Map Embed for Local Reference -->
+                    <div class="w-full h-48 rounded-2xl overflow-hidden border-2 border-sage/20 relative shadow-md">
+                        <!-- Standard Iframe Map (Berlin Baumschulenweg area placeholder view) -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.4077840139195!2d13.4839843!3d52.4716766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84faf87dfb455%3A0xbd84dc74c2ea5b11!2sBaumschulenweg%2C%20Berlin!5e0!3m2!1sde!2sde!4v1700000000000" 
+                                class="w-full h-full border-0 grayscale opacity-80 hover:grayscale-0 transition-all duration-300" 
+                                allowfullscreen="" 
+                                loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Right: Custom Contact Form -->
+                <div class="lg:col-span-7 bg-forest-light/60 border border-sage/20 rounded-3xl p-8 sm:p-12 relative">
+                    
+                    <form id="contact-form" action="mailto:susanne_menke@web.de" method="POST" enctype="text/plain" class="space-y-6" onsubmit="return handleFormSubmit(event)">
+                        <!-- Disclaimer about backend -->
+                        <!-- PLATZHALTER – Backend Integration bei Bedarf durchführen -->
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-xs uppercase tracking-widest font-bold text-sage-light mb-2">Ihr Name *</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-forest-dark/50 border border-sage/20 focus:border-clay rounded-xl px-4 py-3 text-sand focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs uppercase tracking-widest font-bold text-sage-light mb-2">Ihre E-Mail *</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-forest-dark/50 border border-sage/20 focus:border-clay rounded-xl px-4 py-3 text-sand focus:outline-none transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="phone-form" class="block text-xs uppercase tracking-widest font-bold text-sage-light mb-2">Telefonnummer (für Rückfragen)</label>
+                            <input type="tel" id="phone-form" name="phone" class="w-full bg-forest-dark/50 border border-sage/20 focus:border-clay rounded-xl px-4 py-3 text-sand focus:outline-none transition-colors">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs uppercase tracking-widest font-bold text-sage-light mb-2">Ihr Anliegen *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Beschreiben Sie kurz Ihren Garten &amp; das gewünschte Anliegen..." class="w-full bg-forest-dark/50 border border-sage/20 focus:border-clay rounded-xl px-4 py-3 text-sand focus:outline-none transition-colors placeholder:text-sand/30"></textarea>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <input type="checkbox" id="privacy" required class="mt-1 h-4 w-4 accent-clay bg-forest-dark rounded border-sage/20 focus:ring-0">
+                            <label for="privacy" class="text-xs text-sage-light">
+                                Ich stimme zu, dass meine Angaben zur Kontaktaufnahme verarbeitet werden. Weitere Infos finden Sie in der <a href="#datenschutz" class="underline text-clay hover:text-clay-light">Datenschutzerklärung</a>. *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-clay hover:bg-clay-dark text-sand font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center space-x-3">
+                            <i class="fa-regular fa-paper-plane"></i>
+                            <span>Anfrage absenden</span>
+                        </button>
+                    </form>
+
+                    <!-- Success Message (initially hidden) -->
+                    <div id="success-message" class="hidden absolute inset-0 bg-forest rounded-3xl flex flex-col items-center justify-center text-center p-8 space-y-4">
+                        <div class="w-20 h-20 rounded-full bg-sage/20 flex items-center justify-center text-sage text-4xl">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold">Vielen Dank für Ihre Nachricht!</h3>
+                        <p class="text-sm text-sage-light max-w-sm">
+                            Ich habe Ihre Anfrage erhalten und werde mich so schnell wie möglich bei Ihnen melden.
+                        </p>
+                        <button onclick="resetForm()" class="bg-forest-light text-sand px-6 py-2 rounded-full text-xs font-semibold">
+                            Weitere Nachricht senden
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGAL SECTIONS (Impressum & Datenschutz als eigene vollwertige Sektionen) -->
+    <section id="impressum" class="py-20 bg-sand border-t border-forest/10 scroll-margin-top">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="border-l-4 border-clay pl-6 space-y-4">
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-forest">Impressum</h2>
+                <p class="text-xs text-forest-light/60 uppercase tracking-widest italic">Anbieterkennzeichnung nach § 5 DDG</p>
+            </div>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-forest-light leading-relaxed">
+                <div class="space-y-2">
+                    <p class="font-bold text-forest">Diensteanbieter &amp; Verantwortlich:</p>
+                    <p>Susanne Menke Gartenpflege<br>
+                    Susanne Menke<br>
+                    Baumschulenweg<br>
+                    <!-- PLATZHALTER – Genaue Postanschrift (Straße, Hausnummer, PLZ) vom Kunden einzutragen -->
+                    [Straße &amp; Hausnummer - PLATZHALTER]<br>
+                    12437 Berlin</p>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="font-bold text-forest">Kontaktmöglichkeiten:</p>
+                    <p>Telefon: 030 63 22 45 92<br>
+                    E-Mail: susanne_menke@web.de</p>
+                    
+                    <p class="font-bold text-forest mt-4">Aufsichtsbehörde / Register:</p>
+                    <!-- PLATZHALTER – Gewerbeanmeldung / Finanzamt / Steuernummer vom Kunden einzutragen -->
+                    <p class="text-xs italic">Gewerbeanmeldung beim Ordnungsamt/Gewerbeamt Berlin-Treptow-Köpenick.<br>
+                    Steuernummer: [Steuernummer eintragen - PLATZHALTER]</p>
+                </div>
+            </div>
+
+            <div class="mt-8 p-4 bg-forest/5 rounded-2xl text-xs text-forest-light/80 leading-relaxed">
+                <strong>Haftungshinweis:</strong> Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+                <br><br>
+                <span class="text-clay font-semibold">Juristischer Hinweis:</span> Dieses Impressum ist ein Entwurf. Der Kunde hat die juristische Richtigkeit eigenverantwortlich prüfen zu lassen.
+            </div>
+        </div>
+    </section>
+
+    <section id="datenschutz" class="py-20 bg-sand border-t border-forest/10 scroll-margin-top">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="border-l-4 border-clay pl-6 space-y-4">
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-forest">Datenschutzerklärung</h2>
+                <p class="text-xs text-forest-light/60 uppercase tracking-widest italic">Informationen über die Verarbeitung Ihrer Daten</p>
+            </div>
+
+            <div class="mt-8 space-y-6 text-sm text-forest-light leading-relaxed">
+                <div>
+                    <h3 class="font-bold text-forest text-base mb-2">1. Datenschutz auf einen Blick</h3>
+                    <p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Personenbezogene Daten werden auf dieser Website nur im technisch notwendigen Umfang (z. B. zur Beantwortung Ihrer Kontaktanfrage) erhoben und verarbeitet. Niemals werden Ihre Daten ohne Ihre ausdrückliche Zustimmung an Dritte weitergegeben.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-forest text-base mb-2">2. Datenerfassung auf unserer Website</h3>
+                    <p><strong>Kontaktformular / E-Mail-Kontakt:</strong> Wenn Sie uns per Kontaktformular oder E-Mail Anfragen zukommen lassen, werden Ihre Angaben zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-forest text-base mb-2">3. Ihre Rechte</h3>
+                    <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen. Wenden Sie sich hierzu einfach an die im Impressum angegebenen Kontaktdaten.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-forest text-base mb-2">4. Hosting &amp; Server-Log-Files</h3>
+                    <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt (Browsertyp, Betriebssystem, Referrer URL, Uhrzeit der Serveranfrage). Diese Daten sind nicht bestimmten Personen zuzuordnen und dienen ausschließlich dem fehlerfreien Betrieb der Website.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 p-4 bg-forest/5 rounded-2xl text-xs text-forest-light/80 leading-relaxed">
+                <span class="text-clay font-semibold">Juristischer Hinweis:</span> Diese Datenschutzerklärung entspricht den Standardvorgaben der DSGVO für Kontaktformulare. Je nach tatsächlichem Hoster und technischen Modifikationen ist diese Datenschutzerklärung vom Kunden juristisch final zu prüfen.
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-forest-dark text-sand/80 py-12 border-t border-forest-light/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-forest-light/20">
+                
+                <a href="#" class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-sage flex items-center justify-center text-forest">
+                        <i class="fa-solid fa-leaf text-sm"></i>
+                    </div>
+                    <span class="font-serif font-bold text-lg text-sand">Susanne Menke</span>
+                </a>
+
+                <!-- Footer Navigation links referencing same-page sections -->
+                <nav class="flex flex-wrap justify-center gap-6 text-sm">
+                    <a href="#services" class="hover:text-clay transition-colors">Dienstleistungen</a>
+                    <a href="#ueber-uns" class="hover:text-clay transition-colors">Über uns</a>
+                    <a href="#kontakt" class="hover:text-clay transition-colors">Kontakt</a>
+                    <a href="#impressum" class="hover:text-clay transition-colors">Impressum</a>
+                    <a href="#datenschutz" class="hover:text-clay transition-colors font-medium">Datenschutz</a>
+                </nav>
+
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between pt-8 text-xs text-sage-light/60 gap-4">
+                <p>&copy; <span id="current-year"></span> Susanne Menke Gartenpflege. Alle Rechte vorbehalten.</p>
+                <p class="flex items-center space-x-1">
+                    <span>In Berlin-Treptow verwurzelt</span>
+                    <i class="fa-solid fa-heart text-clay"></i>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE CTA (Visible only on mobile) -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-sand/95 backdrop-blur-md border-t border-forest/15 px-4 py-3 flex items-center justify-between md:hidden shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        <div class="flex flex-col">
+            <span class="text-[10px] uppercase tracking-wider text-forest-light font-bold">Susanne Menke</span>
+            <span class="text-xs font-bold text-clay">Gartenpflege Treptow</span>
+        </div>
+        <div class="flex space-x-2">
+            <a href="tel:03063224592" class="bg-forest text-sand p-3 rounded-full text-center flex items-center justify-center shadow-md">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+            <a href="#kontakt" class="bg-clay text-sand px-4 py-2.5 rounded-full text-xs font-bold flex items-center space-x-1 shadow-md">
+                <i class="fa-regular fa-envelope"></i>
+                <span>Anfragen</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- COOKIE CONSENT BANNER -->
+    <div id="cookie-banner" class="fixed bottom-16 md:bottom-6 left-4 right-4 md:left-auto md:right-6 md:max-w-md bg-forest text-sand p-6 rounded-3xl shadow-2xl z-50 border border-sage/20 hidden">
+        <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-cookie-bite text-clay text-2xl"></i>
+                <h4 class="font-serif font-bold text-lg">Cookie-Einstellungen</h4>
+            </div>
+            <p class="text-xs text-sage-light leading-relaxed">
+                Diese Website verwendet ausschließlich technisch notwendige Cookies, um Ihr Nutzererlebnis zu optimieren. Mit der Nutzung erklären Sie sich einverstanden.
+            </p>
+            <div class="flex justify-end space-x-3 pt-2">
+                <button onclick="acceptCookies()" class="bg-clay hover:bg-clay-dark text-sand px-4 py-2 rounded-full text-xs font-bold transition-colors">
+                    Einverstanden
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FUNCTIONS -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Responsive Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            
+            if (!isExpanded) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Toggle Accordion (FAQ)
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Check if active
+            const isOpen = !content.classList.contains('hidden');
+            
+            // Close all
+            document.querySelectorAll('.faq-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('button i').forEach(el => el.classList.remove('rotate-180'));
+            
+            if (!isOpen) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // Contact Form Processing (Client-Side Feedback with fallback notice)
+        function handleFormSubmit(event) {
+            // Prevent actual mailto redirect if we want inline success notification
+            event.preventDefault();
+            
+            const form = document.getElementById('contact-form');
+            const successMsg = document.getElementById('success-message');
+            
+            // Show dynamic feedback
+            successMsg.classList.remove('hidden');
+            
+            // Send email draft in background (native fallback option)
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone-form').value;
+            const message = document.getElementById('message').value;
+            
+            const mailtoLink = `mailto:susanne_menke@web.de?subject=Kontaktanfrage von ${encodeURIComponent(name)}&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0ATelefon: ${encodeURIComponent(phone)}%0D%0ANachricht: %0D%0A${encodeURIComponent(message)}`;
+            
+            // Trigger mail client as fallback
+            window.location.href = mailtoLink;
+            
+            return false;
+        }
+
+        function resetForm() {
+            const form = document.getElementById('contact-form');
+            const successMsg = document.getElementById('success-message');
+            form.reset();
+            successMsg.classList.add('hidden');
+        }
+
+        // Cookie Consent local storage logic
+        function acceptCookies() {
+            localStorage.setItem('gartenpflegemenke_cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').classList.add('hidden');
+        }
+
+        window.onload = function() {
+            if (!localStorage.getItem('gartenpflegemenke_cookie_consent')) {
+                document.getElementById('cookie-banner').classList.remove('hidden');
+            }
+        };
+
+        // Scroll Intersection Observer for Micro-Interactions (Fading in elements)
+        const faders = document.querySelectorAll('.fade-in-section');
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('is-visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // Set generic sections as faders dynamically
+        document.querySelectorAll('section').forEach(section => {
+            if (section.id !== '') {
+                section.classList.add('fade-in-section');
+                appearOnScroll.observe(section);
+            }
+        });
+    </script>
+</body>
+</html>
