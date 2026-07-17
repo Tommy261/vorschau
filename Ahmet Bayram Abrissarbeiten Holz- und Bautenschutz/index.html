@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmet Bayram | Abrissarbeiten, Holz- & Bautenschutz Berlin-Reinickendorf</title>
+    <meta name="description" content="Professionelle Abbrucharbeiten und Holz- & Bautenschutz in Berlin-Reinickendorf. Ahmet Bayram ist Ihr zuverlässiger Partner für sicheren Abriss und Gebäudeschutz.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ahmet Bayram | Abrissarbeiten, Holz- & Bautenschutz Berlin">
+    <meta property="og:description" content="Fachgerechter Abbruch und nachhaltiger Bautenschutz in Berlin-Reinickendorf. Jetzt unverbindliches Angebot anfordern.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#ea580c', // Safety Orange
+                            dark: '#c2410c',
+                            light: '#ffedd5',
+                            charcoal: '#0f172a', // Slate 900
+                            concrete: '#f1f5f9' // Slate 100
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Ahmet Bayram Abrissarbeiten Holz- und Bautenschutz",
+      "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+      "telephone": "030 49 91 64 01",
+      "email": "ahmet-bayram-abbruch@gmx.de",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin-Reinickendorf",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.5901,
+        "longitude": 13.3308
+      },
+      "url": "https://ahmet-bayram-abbruch.de",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        html {
+            scroll-padding-top: 5rem; /* Prevents sticky header from overlapping anchor tags */
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+            color: transparent;
+        }
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        .clip-diagonal-reverse {
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+        /* Fallback background styles in case images fail to load */
+        .bg-fallback-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-brand-charcoal/95 backdrop-blur-md border-b border-slate-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Brand Grid -->
+                <div class="flex-shrink-0 flex flex-col justify-center">
+                    <span class="text-white font-extrabold text-lg sm:text-xl tracking-tight leading-none uppercase">Ahmet Bayram</span>
+                    <span class="text-brand text-xs sm:text-sm font-semibold tracking-wider mt-1">Abriss &amp; Bautenschutz</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="text-slate-300 hover:text-brand font-medium transition duration-150">Leistungen</a>
+                    <a href="#ueber-uns" class="text-slate-300 hover:text-brand font-medium transition duration-150">Über uns</a>
+                    <a href="#kontakt" class="text-slate-300 hover:text-brand font-medium transition duration-150">Kontakt</a>
+                    <a href="tel:03049916401" class="bg-brand hover:bg-brand-dark text-white px-5 py-2.5 rounded-lg font-bold transition duration-150 flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> 030 49 91 64 01
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" type="button" class="text-slate-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand p-2 rounded-md" aria-expanded="false" aria-label="Hauptmenü öffnen">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon-hamburger"></i>
+                        <i class="fa-solid fa-xmark text-2xl hidden" id="menu-icon-close"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div class="hidden md:hidden bg-brand-charcoal border-t border-slate-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#services" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition duration-150">Leistungen</a>
+                <a href="#ueber-uns" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition duration-150">Über uns</a>
+                <a href="#kontakt" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition duration-150">Kontakt</a>
+                <a href="tel:03049916401" class="flex items-center gap-2 w-full mt-2 bg-brand hover:bg-brand-dark text-white px-4 py-3 rounded-md font-bold transition duration-150">
+                    <i class="fa-solid fa-phone"></i> 030 49 91 64 01
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Asymmetrical Layout, Bold Typography Accent, Diagonal Transition) -->
+    <header class="relative bg-fallback-hero min-h-screen flex items-center overflow-hidden clip-diagonal pb-16 lg:pb-32">
+        <!-- Hero Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover opacity-30" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" alt="Baustelle mit Abbrucharbeiten im Hintergrund" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80'">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal via-brand-charcoal/80 to-transparent"></div>
+        </div>
+
+        <!-- Huge Background Typography Gesture -->
+        <div class="absolute right-0 bottom-0 select-none pointer-events-none hidden lg:block overflow-hidden z-10 opacity-10">
+            <span class="text-stroke text-[18rem] font-extrabold tracking-widest uppercase block leading-none transform translate-x-20 translate-y-10">BERLIN</span>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-20 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 space-y-6">
+                    <!-- Location Tag -->
+                    <div class="inline-flex items-center gap-2 bg-brand/10 border border-brand/30 text-brand px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-location-dot"></i> Berlin-Reinickendorf &amp; Umgebung
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight uppercase">
+                        Fachgerechter Abbruch &amp; <br>
+                        <span class="text-brand">Wertbeständiger Bautenschutz</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+                        Wenn Altes weichen muss, schaffen wir Raum für Neues – sicher, sauber und termintreu. Ihr Meisterbetrieb für präzise Abrissarbeiten sowie fachgerechten Holz- und Bautenschutz im Raum Berlin.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#kontakt" class="bg-brand hover:bg-brand-dark text-white text-center px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-brand/20 transition-all duration-150 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-contract"></i> Gratis Angebot anfordern
+                        </a>
+                        <a href="tel:03049916401" class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-white text-center px-8 py-4 rounded-xl font-bold text-lg transition-all duration-150 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Jetzt anrufen
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Industrial Accent Hero Card (Asymmetric Design Element) -->
+                <div class="lg:col-span-4 mt-8 lg:mt-0">
+                    <div class="bg-slate-900/90 border-2 border-brand p-8 rounded-2xl shadow-2xl relative overflow-hidden backdrop-blur-md">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-brand/10 rounded-full blur-2xl"></div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand text-white text-xl font-bold">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </span>
+                            <div>
+                                <h3 class="text-lg font-bold text-white uppercase">Unsere Garantie</h3>
+                                <p class="text-xs text-slate-400">Präzision &amp; Sicherheit</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand mt-1 flex-shrink-0"></i>
+                                <span><strong>Pünktlich &amp; Zuverlässig:</strong> Feste Bauzeitgarantie.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand mt-1 flex-shrink-0"></i>
+                                <span><strong>Sicherheit zuerst:</strong> Kontrollierter Rückbau nach Vorschrift.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand mt-1 flex-shrink-0"></i>
+                                <span><strong>Saubere Übergabe:</strong> Fachgerechte Mülltrennung &amp; Entsorgung.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CORE SERVICES SECTION (#services) -->
+    <section id="services" class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Title -->
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+                <span class="text-brand font-bold text-sm uppercase tracking-widest block mb-2">Gewerkleistungen</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-charcoal uppercase leading-none">Unsere Expertise im Detail</h2>
+                <div class="h-1.5 w-24 bg-brand mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-600 mt-6 text-lg">
+                    Vom Einfamilienhaus bis hin zum gewerblichen Projekt bieten wir Ihnen maßgeschneiderte Lösungen für Abbruch, Demontage und Gebäudeschutz.
+                </p>
+            </div>
+
+            <!-- Asymmetrical Grid: One main "Hero Card" and three smaller cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Hero Card (Double width / Height accentuation) -->
+                <div class="lg:col-span-2 bg-brand-charcoal text-white rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between group relative min-h-[400px] reveal">
+                    <!-- Overlay background -->
+                    <div class="absolute inset-0 bg-fallback-hero z-0">
+                        <img class="w-full h-full object-cover opacity-25 group-hover:scale-105 transition duration-500" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Arbeiter bei Abbrucharbeiten" onerror="this.src=''">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-brand-charcoal/60 to-transparent"></div>
+                    </div>
+                    
+                    <div class="relative z-10 p-8 sm:p-12">
+                        <!-- Typography Watermark -->
+                        <span class="absolute top-4 right-8 text-7xl font-extrabold text-white/5 select-none pointer-events-none">01</span>
+                        <div class="inline-flex items-center gap-2 bg-brand text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider mb-6">
+                            Hauptgewerk
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold uppercase mb-4 tracking-tight">Komplette &amp; Teil-Abbrucharbeiten</h3>
+                        <p class="text-slate-300 max-w-xl text-base leading-relaxed mb-6">
+                            Wir übernehmen den professionellen und behördengerechten Abriss von Gebäuden, Nebengebäuden sowie den präzisen Teilrückbau im Bestand. Mit modernen Geräten garantieren wir eine emissionsarme, schnelle Durchführung und die saubere Trennung aller anfallenden Baustoffe.
+                        </p>
+                    </div>
+
+                    <div class="relative z-10 p-8 sm:p-12 pt-0 border-t border-slate-800 flex flex-wrap gap-4 text-xs font-semibold text-slate-300">
+                        <span class="bg-slate-800 px-3 py-1.5 rounded-full"><i class="fa-solid fa-check text-brand mr-1.5"></i>Gebäuderückbau</span>
+                        <span class="bg-slate-800 px-3 py-1.5 rounded-full"><i class="fa-solid fa-check text-brand mr-1.5"></i>Entkernungsarbeiten</span>
+                        <span class="bg-slate-800 px-3 py-1.5 rounded-full"><i class="fa-solid fa-check text-brand mr-1.5"></i>Garagenabbruch</span>
+                        <span class="bg-slate-800 px-3 py-1.5 rounded-full"><i class="fa-solid fa-check text-brand mr-1.5"></i>Fundamententfernung</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Holz- & Bautenschutz -->
+                <div class="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl border border-slate-100 flex flex-col justify-between relative overflow-hidden group transition duration-300 reveal">
+                    <span class="absolute top-4 right-8 text-7xl font-extrabold text-slate-100 select-none pointer-events-none">02</span>
+                    <div class="relative z-10">
+                        <div class="h-14 w-14 rounded-2xl bg-brand/10 flex items-center justify-center text-brand text-2xl mb-8 group-hover:bg-brand group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-house-chimney-crack"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase text-brand-charcoal mb-4">Holz- und Bautenschutz</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Wir schützen Ihre Bauwerke dauerhaft vor Feuchtigkeit, Schimmel und Verfall. Ob Kellerabdichtung von innen und außen oder konservierende Schutzmaßnahmen für beanspruchtes Holzwerk im Außenbereich.
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-6 mt-6 flex flex-wrap gap-2 text-xs font-semibold text-slate-500">
+                        <span class="bg-slate-50 px-2.5 py-1 rounded"><i class="fa-solid fa-droplet text-brand mr-1"></i>Feuchtigkeitsschutz</span>
+                        <span class="bg-slate-50 px-2.5 py-1 rounded"><i class="fa-solid fa-tree text-brand mr-1"></i>Holzschutz</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Demontage & Rückbau -->
+                <div class="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl border border-slate-100 flex flex-col justify-between relative overflow-hidden group transition duration-300 reveal">
+                    <span class="absolute top-4 right-8 text-7xl font-extrabold text-slate-100 select-none pointer-events-none">03</span>
+                    <div class="relative z-10">
+                        <div class="h-14 w-14 rounded-2xl bg-brand/10 flex items-center justify-center text-brand text-2xl mb-8 group-hover:bg-brand group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase text-brand-charcoal mb-4">Präzise Demontage</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Fachgerechte, manuelle Demontage von Einbauten, Wandbelägen, Fußböden, Heizungsanlagen oder Rohrleitungen. Ideal zur Vorbereitung nachfolgender Sanierungs- und Renovierungsmaßnahmen.
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-6 mt-6 flex flex-wrap gap-2 text-xs font-semibold text-slate-500">
+                        <span class="bg-slate-50 px-2.5 py-1 rounded"><i class="fa-solid fa-border-all text-brand mr-1"></i>Fliesen- &amp; Bodenabriss</span>
+                        <span class="bg-slate-50 px-2.5 py-1 rounded"><i class="fa-solid fa-puzzle-piece text-brand mr-1"></i>Wandrückbau</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Entsorgung & Baustellenreinigung -->
+                <div class="lg:col-span-2 bg-white rounded-3xl p-8 shadow-md hover:shadow-xl border border-slate-100 flex flex-col sm:flex-row justify-between items-start sm:items-center relative overflow-hidden group transition duration-300 reveal">
+                    <span class="absolute top-4 right-8 text-7xl font-extrabold text-slate-100 select-none pointer-events-none">04</span>
+                    <div class="relative z-10 max-w-lg">
+                        <div class="h-14 w-14 rounded-2xl bg-brand/10 flex items-center justify-center text-brand text-2xl mb-6 group-hover:bg-brand group-hover:text-white transition duration-300">
+                            <i class="fa-solid fa-dumpster-fire"></i>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase text-brand-charcoal mb-3">Abtransport &amp; Fachgerechte Entsorgung</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Bauschutt, belastete Hölzer und Baustoffe werden nach aktuellen gesetzlichen Vorgaben getrennt, abtransportiert und umweltgerecht entsorgt. Wir übergeben die Baustelle besenrein und abnahmebereit.
+                        </p>
+                    </div>
+                    <div class="mt-6 sm:mt-0 relative z-10">
+                        <a href="#kontakt" class="inline-flex items-center gap-2 bg-brand-charcoal hover:bg-brand text-white font-bold py-3 px-6 rounded-xl text-xs uppercase tracking-wider transition duration-300">
+                            Details anfragen <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: THE WORKFLOW (Process step-by-step with Diagonal Background transition) -->
+    <section class="py-24 bg-brand-charcoal text-white relative overflow-hidden clip-diagonal-reverse pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-brand font-bold text-sm uppercase tracking-widest block mb-2">Ablauf</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold uppercase leading-none">In 4 Schritten zum sauberen Ergebnis</h2>
+                <div class="h-1.5 w-24 bg-brand mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                
+                <!-- Step 1 -->
+                <div class="text-center space-y-4 reveal">
+                    <div class="w-16 h-16 rounded-full bg-brand flex items-center justify-center text-xl font-bold mx-auto border-4 border-slate-800 shadow-lg shadow-brand/20">
+                        01
+                    </div>
+                    <h4 class="font-bold uppercase text-lg">Kontakt &amp; Besichtigung</h4>
+                    <p class="text-slate-400 text-sm">
+                        Sie schildern uns Ihr Vorhaben. Nach einer kurzen Bestandsaufnahme, bei Bedarf direkt vor Ort in Berlin, erstellen wir ein Konzept.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center space-y-4 reveal">
+                    <div class="w-16 h-16 rounded-full bg-brand flex items-center justify-center text-xl font-bold mx-auto border-4 border-slate-800 shadow-lg shadow-brand/20">
+                        02
+                    </div>
+                    <h4 class="font-bold uppercase text-lg">Festpreis-Angebot</h4>
+                    <p class="text-slate-400 text-sm">
+                        Sie erhalten ein transparentes, faires Angebot ohne versteckte Kosten. Planbarkeit steht für uns an oberster Stelle.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center space-y-4 reveal">
+                    <div class="w-16 h-16 rounded-full bg-brand flex items-center justify-center text-xl font-bold mx-auto border-4 border-slate-800 shadow-lg shadow-brand/20">
+                        03
+                    </div>
+                    <h4 class="font-bold uppercase text-lg">Sichere Durchführung</h4>
+                    <p class="text-slate-400 text-sm">
+                        Unser erfahrenes Team führt sämtliche Arbeiten (Abriss, Rückbau oder Schutz) fachgerecht, sauber und nach Sicherheitsstandards durch.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center space-y-4 reveal">
+                    <div class="w-16 h-16 rounded-full bg-brand flex items-center justify-center text-xl font-bold mx-auto border-4 border-slate-800 shadow-lg shadow-brand/20">
+                        04
+                    </div>
+                    <h4 class="font-bold uppercase text-lg">Besenreine Übergabe</h4>
+                    <p class="text-slate-400 text-sm">
+                        Nach Abschluss der Arbeiten entsorgen wir den Abfall fachgerecht und übergeben Ihnen die Fläche absolut sauber und planungsbereit.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ABOUT US (#ueber-uns) (Asymmetrical overlapping layout) -->
+    <section id="ueber-uns" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Overlapping Images (Asymmetric Design) -->
+                <div class="lg:col-span-5 relative mt-12 lg:mt-0 order-2 lg:order-1">
+                    <div class="absolute -top-10 -left-10 w-2/3 h-2/3 bg-brand/10 rounded-2xl -z-10"></div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img class="w-full h-[400px] object-cover" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Ahmet Bayram Baustellen-Impression" onerror="this.src=''">
+                    </div>
+                    <!-- Badge overlapping -->
+                    <div class="absolute -bottom-6 -right-6 bg-brand text-white p-6 rounded-2xl shadow-xl max-w-[220px]">
+                        <p class="font-bold uppercase text-xs tracking-wider mb-1">Qualität aus</p>
+                        <p class="font-extrabold text-xl uppercase leading-tight">Berlin-Reinickendorf</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Text Information -->
+                <div class="lg:col-span-7 space-y-6 order-1 lg:order-2 reveal">
+                    <span class="text-brand font-bold text-sm uppercase tracking-widest block">Das Unternehmen</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-charcoal uppercase leading-tight">Ihr starker Partner vor Ort in Berlin</h2>
+                    <div class="h-1.5 w-24 bg-brand rounded-full my-4"></div>
+                    
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        Das Unternehmen <strong>Ahmet Bayram Abrissarbeiten Holz- und Bautenschutz</strong> steht für handwerkliche Präzision, Zuverlässigkeit und absolute Transparenz im Großraum Berlin. Mit unserem Sitz in Berlin-Reinickendorf sind wir schnell vor Ort und können flexibel auf Kundenwünsche reagieren.
+                    </p>
+
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Wir verstehen unser Handwerk als Dienstleistung am Kunden. Deshalb legen wir größten Wert auf pünktliche Termineinhaltung, saubere Arbeitsweisen und die strikte Einhaltung aller gesetzlichen Umwelt- und Entsorgungsvorgaben. Ob kleine private Entkernung oder anspruchsvoller Holz- und Bautenschutz zur Werterhaltung Ihres Hauses – bei uns liegt Ihr Projekt in professionellen Händen.
+                    </p>
+
+                    <!-- Accents -->
+                    <div class="grid grid-cols-2 gap-4 pt-4 text-sm font-semibold text-brand-charcoal">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand"></i> Schnelle Vor-Ort-Besichtigung
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand"></i> Regional verwurzelt in Berlin
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand"></i> Transparente Festpreise
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand"></i> Gewerbe- und Privatprojekte
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: TESTIMONIALS (With customer notice in code comment) -->
+    <section class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-brand font-bold text-sm uppercase tracking-widest block mb-2">Kundenstimmen</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-charcoal uppercase leading-none">Das sagen unsere Kunden</h2>
+                <div class="h-1.5 w-24 bg-brand mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- PLATZHALTER – vom Kunden zu bestätigen (Kundenbewertungen sind exemplarische Beispiele) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-between relative reveal">
+                    <span class="absolute top-6 right-8 text-4xl text-slate-100"><i class="fa-solid fa-quote-right"></i></span>
+                    <p class="text-slate-600 text-sm italic leading-relaxed mb-6">
+                        "Ahmet Bayram und sein Team haben die alte Laube und das Fundament in unserem Garten in Reinickendorf abgerissen. Alles ging extrem schnell und sauber über die Bühne. Sehr freundlicher Kontakt und fairer Preis!"
+                    </p>
+                    <div>
+                        <div class="flex text-amber-500 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="font-bold text-slate-800 text-sm block">Familie Weber</span>
+                        <span class="text-slate-400 text-xs">Privatkunde aus Berlin</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-between relative reveal">
+                    <span class="absolute top-6 right-8 text-4xl text-slate-100"><i class="fa-solid fa-quote-right"></i></span>
+                    <p class="text-slate-600 text-sm italic leading-relaxed mb-6">
+                        "Hervorragende Arbeit beim Bautenschutz unseres Altbaus. Die feuchten Kellerwände wurden von innen abgedichtet. Seit Monaten ist alles trocken. Kompetent und absolut zuverlässig!"
+                    </p>
+                    <div>
+                        <div class="flex text-amber-500 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="font-bold text-slate-800 text-sm block">M. Neumann</span>
+                        <span class="text-slate-400 text-xs">Hausbesitzer, Berlin</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-200/60 flex flex-col justify-between relative reveal">
+                    <span class="absolute top-6 right-8 text-4xl text-slate-100"><i class="fa-solid fa-quote-right"></i></span>
+                    <p class="text-slate-600 text-sm italic leading-relaxed mb-6">
+                        "Wir haben Herrn Bayram für eine Entkernung einer Gewerbefläche beauftragt. Pünktliche Ausführung, die Baustelle wurde tadellos besenrein hinterlassen. Gerne wieder!"
+                    </p>
+                    <div>
+                        <div class="flex text-amber-500 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="font-bold text-slate-800 text-sm block">G. Kraft</span>
+                        <span class="text-slate-400 text-xs">Gewerbekunde, Berlin</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION (Accordion) -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-brand font-bold text-sm uppercase tracking-widest block mb-2">Häufige Fragen</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-charcoal uppercase leading-none">FAQ – Fragen &amp; Antworten</h2>
+                <div class="h-1.5 w-24 bg-brand mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn flex justify-between items-center w-full px-6 py-4 text-left font-bold text-brand-charcoal hover:bg-slate-50 transition duration-150" aria-expanded="false">
+                        <span>Führen Sie auch kleinere Abbrucharbeiten wie Gartenlauben-Abrisse durch?</span>
+                        <i class="fa-solid fa-chevron-down text-brand transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                        Ja, absolut. Wir übernehmen Kleinstaufträge wie den Abriss von Gartenlauben, Garagen, Mauern oder Zäunen genauso professionell wie größere Entkernungen und Abbrucharbeiten von Einfamilienhäusern.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn flex justify-between items-center w-full px-6 py-4 text-left font-bold text-brand-charcoal hover:bg-slate-50 transition duration-150" aria-expanded="false">
+                        <span>Wie läuft die Schuttentsorgung bei Ihnen ab?</span>
+                        <i class="fa-solid fa-chevron-down text-brand transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                        Wir arbeiten streng nach Umweltrichtlinien. Der anfallende Bauschutt wird sortenrein getrennt, direkt abtransportiert und über zertifizierte Entsorgungsfachbetriebe umweltgerecht verwertet oder deponiert.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn flex justify-between items-center w-full px-6 py-4 text-left font-bold text-brand-charcoal hover:bg-slate-50 transition duration-150" aria-expanded="false">
+                        <span>Was gehört alles zum Bereich Holz- und Bautenschutz?</span>
+                        <i class="fa-solid fa-chevron-down text-brand transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                        Bautenschutz umfasst alle Maßnahmen zur Vorbeugung und Behebung von Schäden durch Feuchtigkeit und Pilze an Bauwerken (z.B. Abdichtungen von Kellern, Mauerwerk). Im Bereich Holzschutz sichern wir tragende oder dekorative Holzelemente gegen Pilz- oder Insektenbefall sowie Witterungseinflüsse.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button class="faq-btn flex justify-between items-center w-full px-6 py-4 text-left font-bold text-brand-charcoal hover:bg-slate-50 transition duration-150" aria-expanded="false">
+                        <span>Sind die Kosten für eine Vor-Ort-Besichtigung kostenlos?</span>
+                        <i class="fa-solid fa-chevron-down text-brand transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed">
+                        Ja. Um Ihnen ein verlässliches und faires Festpreisangebot unterbreiten zu können, führen wir in Berlin-Reinickendorf und Umgebung kostenlose und unverbindliche Besichtigungen durch.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CONTACT & MAP (#kontakt) -->
+    <section id="kontakt" class="py-24 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-brand font-bold text-sm uppercase tracking-widest block mb-2">Kontakt</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold uppercase leading-none">Jetzt unverbindliches Angebot sichern</h2>
+                <div class="h-1.5 w-24 bg-brand mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left: Contact info & Google Map -->
+                <div class="lg:col-span-5 space-y-8">
+                    <h3 class="text-xl font-bold uppercase tracking-wide">Kontaktkanäle</h3>
+                    
+                    <div class="space-y-6">
+                        <a href="tel:03049916401" class="flex items-start gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition duration-150 group">
+                            <span class="h-12 w-12 rounded-lg bg-brand flex items-center justify-center text-xl text-white group-hover:scale-105 transition duration-150"><i class="fa-solid fa-phone"></i></span>
+                            <div>
+                                <span class="text-xs text-slate-400 block uppercase font-bold">Rufen Sie uns an</span>
+                                <span class="text-lg font-bold text-white">030 49 91 64 01</span>
+                            </div>
+                        </a>
+
+                        <a href="mailto:ahmet-bayram-abbruch@gmx.de" class="flex items-start gap-4 p-4 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition duration-150 group">
+                            <span class="h-12 w-12 rounded-lg bg-brand flex items-center justify-center text-xl text-white group-hover:scale-105 transition duration-150"><i class="fa-solid fa-envelope"></i></span>
+                            <div>
+                                <span class="text-xs text-slate-400 block uppercase font-bold">E-Mail schreiben</span>
+                                <span class="text-base sm:text-lg font-bold text-white break-all">ahmet-bayram-abbruch@gmx.de</span>
+                            </div>
+                        </a>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-800/50">
+                            <span class="h-12 w-12 rounded-lg bg-brand flex items-center justify-center text-xl text-white"><i class="fa-solid fa-map-pin"></i></span>
+                            <div>
+                                <span class="text-xs text-slate-400 block uppercase font-bold">Einsatzort</span>
+                                <span class="text-base font-bold text-white">Berlin-Reinickendorf &amp; ganz Berlin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Google Map -->
+                    <div class="rounded-2xl overflow-hidden border border-slate-700 h-[220px] shadow-lg">
+                        <!-- Centered around Reinickendorf, Berlin -->
+                        <iframe class="w-full h-full border-none grayscale" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d38760.36440263652!2d13.296578051280766!3d52.59012396160751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8519db8a70c3d%3A0x1c21c76f5713df50!2sReinickendorf%2C%20Berlin!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Contact Form (With Success Message handling in JS) -->
+                <!-- PLATZHALTER – Backend-Bedarf beachten (Derzeit JS Simulation oder mailto Integration) -->
+                <div class="lg:col-span-7 bg-slate-800 p-8 rounded-3xl border border-slate-700 relative">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-xs font-bold uppercase text-slate-300 mb-2">Ihr Name *</label>
+                                <input type="text" id="name" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-bold uppercase text-slate-300 mb-2">Ihre E-Mail-Adresse *</label>
+                                <input type="email" id="email" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="telefon" class="block text-xs font-bold uppercase text-slate-300 mb-2">Telefonnummer</label>
+                            <input type="tel" id="telefon" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition">
+                        </div>
+
+                        <div>
+                            <label for="leistung" class="block text-xs font-bold uppercase text-slate-300 mb-2">Gewünschte Leistung</label>
+                            <select id="leistung" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition">
+                                <option value="Abbruch">Abbrucharbeiten</option>
+                                <option value="Bautenschutz">Holz- und Bautenschutz</option>
+                                <option value="Demontage">Demontage &amp; Rückbau</option>
+                                <option value="Andere">Sonstiges</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-bold uppercase text-slate-300 mb-2">Ihre Nachricht *</label>
+                            <textarea id="message" rows="5" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition" placeholder="Schildern Sie uns kurz Ihr geplantes Vorhaben..."></textarea>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="privacy-check" required class="mt-1 h-4 w-4 text-brand focus:ring-brand border-slate-700 rounded bg-slate-900">
+                            <label for="privacy-check" class="text-xs text-slate-400 leading-snug">Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Bearbeitung meines Anliegens gemäß der <a href="#datenschutz" class="text-brand underline hover:text-white">Datenschutzerklärung</a> verarbeitet werden. *</label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand hover:bg-brand-dark text-white font-bold py-4 rounded-xl text-center uppercase tracking-wider transition-all duration-150 shadow-lg shadow-brand/10 hover:shadow-brand/20">
+                            Anfrage absenden
+                        </button>
+                    </form>
+
+                    <!-- Success State Form (hidden by default) -->
+                    <div id="form-success-message" class="hidden absolute inset-0 bg-slate-800 p-8 rounded-3xl flex flex-col items-center justify-center text-center space-y-6">
+                        <span class="h-20 w-20 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-4xl border border-emerald-500/20"><i class="fa-solid fa-circle-check"></i></span>
+                        <div>
+                            <h3 class="text-2xl font-bold uppercase text-white mb-2">Vielen Dank!</h3>
+                            <p class="text-slate-300 text-sm max-w-sm mx-auto">Ihre Anfrage wurde erfolgreich übermittelt. Wir werden uns innerhalb von 24 Stunden bei Ihnen melden.</p>
+                        </div>
+                        <button onclick="resetContactForm()" class="bg-slate-700 hover:bg-slate-600 text-white font-bold px-6 py-2 rounded-lg text-xs uppercase tracking-wider transition">Neues Formular senden</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGAL SECTIONS (#impressum & #datenschutz) (Scroll margins used for precise navigation focus) -->
+    <section id="impressum" class="py-16 bg-slate-100 border-t border-slate-200 scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-extrabold text-brand-charcoal uppercase mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-scale-balanced text-brand"></i> Impressum
+            </h2>
+            <!-- PLATZHALTER – juristisch prüfen lassen -->
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm text-sm text-slate-600 space-y-4 leading-relaxed">
+                <p class="font-bold text-slate-800">Angaben gemäß § 5 TMG:</p>
+                <p>
+                    <strong>Ahmet Bayram</strong><br>
+                    Ahmet Bayram Abrissarbeiten Holz- und Bautenschutz<br>
+                    Berlin-Reinickendorf<br>
+                    <!-- PLATZHALTER: Genaue Postanschrift vom Kunden nachtragen lassen -->
+                    <em>[Vollständige Anschrift - PLATZHALTER vom Kunden zu bestätigen]</em>
+                </p>
+                
+                <p class="font-bold text-slate-800">Kontakt:</p>
+                <p>
+                    Telefon: 030 49 91 64 01<br>
+                    E-Mail: <a href="mailto:ahmet-bayram-abbruch@gmx.de" class="text-brand hover:underline">ahmet-bayram-abbruch@gmx.de</a>
+                </p>
+
+                <p class="font-bold text-slate-800">Umsatzsteuer-ID:</p>
+                <p><em>[Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz - PLATZHALTER vom Kunden zu ergänzen]</em></p>
+
+                <p class="font-bold text-slate-800">EU-Streitschlichtung:</p>
+                <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener" class="text-brand hover:underline">https://ec.europa.eu/consumers/odr/</a>.<br>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+
+                <p class="font-bold text-slate-800">Verbraucherstreitbeilegung/Universalschlichtungsstelle:</p>
+                <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="datenschutz" class="py-16 bg-slate-100 border-t border-slate-200 scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-extrabold text-brand-charcoal uppercase mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-brand"></i> Datenschutzerklärung
+            </h2>
+            <!-- PLATZHALTER – juristisch prüfen lassen -->
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm text-sm text-slate-600 space-y-6 leading-relaxed">
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2">1. Datenschutz auf einen Blick</h3>
+                    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2">2. Datenerfassung auf dieser Website</h3>
+                    <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
+                    <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber (siehe Impressum).</p>
+                    <p><strong>Wie erfassen wir Ihre Daten?</strong></p>
+                    <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z. B. durch Eingabe in das Kontaktformular). Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst (z. B. IP-Adresse, Browser, Uhrzeit des Seitenaufrufs).</p>
+                    <p><strong>Wofür nutzen wir Ihre Daten?</strong></p>
+                    <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2">3. Ihre Rechte bezüglich Ihrer Daten</h3>
+                    <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenden Sie sich hierzu an die im Impressum angegebene Adresse.</p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-slate-800 mb-2">4. Hosting</h3>
+                    <p>Wir hosten die Inhalte unserer Website bei einem externen Dienstleister (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Dies geschieht zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH LINKS -->
+    <footer class="bg-brand-charcoal text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Col 1: Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <span class="text-white font-extrabold text-xl uppercase tracking-tight block leading-none">AHMET BAYRAM</span>
+                    <span class="text-brand text-xs font-semibold tracking-wider block uppercase">Abrissarbeiten Holz- und Bautenschutz</span>
+                    <p class="text-sm text-slate-400 max-w-sm mt-2">
+                        Ihr zuverlässiger Partner für fachgerechte Abbrucharbeiten und werthaltigen Holz- und Bautenschutz in Berlin-Reinickendorf und Umgebung.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="hover:text-brand transition duration-150">Leistungen</a></li>
+                        <li><a href="#ueber-uns" class="hover:text-brand transition duration-150">Über Uns</a></li>
+                        <li><a href="#kontakt" class="hover:text-brand transition duration-150">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legal & Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Rechtliches</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#impressum" class="hover:text-brand transition duration-150">Impressum</a></li>
+                        <li><a href="#datenschutz" class="hover:text-brand transition duration-150">Datenschutzerklärung</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-slate-800 text-center text-xs text-slate-500 space-y-2">
+                <p>&copy; <span id="current-year"></span> Ahmet Bayram. Alle Rechte vorbehalten.</p>
+                <p class="text-[10px]">Entwickelt nach höchsten Standards für Handwerksbetriebe.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE CTA BUTTON (Visible only on small devices at the very bottom) -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900 border-t border-slate-800 p-3 flex md:hidden gap-3 shadow-2xl">
+        <a href="tel:03049916401" class="flex-1 bg-brand hover:bg-brand-dark text-white text-center py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition duration-150">
+            <i class="fa-solid fa-phone"></i> Anrufen
+        </a>
+        <a href="#kontakt" class="flex-1 bg-slate-800 text-white text-center py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition duration-150">
+            <i class="fa-solid fa-envelope"></i> Anfrage
+        </a>
+    </div>
+
+    <!-- COOKIE BANNER -->
+    <div id="cookieBanner" class="fixed bottom-20 md:bottom-6 left-4 right-4 md:left-auto md:right-6 md:max-w-md bg-slate-900 text-white p-6 rounded-2xl shadow-2xl border border-slate-800 z-50 transform translate-y-10 opacity-0 transition-all duration-500 hidden">
+        <h4 class="font-bold text-sm uppercase tracking-wider mb-2 flex items-center gap-2 text-brand">
+            <i class="fa-solid fa-cookie-bite"></i> Cookie-Hinweis
+        </h4>
+        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Wir verwenden Cookies, um Ihren Besuch auf unserer Website optimal zu gestalten. Einige sind technisch notwendig, andere helfen uns, diese Seite weiter zu verbessern.
+        </p>
+        <div class="flex gap-2 justify-end">
+            <button id="acceptCookies" class="bg-brand hover:bg-brand-dark text-white font-bold py-2 px-4 rounded text-xs uppercase tracking-wider transition duration-150">Akzeptieren</button>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // Set current copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('menu-icon-hamburger');
+        const closeIcon = document.getElementById('menu-icon-close');
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on clicking any navigation link
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // FAQ Accordion Interaction
+        const faqButtons = document.querySelectorAll('.faq-btn');
+        faqButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', !isExpanded);
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Form Success Simulation
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('form-success-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate form processing state and display success view
+            successMessage.classList.remove('hidden');
+        });
+
+        function resetContactForm() {
+            contactForm.reset();
+            successMessage.classList.add('hidden');
+        }
+
+        // Cookie Banner Consent logic
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptBtn = document.getElementById('acceptCookies');
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('cookieConsent')) {
+                // Delay showing cookie banner for visual comfort
+                setTimeout(() => {
+                    cookieBanner.classList.remove('hidden');
+                    setTimeout(() => {
+                        cookieBanner.classList.remove('translate-y-10', 'opacity-0');
+                    }, 50);
+                }, 1000);
+            }
+        });
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.add('translate-y-10', 'opacity-0');
+            setTimeout(() => {
+                cookieBanner.classList.add('hidden');
+            }, 500);
+        });
+
+        // Scroll Reveal animation helper
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 120;
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Trigger once on load to show elements already in viewport
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>
